@@ -16,9 +16,9 @@
                 },
                 {
                     "name": "Dash",
-                    "type": "Value",
+                    "type": "Button",
                     "id": "4b8f1487-bd6c-4132-a387-7018a1ef83b0",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -136,7 +136,7 @@
                 {
                     "name": "",
                     "id": "2cfa9163-08f0-47c1-8887-a594e8daf890",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
