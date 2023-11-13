@@ -7,8 +7,17 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "418a01f4-1fd0-4abe-8790-bc2429d04a96",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Dash",
+                    "type": "Value",
+                    "id": "4b8f1487-bd6c-4132-a387-7018a1ef83b0",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -17,16 +26,7 @@
                 {
                     "name": "Fire",
                     "type": "Button",
-                    "id": "a737d1ca-fde1-487c-806c-dd83a13f7179",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Dash",
-                    "type": "Button",
-                    "id": "4b8f1487-bd6c-4132-a387-7018a1ef83b0",
+                    "id": "c10e208d-6ae1-4828-ac06-f4a5888ecafc",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -135,23 +135,23 @@
                 },
                 {
                     "name": "",
-                    "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
+                    "id": "2cfa9163-08f0-47c1-8887-a594e8daf890",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Fire",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "2cfa9163-08f0-47c1-8887-a594e8daf890",
-                    "path": "<Keyboard>/space",
+                    "id": "3598fe3f-45f9-4b0a-9bc2-51e1a0a19dae",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Dash",
+                    "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
