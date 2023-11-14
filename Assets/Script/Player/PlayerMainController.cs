@@ -33,21 +33,19 @@ public class PlayerMainController : MonoBehaviour
     public float fireCoolTiem = 0.3f; //발사 쿨타임
     bool isFire = false;//발사 상태 여부
 
-    private void Start()
+    private void Awake()
     {
         playerRbody = this.GetComponent<Rigidbody2D>();//플레이어 리지드바디값 초기화
-    }
-
-    private void Update()
-    {
-        
     }
 
     private void FixedUpdate()
     {
         //플레이어 이동 구현 부분
-        Vector2 MoveVec = inputMoveVec.normalized * (isFire ? moveSpeed/2 : moveSpeed);
-        playerRbody.velocity = MoveVec;
+        if (isDashAvailability)
+        {
+            Vector2 MoveVec = inputMoveVec.normalized * (isFire ? moveSpeed / 2 : moveSpeed);
+            playerRbody.velocity = MoveVec;
+        }
 
         //플레이어 대쉬 구현 부분
         if (isDash)
@@ -61,11 +59,7 @@ public class PlayerMainController : MonoBehaviour
     //이동 입력 시 처리하는 함수
     void OnMove(InputValue value)
     {
-        //이동가능여부 체크
-        if (isDashAvailability)
-            inputMoveVec = value.Get<Vector2>();//이동방향 설정
-        else
-            inputMoveVec = new Vector2(0,0);//이동방향 0으로 설정
+        inputMoveVec = value.Get<Vector2>();//이동방향 설정
     }
     
     //대쉬 입력 시 처리하는 함수
