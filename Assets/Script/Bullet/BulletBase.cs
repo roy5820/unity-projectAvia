@@ -8,7 +8,7 @@ public class BulletBase : MonoBehaviour
     public bool isLaunch = false;//발사 여부
     public float fireForce = 20f;//발사 파워
     Rigidbody2D bulletRbody;
-    float bulletLifeTime = 1f;
+    public float bulletLifeTime = 1f;
     float isTime = 0;
     
 
@@ -33,5 +33,6 @@ public class BulletBase : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         Destroy(other.gameObject);
+        Destroy(this.gameObject);
     }
 }
