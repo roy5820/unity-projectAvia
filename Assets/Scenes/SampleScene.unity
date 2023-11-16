@@ -161,6 +161,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4524936060698637594, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: maxSpawnTime
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637594, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: minSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4524936060698637595, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -530,6 +538,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4524936060698637594, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: maxSpawnTime
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637594, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: minSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4524936060698637595, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -671,6 +687,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4524936060698637594, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: maxSpawnTime
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637594, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: minSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4524936060698637595, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -728,6 +752,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4524936060698637594, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: maxSpawnTime
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637594, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: minSpawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4524936060698637595, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_RootOrder
       value: 2
