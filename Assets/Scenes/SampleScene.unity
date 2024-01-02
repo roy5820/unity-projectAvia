@@ -217,6 +217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemySpawnerBase03
       objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
 --- !u!1 &172261148
@@ -229,10 +233,11 @@ GameObject:
   m_Component:
   - component: {fileID: 172261150}
   - component: {fileID: 172261149}
-  - component: {fileID: 172261151}
-  - component: {fileID: 172261152}
-  - component: {fileID: 172261154}
   - component: {fileID: 172261153}
+  - component: {fileID: 172261154}
+  - component: {fileID: 172261152}
+  - component: {fileID: 172261151}
+  - component: {fileID: 172261155}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -321,15 +326,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 791556207}
-  isMoveAvailability: 1
-  isDashAvailability: 1
-  isFireAvailability: 1
-  isSkillAvailability: 1
-  moveSpeed: 25
-  DashPower: 60
-  DashTime: 0.3
-  dashCoolTime: 3
-  fireCoolTiem: 0.3
+  playerStatus: 0
+  isMoveStatus: 0
+  isDashStatus: 0
+  isFireStatus: 0
+  isSkillStatus: 2
 --- !u!114 &172261152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +398,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &172261155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172261148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154bfb6186cb1e343ad99d8b49ca12f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 30
+  DashPower: 60
+  DashTime: 0.3
+  dashCoolTime: 3
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 791556208}
   - component: {fileID: 791556209}
+  - component: {fileID: 791556210}
   m_Layer: 6
   m_Name: weaponCrossbow
   m_TagString: Untagged
@@ -531,6 +549,37 @@ MonoBehaviour:
   firePoint: {fileID: 14861297}
   maxBulletCnt: 5
   nowBulletCnt: 0
+  fireCoolTiem: 0.3
+--- !u!114 &791556210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791556207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f2e24a7f93966e0409bb0814cec5b1ba, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &993036054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -593,6 +642,10 @@ PrefabInstance:
     - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_Name
       value: enemySpawnerBase04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
@@ -743,6 +796,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemySpawnerBase02
       objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
 --- !u!1001 &4524936061055918543
@@ -807,6 +864,10 @@ PrefabInstance:
     - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_Name
       value: enemySpawnerBase01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}

@@ -6,117 +6,115 @@ using UnityEngine.InputSystem;
 
 public class PlayerMainController : MonoBehaviour
 {
-    Rigidbody2D playerRbody;//플레이어 리지드 바디
+    private static PlayerMainController instance = null;//게임 메인컨트롤러 인스턴스화를 위한 변수 선언
     public GameObject weapon;//플레이어 무기
-    int playerStatus = 0; //플레이어 상태 0: 일반 1: 무적 2: 죽음
+    private int playerStatus = 0; //플레이어 상태 0: 일반, 1: 무적, 2: 부활 중, 3: 사망
 
-    //액션제한 관련 변수
-    public bool isMoveAvailability = true; //이동 가능 여부
-    public bool isDashAvailability = true; //대쉬 가능 여부
-    public bool isFireAvailability = true; //일반공격 가능 여부
-    public bool isSkillAvailability = true; //스킬공격 가능 여부
-
-    //이동관련 변수
-    bool isMove = false;//이동 상태 여부
-    public float moveSpeed = 8.0f;//이동 스피드
-    Vector2 inputMoveVec;//입력된 이동방향 벡터값
-    
-
-    //대쉬관련 변수
-    bool isDash = false; //대쉬 상태 여부
-    public float DashPower = 30.0f;//대쉬 파워
-    public float DashTime = 0.5f;//대쉬 시간
-    public float dashCoolTime = 3.0f;//대쉬 쿨타임
-    Vector2 inputDashVec;//대쉬 이동방향 벡터값
-
-    //발사관련 변수
-    public float fireCoolTiem = 0.3f; //발사 쿨타임
-    bool isFire = false;//발사 상태 여부
+    //각 액션별 상태 값이 저장되는 변수 0: 액션 가능, 1: 액션 중, 2: 액션 제한
+    private int isMoveStatus = 0; //이동 상태값
+    private int isDashStatus = 0; //대쉬 상태값
+    private int isFireStatus = 0; //일반공격 상태값
+    private int isReloadStatus = 0; //리로드 상태값
+    private int isSkillStatus = 2; //스킬공격 상태값
 
     private void Awake()
     {
-        playerRbody = this.GetComponent<Rigidbody2D>();//플레이어 리지드바디값 초기화
+        //인스턴스 값 초기화
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
     }
 
-    private void FixedUpdate()
+    //플레이어 메인컨트롤러에 인스턴스값에 접근하는 프로퍼티
+    public static PlayerMainController getInstanc
     {
-        //플레이어 이동 구현 부분
-        if (isDashAvailability)
+        get
         {
-            Vector2 MoveVec = inputMoveVec.normalized * (isFire ? moveSpeed / 2 : moveSpeed);
-            playerRbody.velocity = MoveVec;
-        }
-
-        //플레이어 대쉬 구현 부분
-        if (isDash)
-        {
-            //현제 이동 입력값에 따른 대쉬 방향 설정
-            Vector2 dashVec = inputDashVec * DashPower;
-            playerRbody.velocity = dashVec;
-        }
-    }
-
-    //이동 입력 시 처리하는 함수
-    void OnMove(InputValue value)
-    {
-        inputMoveVec = value.Get<Vector2>();//이동방향 설정
-    }
-    
-    //대쉬 입력 시 처리하는 함수
-    void OnDash()
-    {
-        if (isDashAvailability)
-        {
-            inputDashVec = (inputMoveVec.x == 0 && inputMoveVec.y == 0 ? new Vector2(1, 0) : inputMoveVec);//대쉬 이동방향 설정
-            StartCoroutine(DashImplementation());//대쉬 시 상태값들을 별경하는 코루틴
-        }
-            
-    }
-    //대쉬 구현 코루틴
-    IEnumerator DashImplementation()
-    {
-        isDash = true; //구르기 상태 활성화
-        isDashAvailability = false;//대쉬 가능 여부 비활성화
-        isFireAvailability = false;//일반 공격 가능여부 비활성화
-        isMoveAvailability = false;//이동 가능여부 비활성화
-        isSkillAvailability = false;//스킬 가능여부 비활성화
-
-        yield return new WaitForSeconds(DashTime);
-
-        isDash = false; //구르기 상태 비활성화
-        isDashAvailability = true;//대쉬 가능 여부 활성화
-        isFireAvailability = true;//일반 공격 가능여부 활성화
-        isMoveAvailability = true;//이동 가능여부 활성화
-        isSkillAvailability = true;//스킬 가능여부 활성화
-        
-    }
-
-    //일반공격 입력 시 처리하는 함수
-    void OnFire()
-    {
-        if (isFireAvailability && !isFire)
-        {
-            //장탄수 체크
-            int nowBulletCnt = weapon.GetComponent<WeaponBase>().nowBulletCnt;
-            if (nowBulletCnt > 0)
+            if (instance == null)
             {
-                weapon.SendMessage("Fire");//무기의 발사 함수 호출
-                isFire = true;//발사 상태 활성화
-                StartCoroutine(FireDelayIementation(fireCoolTiem));//딜레이후 비활성화하는 코루틴 호출
+                return null;
             }
-            else OnReloard();//총알이 없을 시 장전
+            return instance;
         }
     }
-    //플레이어 일반공격 딜레이 구현
-    IEnumerator FireDelayIementation(float DelayTime)
+
+    //플레이어 상태값 get set 프로퍼티
+    public int getSetPlayerStatus
     {
-        yield return new WaitForSeconds(DelayTime);
-        isFire = false;
+        get
+        {
+            return playerStatus;
+        }
+        set
+        {
+            playerStatus = value;
+        }
     }
 
-    //총알 장전 함수
-    void OnReloard()
+    //이동 상태값 get set 프로퍼티
+    public int getSetMoveStatus
     {
-        
+        get
+        {
+            return isMoveStatus;
+        }
+        set
+        {
+            isMoveStatus = value;
+        }
+    }
+
+    //대쉬 상태값 get set 프로퍼티
+    public int getSetDashStatus
+    {
+        get
+        {
+            return isDashStatus;
+        }
+        set
+        {
+            isDashStatus = value;
+        }
+    }
+
+
+    //일반공격 상태값 get set 프로퍼티
+    public int getSetFireStatus
+    {
+        get
+        {
+            return isFireStatus;
+        }
+        set
+        {
+            isFireStatus = value;
+        }
+    }
+
+    //리로드 상태값 get set 프로퍼티
+    public int getSetReloadStatus
+    {
+        get
+        {
+            return isReloadStatus;
+        }
+        set
+        {
+            isReloadStatus = value;
+        }
+    }
+
+    //스킬 상태값 get set 프로퍼티
+    public int getSetSkillStatus
+    {
+        get
+        {
+            return isSkillStatus;
+        }
+        set
+        {
+            isSkillStatus = value;
+        }
     }
 }
