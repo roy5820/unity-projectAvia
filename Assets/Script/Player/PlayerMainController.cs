@@ -15,7 +15,7 @@ public class PlayerMainController : MonoBehaviour
     private int isDashStatus = 0; //대쉬 상태값
     private int isFireStatus = 0; //일반공격 상태값
     private int isReloadStatus = 0; //리로드 상태값
-    private int isSkillStatus = 2; //스킬공격 상태값
+    private int isSkillStatus = 0; //스킬공격 상태값
 
     private void Awake()
     {

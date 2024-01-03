@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 8798696867219536493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 15.45, y: -7.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8798696865757511784}
@@ -156,7 +156,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8798696867219536487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +187,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buletPrefeb: {fileID: 5836834420690895328, guid: 533361006d0f0874abf74a0151ec3719, type: 3}
   firePoint: {fileID: 8798696865757511784}
-  attackRange: 15
-  attackDelay: 1
+  attackRange: 5
+  attackDelay: 2
   attackCoolTime: 0.3

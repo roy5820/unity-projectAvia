@@ -25,34 +25,16 @@ public class WeaponBase : MonoBehaviour
 
     private void Awake()
     {
-        nowBulletCnt = maxBulletCnt;
+        nowBulletCnt = maxBulletCnt;//현제 총알 계수 초기화
 
         //각 상태값들을 메인 컨트롤러안에 값으로 초기화 하는 함수
-        mainController = PlayerMainController.getInstanc;//메인 컨트롤러 가져오기
-        if (mainController != null)
-        {
-            getPlayerStatus = mainController.getSetPlayerStatus;//플레이어 상태값을 메인
-            getMoveStatus = mainController.getSetMoveStatus;//이동 상태값 초기화
-            getDashStatus = mainController.getSetDashStatus;//대쉬 상태값 초기화
-            getFireStatus = mainController.getSetFireStatus;//일반공격 상태값 초기화
-            getReloadStatus = mainController.getSetReloadStatus;//일반공격 재장전 상태값 초기화
-            getSkillStatus = mainController.getSetSkillStatus;//스킬 상태값 초기화
-        }
+        LoadStatus();
     }
 
     private void Update()
     {
         //각 상태값들을 메인 컨트롤러안에 값으로 초기화 하는 함수
-        mainController = PlayerMainController.getInstanc;//메인 컨트롤러 가져오기
-        if (mainController != null)
-        {
-            getPlayerStatus = mainController.getSetPlayerStatus;//플레이어 상태값을 메인
-            getMoveStatus = mainController.getSetMoveStatus;//이동 상태값 초기화
-            getDashStatus = mainController.getSetDashStatus;//대쉬 상태값 초기화
-            getFireStatus = mainController.getSetFireStatus;//일반공격 상태값 초기화
-            getReloadStatus = mainController.getSetReloadStatus;//일반공격 재장전 상태값 초기화
-            getSkillStatus = mainController.getSetSkillStatus;//스킬 상태값 초기화
-        }
+        LoadStatus();
 
         //마우스 방향에 따른 무기 회전
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -67,9 +49,12 @@ public class WeaponBase : MonoBehaviour
     //무기 발사 구현
     public void OnFire()
     {
-        if(getFireStatus == 0 && nowBulletCnt > 0 && getReloadStatus != 1)
+        if(getFireStatus == 0 && nowBulletCnt > 0)
         {
             mainController.getSetFireStatus = 1;//일반공격 공격 중 상태로 변경
+            //재장전 중 일반 공격 시 재장전 취소
+            if (getReloadStatus == 1)
+                mainController.getSetReloadStatus = 0;
 
             nowBulletCnt--;//현제 장탄 개수 감소
             StartCoroutine(FireDelayIementation());//딜레이 구현 코루틴 호출
@@ -105,18 +90,40 @@ public class WeaponBase : MonoBehaviour
     //재장전 구현 코루틴
     IEnumerator ReloardImplementation()
     {
-        Debug.Log(0);
+        float cntTime = 0f;//시간 경과값을 담을 변수
+        //재장전 시 액션 재한 상태값 설정
         mainController.getSetReloadStatus = 1;
-        mainController.getSetFireStatus = 2;
-        mainController.getSetDashStatus = 2;
-        mainController.getSetSkillStatus = 2;
-        yield return new WaitForSeconds(reLoardTime);
-        Debug.Log(1);
-        mainController.getSetReloadStatus = 0;
-        mainController.getSetFireStatus = 0;
-        mainController.getSetDashStatus = 0;
-        mainController.getSetSkillStatus = 0;
 
+        //재장전 시간 동안 장전을 취소할 행동을 할 경우 재장전 취소
+        while (cntTime < reLoardTime)
+        {
+            cntTime += Time.deltaTime;//시간 카운트
+            LoadStatus();//상태값 메인 컨트롤러에 있는 값으로 초기화
+
+            //장전 취소 시 코루틴 강제 종료
+            if (getReloadStatus != 1)
+            {
+                yield break;
+            }
+
+            yield return null;
+        }
+        mainController.getSetReloadStatus = 0;
         nowBulletCnt = maxBulletCnt;//장전
+    }
+
+    //메인 컨트롤러에서 상태값을 가져와 초기화하는 함수
+    public void LoadStatus()
+    {
+        mainController = PlayerMainController.getInstanc;//메인 컨트롤러 가져오기
+        if (mainController != null)
+        {
+            getPlayerStatus = mainController.getSetPlayerStatus;//플레이어 상태값을 메인
+            getMoveStatus = mainController.getSetMoveStatus;//이동 상태값 초기화
+            getDashStatus = mainController.getSetDashStatus;//대쉬 상태값 초기화
+            getFireStatus = mainController.getSetFireStatus;//일반공격 상태값 초기화
+            getReloadStatus = mainController.getSetReloadStatus;//일반공격 재장전 상태값 초기화
+            getSkillStatus = mainController.getSetSkillStatus;//스킬 상태값 초기화
+        }
     }
 }

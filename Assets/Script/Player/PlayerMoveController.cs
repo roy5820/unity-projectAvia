@@ -32,32 +32,15 @@ public class PlayerMoveController : MonoBehaviour
         playerRbody = this.GetComponent<Rigidbody2D>();//플레이어 리지드바디값 초기화
 
         //각 상태값들을 메인 컨트롤러안에 값으로 초기화 하는 함수
-        mainController = PlayerMainController.getInstanc;//메인 컨트롤러 가져오기
-        if (mainController != null)
-        {
-            getPlayerStatus = mainController.getSetPlayerStatus;//플레이어 상태값을 메인
-            getMoveStatus = mainController.getSetMoveStatus;//이동 상태값 초기화
-            getDashStatus = mainController.getSetDashStatus;//대쉬 상태값 초기화
-            getFireStatus = mainController.getSetFireStatus;//일반공격 상태값 초기화
-            getReloadStatus = mainController.getSetReloadStatus;//일반공격 재장전 상태값 초기화
-            getSkillStatus = mainController.getSetSkillStatus;//스킬 상태값 초기화
-        }
+        LoadStatus();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         //각 상태값들을 메인 컨트롤러안에 값으로 초기화 하는 함수
-        mainController = PlayerMainController.getInstanc;//메인 컨트롤러 가져오기
-        if (mainController != null)
-        {
-            getPlayerStatus = mainController.getSetPlayerStatus;//플레이어 상태값을 메인
-            getMoveStatus = mainController.getSetMoveStatus;//이동 상태값 초기화
-            getDashStatus = mainController.getSetDashStatus;//대쉬 상태값 초기화
-            getFireStatus = mainController.getSetFireStatus;//일반공격 상태값 초기화
-            getReloadStatus = mainController.getSetReloadStatus;//일반공격 재장전 상태값 초기화
-            getSkillStatus = mainController.getSetSkillStatus;//스킬 상태값 초기화
-        }
+        LoadStatus();
     }
 
     private void FixedUpdate()
@@ -66,7 +49,7 @@ public class PlayerMoveController : MonoBehaviour
         if (getMoveStatus != 2)
         {
             //이동 구현
-            Vector2 MoveVec = inputMoveVec.normalized * (getFireStatus == 1 ? moveSpeed / 2 : moveSpeed);
+            Vector2 MoveVec = inputMoveVec.normalized * (getFireStatus == 1 || getReloadStatus == 1 ? moveSpeed / 2 : moveSpeed);
             playerRbody.velocity = MoveVec;
         }
 
@@ -92,8 +75,11 @@ public class PlayerMoveController : MonoBehaviour
     //대쉬 입력 시 처리하는 함수
     void OnDash()
     {
-        inputDashVec = (inputMoveVec.x == 0 && inputMoveVec.y == 0 ? new Vector2(1, 0) : inputMoveVec);//대쉬 이동방향 설정
-        StartCoroutine(DashTimer());//대쉬 시 상태값들을 변경하는 대쉬 타이머 구로틴 호출
+        if (getDashStatus == 0)
+        {
+            inputDashVec = (inputMoveVec.x == 0 && inputMoveVec.y == 0 ? new Vector2(1, 0) : inputMoveVec);//대쉬 이동방향 설정
+            StartCoroutine(DashTimer());//대쉬 시 상태값들을 변경하는 대쉬 타이머 구로틴 호출
+        }
     }
     //대쉬 타이머 구현 코루틴
     IEnumerator DashTimer()
@@ -111,9 +97,28 @@ public class PlayerMoveController : MonoBehaviour
         //플레리어를 일반 상태로 바꾸고 모든 액션을 사용 가능으로 설정
         mainController.getSetPlayerStatus = 1;
         mainController.getSetMoveStatus = 0;
-        mainController.getSetDashStatus = 0;
+        mainController.getSetDashStatus = 2;
         mainController.getSetFireStatus = 0;
         mainController.getSetReloadStatus = 0;
         mainController.getSetSkillStatus = 0;
+
+        yield return new WaitForSeconds(dashCoolTime-DashTime);
+
+        mainController.getSetDashStatus = 0;
+    }
+
+    //메인 컨트롤러에서 상태값을 가져와 초기화하는 함수
+    public void LoadStatus()
+    {
+        mainController = PlayerMainController.getInstanc;//메인 컨트롤러 가져오기
+        if (mainController != null)
+        {
+            getPlayerStatus = mainController.getSetPlayerStatus;//플레이어 상태값을 메인
+            getMoveStatus = mainController.getSetMoveStatus;//이동 상태값 초기화
+            getDashStatus = mainController.getSetDashStatus;//대쉬 상태값 초기화
+            getFireStatus = mainController.getSetFireStatus;//일반공격 상태값 초기화
+            getReloadStatus = mainController.getSetReloadStatus;//일반공격 재장전 상태값 초기화
+            getSkillStatus = mainController.getSetSkillStatus;//스킬 상태값 초기화
+        }
     }
 }
