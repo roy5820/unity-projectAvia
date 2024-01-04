@@ -108,11 +108,11 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerT: {fileID: 0}
   isMoveAvailability: 1
-  moveSpeed: 10
+  moveSpeed: 5
   isFireAvailability: 1
 --- !u!114 &8798696867219536486
 MonoBehaviour:
@@ -187,6 +187,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buletPrefeb: {fileID: 5836834420690895328, guid: 533361006d0f0874abf74a0151ec3719, type: 3}
   firePoint: {fileID: 8798696865757511784}
-  attackRange: 5
+  attackRange: 4.5
   attackDelay: 2
-  attackCoolTime: 0.3
+  attackCoolTime: 1

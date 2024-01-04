@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterPrefab: {fileID: 8798696867219536493, guid: 7b6cd4c6390a3ed499919c3a3326f1de, type: 3}
   minSpawnTime: 3
-  maxSpawnTime: 6
+  maxSpawnTime: 8

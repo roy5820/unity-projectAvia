@@ -49,7 +49,7 @@ public class PlayerMoveController : MonoBehaviour
         if (getMoveStatus != 2)
         {
             //이동 구현
-            Vector2 MoveVec = inputMoveVec.normalized * (getFireStatus == 1 || getReloadStatus == 1 ? moveSpeed / 2 : moveSpeed);
+            Vector2 MoveVec = inputMoveVec.normalized * (getFireStatus == 1 || getReloadStatus == 1 || getSkillStatus == 1 ? moveSpeed / 2 : moveSpeed);
             playerRbody.velocity = MoveVec;
         }
 

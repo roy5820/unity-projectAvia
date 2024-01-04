@@ -17,6 +17,8 @@ public class PlayerMainController : MonoBehaviour
     private int isReloadStatus = 0; //리로드 상태값
     private int isSkillStatus = 0; //스킬공격 상태값
 
+    private int playerLife = 50; //플레이어 목숨 개수
+
     private void Awake()
     {
         //인스턴스 값 초기화
@@ -115,6 +117,21 @@ public class PlayerMainController : MonoBehaviour
         set
         {
             isSkillStatus = value;
+        }
+    }
+
+    //피격 처리 함수
+    public void HitFuntion()
+    {
+        playerLife--;//목숨 감소
+
+        if (playerLife > 0)//부활 처리
+        {
+
+        }
+        else //죽음 처리
+        {
+            
         }
     }
 }

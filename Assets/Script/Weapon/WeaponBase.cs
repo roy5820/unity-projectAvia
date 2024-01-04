@@ -61,9 +61,8 @@ public class WeaponBase : MonoBehaviour
 
             //총알 생성
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 direction = mousePos - transform.position;
-            GameObject bulletPre = Instantiate(bulletPrefab);
-            bulletPre.transform.position = firePoint.transform.position;//총알생성 위치 설정
+            Vector3 direction = mousePos - transform.position;//총알 발사 방향 계산
+            GameObject bulletPre = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);//총알 생성
             bulletPre.GetComponent<BulletBase>().bulletVec = bulletVec;
             bulletPre.GetComponent<BulletBase>().isLaunch = true;
         }

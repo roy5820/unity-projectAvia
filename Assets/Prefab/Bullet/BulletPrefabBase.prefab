@@ -99,10 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46debe11f1844d4181c827fc1cf297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletVec: {x: 36.796352, y: 9.69784}
+  bulletVec: {x: 1, y: 1}
   isLaunch: 1
   fireForce: 60
-  bulletLifeTime: 1
+  bulletDistance: 6
 --- !u!58 &6284921266273336494
 CircleCollider2D:
   m_ObjectHideFlags: 0

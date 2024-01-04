@@ -50,4 +50,12 @@ public class EnemyControllerBase : MonoBehaviour
                 enemyRbody.velocity = new Vector2(0, 0);
         }
     }
+    //피격 처리 함수
+    public void HitFuntion()
+    {
+        if(enemyStatus == 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
