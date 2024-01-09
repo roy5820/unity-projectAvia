@@ -16,6 +16,7 @@ public class EnemyFireAttackBase : MonoBehaviour
     public float attackRange = 6.0f;//공격 사거리
     public float attackDelay = 0.8f;//공격 선딜
     public float attackCoolTime = 1.0f;//공격 쿨타임
+    public float fireForce = 30f;//발사 파워
 
     // Start is called before the first frame update
     void Start()
@@ -52,10 +53,9 @@ public class EnemyFireAttackBase : MonoBehaviour
         MainController.GetComponent<EnemyControllerBase>().isMoveAvailability = false;//이동 가능상태 비활성화
         
         yield return new WaitForSeconds(attackDelay);//공격 선딜
-        GameObject buletPre = Instantiate(buletPrefeb);
-        buletPre.transform.position = firePoint.transform.position;//총알생성 위치 설정
-        buletPre.GetComponent<BulletBase>().bulletVec = direction;
-        buletPre.GetComponent<BulletBase>().isLaunch = true;
+        GameObject bulletPre = Instantiate(buletPrefeb);
+        bulletPre.transform.position = firePoint.transform.position;//총알생성 위치 설정
+        bulletPre.GetComponent<Rigidbody2D>().AddForce(direction.normalized * fireForce, ForceMode2D.Impulse);
 
         MainController.GetComponent<EnemyControllerBase>().isMoveAvailability = true;//이동 가능상태 활성화
         StartCoroutine(FireCooltime());//공격 쿨타임 구현

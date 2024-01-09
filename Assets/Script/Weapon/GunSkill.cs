@@ -33,30 +33,16 @@ public class GunSkill : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        mainController = PlayerMainController.getInstanc;//플레이어 컨트롤러값 초기화
         //각 상태값들을 메인 컨트롤러안에 값으로 초기화 하는 함수
-        LoadStatus();
+        mainController.OnLoadStatus(ref getPlayerStatus, ref getMoveStatus, ref getDashStatus, ref getFireStatus, ref getReloadStatus, ref getSkillStatus);
     }
 
     // Update is called once per frame
     void Update()
     {
         //각 상태값들을 메인 컨트롤러안에 값으로 초기화 하는 함수
-        LoadStatus();
-    }
-
-    //메인 컨트롤러에서 상태값을 가져와 초기화하는 함수
-    public void LoadStatus()
-    {
-        mainController = PlayerMainController.getInstanc;//메인 컨트롤러 가져오기
-        if (mainController != null)
-        {
-            getPlayerStatus = mainController.getSetPlayerStatus;//플레이어 상태값을 메인
-            getMoveStatus = mainController.getSetMoveStatus;//이동 상태값 초기화
-            getDashStatus = mainController.getSetDashStatus;//대쉬 상태값 초기화
-            getFireStatus = mainController.getSetFireStatus;//일반공격 상태값 초기화
-            getReloadStatus = mainController.getSetReloadStatus;//일반공격 재장전 상태값 초기화
-            getSkillStatus = mainController.getSetSkillStatus;//스킬 상태값 초기화
-        }
+        mainController.OnLoadStatus(ref getPlayerStatus, ref getMoveStatus, ref getDashStatus, ref getFireStatus, ref getReloadStatus, ref getSkillStatus);
     }
 
     //스킬 사용 입력 처리 함수
@@ -67,22 +53,41 @@ public class GunSkill : MonoBehaviour
         {
 
             //적 오브젝트를 탐색한 뒤 탐색한 적오브젝트를 순서대로 공격 발사
-            Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, skillRange, EnemyLayer);
+            List<Collider2D> enemiesInRange = new List<Collider2D>(Physics2D.OverlapBoxAll(transform.position, new Vector2(16, 10), 0, EnemyLayer));
+
+
+            //타겟 사이에 벽이 있으면 타켓 목록에서 제거
+            for(int i = 0; i < enemiesInRange.Count; i++)
+            {
+                if (enemiesInRange[i] != null)
+                {
+                    Transform target = enemiesInRange[i].transform;//타겟의 트렛스폼 저장
+                    Vector2 direction = (target.position - transform.position).normalized;//총알 발사 방향구하기
+                    float Dist = Vector2.Distance(target.position, this.transform.position);//물제 거리 계산
+                    RaycastHit2D rayTarget = Physics2D.Raycast(transform.position, direction, Dist, LayerMask.GetMask("Wall"));
+
+                    //레이케스트로 플레이어와 타겟 사이에 벽이 있는지 체크
+                    if(rayTarget)
+                    {
+                        if (rayTarget.transform.gameObject.layer != LayerMask.NameToLayer("Wall"))
+                            enemiesInRange.RemoveAt(i);//벽이 있으면 리스트에서 해당 타겟 제거
+                    }
+                    
+                }
+            }
 
             StartCoroutine(ShotEnemy(enemiesInRange));//탐지한 적들에게 총할 발사
         }
     }
 
     //총알 발사 구현 코루틴
-    IEnumerator ShotEnemy(Collider2D[] enemiesInRange)
+    IEnumerator ShotEnemy(List<Collider2D> enemiesInRange)
     {
         nowSkillGauge -= skillCoast;//스킬 코스트 감소
         float takenTime = 0;//현제 소요한 시간
 
         //상태값 변경
-        mainController.getSetSkillStatus = 1;
-        mainController.getSetReloadStatus = 2;
-        mainController.getSetFireStatus = 2;
+        mainController.getSetPlayerStatus = 4;
         
         //타겟 별로 딜레이를 주어 공격
         foreach (Collider2D enemy in enemiesInRange)
@@ -90,20 +95,8 @@ public class GunSkill : MonoBehaviour
             
             if (enemy != null)
             {
-                Transform target = enemy.transform;//타겟의 트렛스폼 저장
-                Vector2 direction = (target.position - transform.position).normalized;//총알 발사 방향구하기
-
-                int _layerMask = 1 << LayerMask.NameToLayer("Player");
-                _layerMask = ~_layerMask;
-                RaycastHit2D rayTarget = Physics2D.Raycast(transform.position, direction, skillRange, _layerMask);
-
-                //레이케스트로 플레이어와 타겟 사이에 벽이 있는지 체크
-                if(rayTarget.transform.gameObject == target.gameObject)
-                {
-                    target.gameObject.SendMessage("HitFuntion");
-                    yield return new WaitForSeconds(shotDelay);//다음 발사 까지 딜레이
-                }
-                
+                enemy.gameObject.SendMessage("HitFuntion");
+                yield return new WaitForSeconds(shotDelay);//다음 발사 까지 딜레이
             }
         }
 
@@ -114,14 +107,12 @@ public class GunSkill : MonoBehaviour
         }
 
         //상태값 변경
-        mainController.getSetSkillStatus = 0;
-        mainController.getSetReloadStatus = 0;
-        mainController.getSetFireStatus = 0;
+        mainController.getSetPlayerStatus = 0;
     }
 
     void OnDrawGizmos() // 범위 그리기
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, skillRange);
+        Gizmos.DrawWireCube(transform.position, new Vector2(16, 10));
     }
 }

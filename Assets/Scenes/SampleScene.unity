@@ -209,6 +209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemySpawnerBase03
       objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
 --- !u!1 &172261148
@@ -720,10 +724,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 5836834420690895328, guid: 6de8087536421c04f8ff98d82e020eca, type: 3}
   firePoint: {fileID: 14861297}
-  maxBulletCnt: 10
+  maxBulletCnt: 10008
   nowBulletCnt: 0
   fireCoolTime: 0.2
   reLoardTime: 1.25
+  fireForce: 60
 --- !u!114 &791556210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,6 +835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemySpawnerBase04
       objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
 --- !u!1001 &1443563608
@@ -887,8 +896,43 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemySpawnerBase02
       objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+--- !u!1 &1869316824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1869316825}
+  m_Layer: 0
+  m_Name: GameManeger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1869316825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1869316824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4524936061055918543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -943,6 +987,10 @@ PrefabInstance:
     - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_Name
       value: enemySpawnerBase01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
