@@ -8,9 +8,9 @@ public class PlayerMainController : MonoBehaviour
 {
     private static PlayerMainController instance = null;//게임 메인컨트롤러 인스턴스화를 위한 변수 선언
     public GameObject weapon;//플레이어 무기
-    private int playerStatus = 0; //플레이어 상태 0: 일반, 1: 대쉬, 2: 일반공격, 3: 재장전, 4: 스킬, 5: 부활 중, 6: 사망
+    private int playerStatus = 0; //플레이어 상태값 0: 일반, 1: 무적, 2: 사망
 
-    //각 액션별 사용 가능 여부 값이 저장되는 변수 0: 액션 가능, 1: 액션 제한
+    //각 액션별 사용 가능 여부 값이 저장되는 변수 0: 액션 가능, 1: 액션 제한, 2: 액션중
     private int isMoveStatus = 0; //이동 상태값
     private int isDashStatus = 0; //대쉬 상태값
     private int isFireStatus = 0; //일반공격 상태값
@@ -56,71 +56,14 @@ public class PlayerMainController : MonoBehaviour
         {
             playerStatus = value;
 
-            //플레이어 상태별 상태 적용
+            //플레이어 상태별 레이어 값 적용
             switch (playerStatus)
             {
                 case 0://플레이어 일반 상태
-                    this.gameObject.layer = LayerMask.NameToLayer("Player");//해당 상태에 맞는 레이어값 설정
-                    //상태별 액션 제한 값 설정
-                    isMoveStatus = 0;
-                    isDashStatus = 0;
-                    isFireStatus = 0;
-                    isReloadStatus = 0;
-                    isSkillStatus = 0;
+                    this.gameObject.layer = LayerMask.NameToLayer("Player");
                     break;
-                case 1://플레이어 대쉬 상태
-                    this.gameObject.layer = LayerMask.NameToLayer("PlayerInv");//해당 상태에 맞는 레이어값 설정
-                    //상태별 액션 제한 값 설정
-                    isMoveStatus = 1;
-                    isDashStatus = 1;
-                    isFireStatus = 1;
-                    isReloadStatus = 1;
-                    isSkillStatus = 1;
-                    break;
-                case 2://플레이어 일반공격 상태
-                    this.gameObject.layer = LayerMask.NameToLayer("Player");//해당 상태에 맞는 레이어값 설정
-                    //상태별 액션 제한 값 설정
-                    isMoveStatus = 0;
-                    isDashStatus = 0;
-                    isFireStatus = 1;
-                    isReloadStatus = 0;
-                    isSkillStatus = 0;
-                    break;
-                case 3://플레이어 재장전 상태
-                    this.gameObject.layer = LayerMask.NameToLayer("Player");//해당 상태에 맞는 레이어값 설정
-                    //상태별 액션 제한 값 설정
-                    isMoveStatus = 0;
-                    isDashStatus = 0;
-                    isFireStatus = 0;
-                    isReloadStatus = 1;
-                    isSkillStatus = 0;
-                    break;
-                case 4://플레이어 스킬 상태
-                    this.gameObject.layer = LayerMask.NameToLayer("Player");//해당 상태에 맞는 레이어값 설정
-                    //상태별 액션 제한 값 설정
-                    isMoveStatus = 0;
-                    isDashStatus = 0;
-                    isFireStatus = 1;
-                    isReloadStatus = 1;
-                    isSkillStatus = 1;
-                    break;
-                case 5://플레이어 부활 중 상태
-                    this.gameObject.layer = LayerMask.NameToLayer("PlayerInv");//해당 상태에 맞는 레이어값 설정
-                    //상태별 액션 제한 값 설정
-                    isMoveStatus = 0;
-                    isDashStatus = 1;
-                    isFireStatus = 1;
-                    isReloadStatus = 1;
-                    isSkillStatus = 1;
-                    break;
-                case 6://플레이어 죽음 상태
-                    this.gameObject.layer = LayerMask.NameToLayer("PlayerInv");//해당 상태에 맞는 레이어값 설정
-                    //상태별 액션 제한 값 설정
-                    isMoveStatus = 1;
-                    isDashStatus = 1;
-                    isFireStatus = 1;
-                    isReloadStatus = 1;
-                    isSkillStatus = 1;
+                case 1://플레이어 무적 상태
+                    this.gameObject.layer = LayerMask.NameToLayer("PlayerInv");
                     break;
             }
         }
@@ -203,6 +146,17 @@ public class PlayerMainController : MonoBehaviour
         skillStatus = isSkillStatus;//스킬 상태값
     }
 
+    //스테이터스 값을 설정하는함수
+    public void OnSetStatus(int playerStatus, int moveStatus, int dashStatus, int fireStatus, int reloadStatus, int skillStatus)
+    {
+        this.getSetPlayerStatus = playerStatus;
+        this.isMoveStatus = moveStatus;
+        this.isDashStatus = dashStatus;
+        this.isFireStatus = fireStatus;
+        this.isReloadStatus = reloadStatus;
+        this.isSkillStatus = skillStatus;
+    }
+
     //피격 처리 함수
     public void HitFuntion()
     {
@@ -221,7 +175,7 @@ public class PlayerMainController : MonoBehaviour
     //죽음 처리 코루틴 revenge 0: gameOver처리 1:죽음 애니메이션 출력 후 부활 처리
     IEnumerator PlayerDathEvent(int revenge)
     {
-        getSetPlayerStatus = 6;//죽음 상태로 전환
+        OnSetStatus(1, 1, 1, 1, 1, 1);//죽음 상태로 전환
 
         yield return new WaitForSeconds(deathTime);
 
@@ -238,8 +192,8 @@ public class PlayerMainController : MonoBehaviour
     //부활 처리 코루틴
     IEnumerator OnResurrection()
     {
-        getSetPlayerStatus = 5;//부활 상태 처리
+        OnSetStatus(1, 0, 1, 1, 1, 1);//부활 상태로 전환
         yield return new WaitForSeconds(resurrectionTime);
-        getSetPlayerStatus = 0;//부활 상태 종료 처리
+        OnSetStatus(0, 0, 0, 0, 0, 0);//부활 상태 종료 처리
     }
 }

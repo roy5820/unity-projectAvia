@@ -53,7 +53,7 @@ public class WeaponBase : MonoBehaviour
     {
         if(getFireStatus == 0 && nowBulletCnt > 0)
         {
-            mainController.getSetPlayerStatus = 2;//일반 공격 상태로 변경
+            mainController.OnSetStatus(0, 0, 0, 2, 0, 0);//일반 공격 상태로 변경
             
             nowBulletCnt--;//현제 장탄 개수 감소
 
@@ -69,9 +69,9 @@ public class WeaponBase : MonoBehaviour
     IEnumerator FireDelayIementation()
     {
         yield return new WaitForSeconds(fireCoolTime);
-        
-        if (getPlayerStatus == 2)
-            mainController.getSetPlayerStatus = 0;
+
+        if (getFireStatus == 2)
+            mainController.OnSetStatus(0, 0, 0, 0, 0, 0);
     }
 
     //일반공격 재장전 입력 시 처리 함수
@@ -88,16 +88,15 @@ public class WeaponBase : MonoBehaviour
     {
         float cntTime = 0f;//시간 경과값을 담을 변수
         //재장전 시 액션 재한 상태값 설정
-        mainController.getSetPlayerStatus = 3;
+        mainController.OnSetStatus(0, 0, 0, 0, 2, 0);
 
         //재장전 시간 동안 장전을 취소할 행동을 할 경우 재장전 취소
         while (cntTime < reLoardTime)
         {
             cntTime += Time.deltaTime;//시간 카운트
-            mainController.OnLoadStatus(ref getPlayerStatus, ref getMoveStatus, ref getDashStatus, ref getFireStatus, ref getReloadStatus, ref getSkillStatus);//상태값 메인 컨트롤러에 있는 값으로 초기화
 
             //장전 취소 시 코루틴 강제 종료
-            if (getPlayerStatus != 3)
+            if (mainController.getSetReloadStatus != 2)
             {
                 yield break;
             }
@@ -105,7 +104,13 @@ public class WeaponBase : MonoBehaviour
             yield return null;
         }
 
-        mainController.getSetPlayerStatus = 0;//플레이어 상태값 일반상태로 설정
+        mainController.OnSetStatus(0, 0, 0, 0, 0, 0);//재장전 이후 상태값 변경
+        nowBulletCnt = maxBulletCnt;//장전
+    }
+
+    //강제 재장전 함수
+    public void OnForcedReload()
+    {
         nowBulletCnt = maxBulletCnt;//장전
     }
 }

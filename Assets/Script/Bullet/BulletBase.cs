@@ -22,8 +22,7 @@ public class BulletBase : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         //플레이어 또는 적 오브젝트 충돌 시
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("Enemy"))

@@ -15,13 +15,16 @@ public class GunSkill : MonoBehaviour
     int getReloadStatus;//일반공격 재장전 상태값
     int getSkillStatus;//스킬 상태값
 
+    [SerializeField]
     private int maxSkillGauge = 20;//최대 스킬 게이지
     [SerializeField]
     private int nowSkillGauge = 0;//현재 스킬 게이지
     [SerializeField]
     private int skillCoast = 10;//스킬 상용 시 코스트
     [SerializeField]
-    private float skillRange = 10f;//스킬 사거리
+    private float skillHorizontalRange = 16f;//스킬 가로 사거리
+    [SerializeField]
+    private float skillVerticalRange = 10f;//스킬 세로 사거리
     [SerializeField]
     private float shotDelay = 0.1f;//스킬 사용시 총알 발사 간격
     [SerializeField]
@@ -53,7 +56,7 @@ public class GunSkill : MonoBehaviour
         {
 
             //적 오브젝트를 탐색한 뒤 탐색한 적오브젝트를 순서대로 공격 발사
-            List<Collider2D> enemiesInRange = new List<Collider2D>(Physics2D.OverlapBoxAll(transform.position, new Vector2(16, 10), 0, EnemyLayer));
+            List<Collider2D> enemiesInRange = new List<Collider2D>(Physics2D.OverlapBoxAll(transform.position, new Vector2(skillHorizontalRange, skillVerticalRange), 0, EnemyLayer));
 
 
             //타겟 사이에 벽이 있으면 타켓 목록에서 제거
@@ -71,24 +74,22 @@ public class GunSkill : MonoBehaviour
                     {
                         if (rayTarget.transform.gameObject.layer != LayerMask.NameToLayer("Wall"))
                             enemiesInRange.RemoveAt(i);//벽이 있으면 리스트에서 해당 타겟 제거
-                    }
-                    
-                }
+                    }                }
             }
 
             StartCoroutine(ShotEnemy(enemiesInRange));//탐지한 적들에게 총할 발사
         }
     }
 
-    //총알 발사 구현 코루틴
+    //스킬 구현 코루틴
     IEnumerator ShotEnemy(List<Collider2D> enemiesInRange)
     {
         nowSkillGauge -= skillCoast;//스킬 코스트 감소
         float takenTime = 0;//현제 소요한 시간
 
         //상태값 변경
-        mainController.getSetPlayerStatus = 4;
-        
+        mainController.OnSetStatus(0, 0, 0, 1, 1, 2);
+
         //타겟 별로 딜레이를 주어 공격
         foreach (Collider2D enemy in enemiesInRange)
         {
@@ -107,12 +108,25 @@ public class GunSkill : MonoBehaviour
         }
 
         //상태값 변경
-        mainController.getSetPlayerStatus = 0;
+        mainController.OnSetStatus(0, 0, 0, 0, 0, 0);
     }
 
     void OnDrawGizmos() // 범위 그리기
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector2(16, 10));
+        Gizmos.DrawWireCube(transform.position, new Vector2(skillHorizontalRange, skillVerticalRange));
     }
+
+    //현재 스킬 게이지 정보를 가져오는 함수
+    public int GetNowSkillGauge()
+    {
+        return nowSkillGauge;
+    }
+
+    //현재 스킬 게이지 값을 설정하는 함수
+    public void SetNowSkillGauge(int value)
+    {
+        nowSkillGauge += value;
+    }
+
 }

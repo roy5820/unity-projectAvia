@@ -51,12 +51,17 @@ public class PlayerMoveController : MonoBehaviour
         if (getMoveStatus == 0)
         {
             //이동 구현(일반 공격, 재장전, 스킬 사용 중 이동속도 절반으로 감속)
-            Vector2 MoveVec = inputMoveVec.normalized * (getPlayerStatus == 2 || getPlayerStatus == 3 || getPlayerStatus == 4 ? moveSpeed / 2 : moveSpeed);
+            Vector2 MoveVec = inputMoveVec.normalized * (getFireStatus == 2 || getReloadStatus == 2 || getSkillStatus == 2 ? moveSpeed / 2 : moveSpeed);
             playerRbody.velocity = MoveVec;//백터 값 적용
+
+            if (playerRbody.velocity.x > 0)
+                this.transform.localScale = new Vector3(1, 1, 1);
+            else if(playerRbody.velocity.x < 0)
+                this.transform.localScale = new Vector3(-1, 1, 1);
         }
 
         //플레이어 대쉬 구현 부분
-        if(thisDashAction == 1)
+        if(getDashStatus == 2)
         {
             Vector2 dashVec = inputDashVec * DashPower;// 현제 이동 입력값에 따른 대쉬 방향 설정
             playerRbody.velocity = dashVec;//대쉬 적용
@@ -82,19 +87,13 @@ public class PlayerMoveController : MonoBehaviour
     IEnumerator DashTimer()
     {
         isDashCool = true;//대쉬 쿨 여부 설정
-        //플레이어를 상태값 변경, 스킬 사용 상태가 아닐경우에만 적용
-        if (mainController.getSetPlayerStatus != 4)
-            mainController.getSetPlayerStatus = 1;
-        thisDashAction = 1;//대쉬 활성화
+        mainController.OnSetStatus(1, 1, 2, 1, 1, mainController.getSetSkillStatus != 4 ? 1 : 2); //대쉬 시 상태값 설정
 
         yield return new WaitForSeconds(DashTime);
 
-        //플레리어를 일반 상태로 바꾸고 모든 액션을 사용 가능으로 설정, 대쉬 상태일 경우에만 적용
-        if (mainController.getSetPlayerStatus == 1)
-            mainController.getSetPlayerStatus = 0;
-        thisDashAction = 0;//대쉬 상태 비활성화
+        mainController.OnSetStatus(0, 0, 0, 0, 0, mainController.getSetSkillStatus != 4 ? 0 : 2); //대쉬 후 상태값 설정
 
-        yield return new WaitForSeconds(dashCoolTime-DashTime);//대쉬 쿨타임 적용
+        yield return new WaitForSeconds(dashCoolTime - DashTime);//대쉬 쿨타임 적용
         isDashCool = false;
     }
 }
