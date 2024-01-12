@@ -727,8 +727,8 @@ MonoBehaviour:
   maxBulletCnt: 6
   nowBulletCnt: 0
   fireCoolTime: 0.2
-  reLoardTime: 1
-  fireForce: 60
+  reLoardTime: 0.5
+  fireForce: 50
 --- !u!114 &791556210
 MonoBehaviour:
   m_ObjectHideFlags: 0

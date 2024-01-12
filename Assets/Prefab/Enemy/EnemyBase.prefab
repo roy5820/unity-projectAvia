@@ -41,12 +41,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8798696867219536483}
   - component: {fileID: 8798696867219536492}
-  - component: {fileID: 1429976677018828911}
+  - component: {fileID: 4060592576485832591}
   - component: {fileID: 8798696867219536482}
   - component: {fileID: 8798696867219536487}
-  - component: {fileID: 8798696867219536486}
   - component: {fileID: 3516621605514879080}
   - component: {fileID: 3557644147822862306}
+  - component: {fileID: 8798696867219536486}
   m_Layer: 8
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -122,8 +122,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &1429976677018828911
-CapsuleCollider2D:
+--- !u!61 &4060592576485832591
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,9 +135,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.09}
-  m_Size: {x: 0.59, y: 1.11}
-  m_Direction: 0
+  m_Offset: {x: 0.0045676827, y: -0.07308313}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.25, y: 1.25}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.62879324, y: 1.1038337}
+  m_EdgeRadius: 0
 --- !u!50 &8798696867219536482
 Rigidbody2D:
   serializedVersion: 4
@@ -171,25 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65d8b9c1e825b17479bc9c96b7171e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8798696867219536486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8798696867219536493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ed270a18c872954f8ffdab0dd65f30a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buletPrefeb: {fileID: 5836834420690895328, guid: 533361006d0f0874abf74a0151ec3719, type: 3}
-  firePoint: {fileID: 8798696865757511784}
-  mainController: {fileID: 8798696867219536487}
-  attackRange: 8
-  attackDelay: 1
-  attackCoolTime: 1
-  fireForce: 30
 --- !u!114 &3516621605514879080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +213,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainController: {fileID: 8798696867219536487}
+--- !u!114 &8798696867219536486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798696867219536493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ed270a18c872954f8ffdab0dd65f30a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buletPrefeb: {fileID: 5836834420690895328, guid: 533361006d0f0874abf74a0151ec3719, type: 3}
+  firePoint: {fileID: 8798696865757511784}
+  mainController: {fileID: 8798696867219536487}
+  attackRange: 7
+  attackDelay: 2
+  attackCoolTime: 1
+  fireForce: 30
