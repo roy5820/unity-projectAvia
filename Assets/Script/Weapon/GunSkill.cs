@@ -74,7 +74,8 @@ public class GunSkill : MonoBehaviour
                     {
                         if (rayTarget.transform.gameObject.layer != LayerMask.NameToLayer("Wall"))
                             enemiesInRange.RemoveAt(i);//벽이 있으면 리스트에서 해당 타겟 제거
-                    }                }
+                    }                
+                }
             }
 
             StartCoroutine(ShotEnemy(enemiesInRange));//탐지한 적들에게 총할 발사

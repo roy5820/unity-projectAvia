@@ -32,7 +32,7 @@ public class Pursue : Seek
             prediction = distance / speed;
 
         target.transform.position = targetAux.transform.position;
-        target.transform.position += (Vector3)(targetAgent.velocity * prediction);
+        target.transform.position += (Vector3)(targetAux.GetComponent<Rigidbody2D>().velocity * prediction);
 
         return base.GetSteering();
     }

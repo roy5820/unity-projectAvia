@@ -16,6 +16,10 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
 
     private int getBehavioralStatus = 0;//적 오브젝트 행동 상태값
 
+    float turnMoveTime = 0;//벽 탐지후 
+
+    Vector3 ss;//이동 방향
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -30,28 +34,24 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
             getBehavioralStatus = mainController.GetComponent<EnemyMainController>().BehavioralStatus = 1;//이동 중 상태로 전환
 
             player = GameObject.FindWithTag("Player").transform;
-            Vector2 directionToPlayer = player.position - transform.position;
-            //RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, castDistance, wallLayer);
-            RaycastHit2D hit = Physics2D.BoxCast(transform.position, new Vector2(0.5f, 0.5f), 0f, directionToPlayer.normalized, castDistance, wallLayer);
+            Vector3 directionToPlayer = (player.position - transform.position).normalized;
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y -0.45f), directionToPlayer, castDistance, wallLayer);
+            RaycastHit2D hitL = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, -45) * directionToPlayer, castDistance, wallLayer);
+            RaycastHit2D hitR = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, -45) * directionToPlayer, castDistance, wallLayer);
 
-            if (hit.collider != null)
+            if (hit.collider != null || hitL.collider != null || hitR.collider != null)
             {
-                // If there is a wall between enemy and player, avoid it
-                Vector2 avoidanceDirection = Vector2.Perpendicular(directionToPlayer).normalized;
-                rb.velocity = avoidanceDirection * speed;
+                directionToPlayer = Vector2.Perpendicular(directionToPlayer);
+                Debug.Log("wall");
+            }
+            
+            if (minLimitDistance < directionToPlayer.magnitude)
+            {
+                // 벽이 없을 때 이동
+                rb.velocity = directionToPlayer * speed;
             }
             else
-            {
-                float targetDistance = Vector2.Distance(player.position, transform.position);
-                if (minLimitDistance < targetDistance)
-                {
-                    // No wall in the way, move towards the player
-                    rb.velocity = directionToPlayer.normalized * speed;
-                }
-                else
-                    rb.velocity = Vector2.zero;
-
-            }
+                rb.velocity = Vector2.zero;
 
             //이동 방향에 따른 좌우 반전 적용
             if (directionToPlayer.x > 0)
