@@ -32,7 +32,6 @@ public class GunSkill : MonoBehaviour
     [SerializeField]
     private GameObject bulletPrefab;//스킬 사용 시 발사할 총알 프리펩
     public LayerMask EnemyLayer;
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -67,7 +66,7 @@ public class GunSkill : MonoBehaviour
                     Transform target = enemiesInRange[i].transform;//타겟의 트렛스폼 저장
                     Vector2 direction = (target.position - transform.position).normalized;//총알 발사 방향구하기
                     float Dist = Vector2.Distance(target.position, this.transform.position);//물제 거리 계산
-                    RaycastHit2D rayTarget = Physics2D.Raycast(transform.position, direction, Dist, LayerMask.GetMask("Wall"));
+                    RaycastHit2D rayTarget = Physics2D.Raycast(transform.position, direction, Dist, LayerMask.NameToLayer("Wall"));
 
                     //레이케스트로 플레이어와 타겟 사이에 벽이 있는지 체크
                     if(rayTarget)
