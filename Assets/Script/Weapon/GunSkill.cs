@@ -31,7 +31,8 @@ public class GunSkill : MonoBehaviour
     private float skillDelay = 0.5f;//스킬 최소 사용 시간
     [SerializeField]
     private GameObject bulletPrefab;//스킬 사용 시 발사할 총알 프리펩
-    public LayerMask EnemyLayer;
+    public LayerMask enemyLayer; // Enemy레이어
+    public LayerMask wallLayer; // 벽레이어
     // Start is called before the first frame update
     void Awake()
     {
@@ -55,25 +56,26 @@ public class GunSkill : MonoBehaviour
         {
 
             //적 오브젝트를 탐색한 뒤 탐색한 적오브젝트를 순서대로 공격 발사
-            List<Collider2D> enemiesInRange = new List<Collider2D>(Physics2D.OverlapBoxAll(transform.position, new Vector2(skillHorizontalRange, skillVerticalRange), 0, EnemyLayer));
-
+            List<Collider2D> enemiesInRange = new List < Collider2D >(new HashSet<Collider2D>(Physics2D.OverlapBoxAll(transform.position, new Vector2(skillHorizontalRange, skillVerticalRange), 0, enemyLayer)));
 
             //타겟 사이에 벽이 있으면 타켓 목록에서 제거
-            for(int i = 0; i < enemiesInRange.Count; i++)
+            for (int i = enemiesInRange.Count - 1; i >= 0; i--)
             {
-                if (enemiesInRange[i] != null)
-                {
-                    Transform target = enemiesInRange[i].transform;//타겟의 트렛스폼 저장
-                    Vector2 direction = (target.position - transform.position).normalized;//총알 발사 방향구하기
-                    float Dist = Vector2.Distance(target.position, this.transform.position);//물제 거리 계산
-                    RaycastHit2D rayTarget = Physics2D.Raycast(transform.position, direction, Dist, LayerMask.NameToLayer("Wall"));
+                Collider2D enemy = enemiesInRange[i];
 
-                    //레이케스트로 플레이어와 타겟 사이에 벽이 있는지 체크
-                    if(rayTarget)
+                if (enemy != null)
+                {
+                    Transform target = enemy.transform; //타겟의 트렛스폼 저장
+                    Vector2 direction = (target.position - transform.position); //총알 발사 방향구하기
+                    float Dist = direction.magnitude; //물체 거리 계산
+                    direction.Normalize(); // 정규화
+                    RaycastHit2D rayTarget = Physics2D.Raycast(transform.position, direction, Dist, wallLayer);
+
+                    if (rayTarget.collider != null)
                     {
-                        if (rayTarget.transform.gameObject.layer != LayerMask.NameToLayer("Wall"))
-                            enemiesInRange.RemoveAt(i);//벽이 있으면 리스트에서 해당 타겟 제거
-                    }                
+                        // 벽이 감지되면 타겟 목록에서 제거
+                        enemiesInRange.RemoveAt(i);
+                    }
                 }
             }
 

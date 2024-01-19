@@ -47,7 +47,9 @@ GameObject:
   - component: {fileID: 8798696867219536487}
   - component: {fileID: 3516621605514879080}
   - component: {fileID: 3557644147822862306}
-  - component: {fileID: 8798696867219536486}
+  - component: {fileID: 5551992548797548385}
+  - component: {fileID: 3709905220773774025}
+  - component: {fileID: 3075341857702020275}
   m_Layer: 8
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -216,7 +218,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   minLimitDistance: 5
-  castDistance: 1
+  castDistance: 2
 --- !u!114 &3557644147822862306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainController: {fileID: 8798696867219536487}
---- !u!114 &8798696867219536486
+--- !u!114 &5551992548797548385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,13 +241,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 8798696867219536493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ed270a18c872954f8ffdab0dd65f30a, type: 3}
+  m_Script: {fileID: 11500000, guid: d89a0b331a7399b40beb8644343ef688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySkills:
+  - skill: {fileID: 3709905220773774025}
+    skillRange: 6
+  - skill: {fileID: 3075341857702020275}
+    skillRange: 0
+  AttackPoint: {fileID: 8798696865757511784}
+--- !u!114 &3709905220773774025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798696867219536493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d070d53a2360294a8a8dac533de5477, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 3
+  castTime: 0.2
+  afterCastTime: 0.3
+  lastUsedTime: 0
   buletPrefeb: {fileID: 5836834420690895328, guid: 533361006d0f0874abf74a0151ec3719, type: 3}
-  firePoint: {fileID: 8798696865757511784}
-  mainController: {fileID: 8798696867219536487}
-  attackRange: 7
-  attackDelay: 2
-  attackCoolTime: 1
   fireForce: 30
+--- !u!114 &3075341857702020275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798696867219536493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd094087545b1264391a2d3a146646ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 8
+  castTime: 0.3
+  afterCastTime: 0
+  lastUsedTime: 0
+  enemyPrefeb: {fileID: 8798696867219536493}

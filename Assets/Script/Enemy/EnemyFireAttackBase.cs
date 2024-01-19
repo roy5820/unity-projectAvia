@@ -22,6 +22,8 @@ public class EnemyFireAttackBase : MonoBehaviour
 
     private int getBehavioralStatus = 0;//적 오브젝트 행동 상태값
 
+    public LayerMask wallLayer;//
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +42,7 @@ public class EnemyFireAttackBase : MonoBehaviour
             rb.velocity = Vector2.zero;//공격 시 이동 값 0으로 초기화
             direction = playerT.position - transform.position;//플레이어 위치 가져오기
             //Raycast로 장애물 체크
-            RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direction, attackRange, LayerMask.GetMask("Wall"));
+            RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, direction.normalized, direction.magnitude, wallLayer);
             
             //플레이어가 공격 범위 안에 있을 시 공격
             if(hitInfo.collider == null)

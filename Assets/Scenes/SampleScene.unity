@@ -242,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
@@ -329,7 +329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172261148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.92, y: -0.14, z: 0}
+  m_LocalPosition: {x: -6.6, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -860,17 +860,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6762bedb1d8bb4c94a36cfbf465802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSkillGauge: 10
+  maxSkillGauge: 14
   nowSkillGauge: 0
-  skillCoast: 5
+  skillCoast: 7
   skillHorizontalRange: 16
   skillVerticalRange: 10
   shotDelay: 0.1
   skillDelay: 0.5
   bulletPrefab: {fileID: 5836834420690895328, guid: 6de8087536421c04f8ff98d82e020eca, type: 3}
-  EnemyLayer:
+  enemyLayer:
     serializedVersion: 2
     m_Bits: 256
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1 &943697622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
@@ -1193,7 +1196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4524936060698637596, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
@@ -1342,11 +1345,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4524936060698637595, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.9
+      value: -1.48
       objectReference: {fileID: 0}
     - target: {fileID: 4524936060698637595, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.61
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4524936060698637595, guid: 7c284dfa0883ff64d8a191af32636daa, type: 3}
       propertyPath: m_LocalPosition.z

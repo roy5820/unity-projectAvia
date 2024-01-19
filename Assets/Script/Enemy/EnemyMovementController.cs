@@ -60,9 +60,6 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
             else if(minLimitDistance > directionMovement.magnitude){
                 directionMovement = Vector2.zero;
             }
-            else
-            {
-            }
 
             //이동 구현
             directionMovement.Normalize();
