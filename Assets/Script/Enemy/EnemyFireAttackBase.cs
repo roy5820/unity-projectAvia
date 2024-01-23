@@ -56,7 +56,6 @@ public class EnemyFireAttackBase : MonoBehaviour
     IEnumerator Fire()
     {
         getBehavioralStatus = mainController.GetComponent<EnemyMainController>().BehavioralStatus = 2;//공격 중 상태로 전환
-        isRedy = false;//공격 가능 상태 비활성화
 
         yield return new WaitForSeconds(attackDelay);//공격 선딜
         GameObject bulletPre = Instantiate(buletPrefeb);

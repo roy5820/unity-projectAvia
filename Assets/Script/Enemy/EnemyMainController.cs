@@ -44,6 +44,7 @@ public class EnemyMainController : MonoBehaviour//적 오브젝트 컨트롤러
         }
         set
         {
+            Debug.Log("Set"+value);
             behavioralStatus = value;
         }
     }

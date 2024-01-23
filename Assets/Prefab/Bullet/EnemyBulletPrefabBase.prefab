@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46debe11f1844d4181c827fc1cf297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDistance: 8
+  bulletDistance: 12
 --- !u!58 &6284921266273336494
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -35,15 +35,16 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
 
             player = GameObject.FindWithTag("Player").transform;
             directionMovement = (player.position - transform.position);
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y -0.45f), directionMovement, castDistance, wallLayer);
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), directionMovement, wallLayer);
+            RaycastHit2D hitM = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y -0.45f), directionMovement, castDistance, wallLayer);
             RaycastHit2D hitL = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, -25) * directionMovement, castDistance, wallLayer);
-            RaycastHit2D hitR = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, -25) * directionMovement, castDistance, wallLayer);
+            RaycastHit2D hitR = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, 25) * directionMovement, castDistance, wallLayer);
             
             //경로에 벽이 있을 시 우회하여 플레이어 추적
-            if (hit.collider != null || hitL.collider != null || hitR.collider != null)
+            if (hitM.collider != null || hitL.collider != null || hitR.collider != null)
             {
                 //캐릭터 모서리 끼임 방지 체크
-                if (hitL.collider != null && hit.collider == null)
+                if (hitL.collider != null && hitM.collider == null)
                 {
                     directionMovement = Vector2.Perpendicular(hitL.normal).normalized;
                 }
@@ -53,11 +54,11 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
                 }
                 else
                 {
-                    directionMovement = Vector2.Perpendicular(hit.normal).normalized;
+                    directionMovement = Vector2.Perpendicular(hitM.normal).normalized;
                 }
             }
             //최소 이동거리 체크
-            else if(minLimitDistance > directionMovement.magnitude){
+            else if(minLimitDistance > directionMovement.magnitude && hit.collider == null){
                 directionMovement = Vector2.zero;
             }
 
