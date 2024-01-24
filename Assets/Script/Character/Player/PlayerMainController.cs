@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMainController : MonoBehaviour
+public class PlayerMainController : MonoBehaviour, CharacterHit
 {
     private static PlayerMainController instance = null;//게임 메인컨트롤러 인스턴스화를 위한 변수 선언
     public GameObject weapon;//플레이어 무기
@@ -158,7 +158,7 @@ public class PlayerMainController : MonoBehaviour
     }
 
     //피격 처리 함수
-    public void HitFuntion()
+    public void HitAction()
     {
         playerLife--;//목숨 감소
 

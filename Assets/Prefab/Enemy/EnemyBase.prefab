@@ -116,7 +116,7 @@ SpriteRenderer:
   m_SortingOrder: 4
   m_Sprite: {fileID: -1439884722, guid: 04250c3448c3cef49a0170126d2f5583, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -217,8 +217,8 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 2048
-  minLimitDistance: 7
-  castDistance: 2
+  minLimitDistance: 3
+  castDistance: 1
 --- !u!114 &3557644147822862306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,13 +262,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cooldown: 3
   castTime: 0.2
-  afterCastTime: 0.3
+  afterCastTime: 0.75
   lastUsedTime: 0
   skillRange: 8
   targetP: {x: 0, y: 0}
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   buletPrefeb: {fileID: 5836834420690895328, guid: 533361006d0f0874abf74a0151ec3719, type: 3}
   fireForce: 30
 --- !u!114 &8523959232430673787
@@ -290,6 +293,9 @@ MonoBehaviour:
   skillRange: 0
   targetP: {x: 0, y: 0}
   targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  wallLayer:
     serializedVersion: 2
     m_Bits: 0
   enemyPrefeb: {fileID: 8798696867219536493, guid: c3053be6646eee44e9f27ea7612b4486, type: 3}

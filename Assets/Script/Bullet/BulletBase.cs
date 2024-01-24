@@ -27,7 +27,7 @@ public class BulletBase : MonoBehaviour
         //플레이어 또는 적 오브젝트 충돌 시
         if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            other.gameObject.SendMessage("HitFuntion");//피격 함수 호출
+
         }
 
         Destroy(this.gameObject);//총알 오브젝트 제거

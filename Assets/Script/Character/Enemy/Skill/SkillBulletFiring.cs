@@ -7,6 +7,11 @@ public class SkillBulletFiring: EnemySkill
     public GameObject buletPrefeb;//발사할 총알 오브젝트
     public float fireForce = 30f;//발사 파워
 
+    //스킬 사용 부분
+    public override void Use(Transform creationLocation, EnemySkillController callbackComponent)
+    {
+        base.Use(creationLocation, callbackComponent);
+    }
 
     //스킬 구현 부분
     public override void Skill(Transform creationLocation)

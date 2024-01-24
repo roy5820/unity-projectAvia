@@ -24,7 +24,7 @@ public class EnemySkillController : MonoBehaviour
                 //스킬 사용 여부 체크
                 if (SkillData.CanUse())
                 {
-                    SkillData.Use(AttackPoint, this.GetComponent<EnemySkillController>());
+                    SkillData.Use(AttackPoint, this.GetComponent<EnemySkillController>());//스킬 사용
                     break;
                 }
             }

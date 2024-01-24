@@ -28,14 +28,14 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
     void FixedUpdate()
     {
         getBehavioralStatus = mainController.GetComponent<EnemyMainController>().BehavioralStatus;//플레이어 상태값 가져오기
-
         if (getBehavioralStatus == 0 || getBehavioralStatus == 1)
         {
             getBehavioralStatus = mainController.GetComponent<EnemyMainController>().BehavioralStatus = 1;//이동 중 상태로 전환
 
-            player = GameObject.FindWithTag("Player").transform;
-            directionMovement = (player.position - transform.position);
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), directionMovement, wallLayer);
+            player = GameObject.FindWithTag("Player").transform;//플레이어 오브젝트 가져오기
+            directionMovement = (player.position - transform.position);//플레이어 방향 가져오기
+            float playerDistance = directionMovement.magnitude;//플레이어와의 거리 계산
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), directionMovement, minLimitDistance, wallLayer);
             RaycastHit2D hitM = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y -0.45f), directionMovement, castDistance, wallLayer);
             RaycastHit2D hitL = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, -25) * directionMovement, castDistance, wallLayer);
             RaycastHit2D hitR = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, 25) * directionMovement, castDistance, wallLayer);
