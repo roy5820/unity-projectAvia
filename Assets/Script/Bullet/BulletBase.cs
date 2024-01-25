@@ -6,7 +6,7 @@ public class BulletBase : MonoBehaviour
 {
     public float bulletDistance = 6f;//총알 최대 발사 거리
     Vector2 startPosition;//총알 발사 위치
-    
+    public int attackType = 0;
 
     private void Start()
     {
@@ -25,10 +25,11 @@ public class BulletBase : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //플레이어 또는 적 오브젝트 충돌 시
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player") || other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.TryGetComponent<CharacterHit>(out CharacterHit characterHit))
         {
-
+            characterHit.HitAction(attackType);//피격 함수 호출
         }
+
 
         Destroy(this.gameObject);//총알 오브젝트 제거
     }

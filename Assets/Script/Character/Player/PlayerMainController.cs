@@ -140,25 +140,31 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     {
         playerStatus = this.playerStatus;
         moveStatus = isMoveStatus;//이동 상태값
-        dashStatus = isDashStatus;//대쉬 상태값 
+        dashStatus = isDashStatus;//대쉬 상태값
         fireStatus = isFireStatus;//일반 공격 상태값
         reloadStatus = isReloadStatus;//재장전 상태값
         skillStatus = isSkillStatus;//스킬 상태값
     }
 
-    //스테이터스 값을 설정하는함수
+    //스테이터스 값을 설정하는함수 0보다 작은 값은 값을 변경하지 않음
     public void OnSetStatus(int playerStatus, int moveStatus, int dashStatus, int fireStatus, int reloadStatus, int skillStatus)
     {
-        this.getSetPlayerStatus = playerStatus;
-        this.isMoveStatus = moveStatus;
-        this.isDashStatus = dashStatus;
-        this.isFireStatus = fireStatus;
-        this.isReloadStatus = reloadStatus;
-        this.isSkillStatus = skillStatus;
+        if(playerStatus > -1)
+            this.getSetPlayerStatus = playerStatus;
+        if (moveStatus > -1)
+            this.isMoveStatus = moveStatus;
+        if (dashStatus > -1)
+            this.isDashStatus = dashStatus;
+        if (fireStatus > -1)
+            this.isFireStatus = fireStatus;
+        if (reloadStatus > -1)
+            this.isReloadStatus = reloadStatus;
+        if (skillStatus > -1)
+            this.isSkillStatus = skillStatus;
     }
 
     //피격 처리 함수
-    public void HitAction()
+    public void HitAction(int attackType)
     {
         playerLife--;//목숨 감소
 

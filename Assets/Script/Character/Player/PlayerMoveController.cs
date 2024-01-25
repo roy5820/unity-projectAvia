@@ -33,7 +33,8 @@ public class PlayerMoveController : MonoBehaviour
     {
         playerRbody = this.GetComponent<Rigidbody2D>();//플레이어 리지드바디값 초기화
 
-        mainController = PlayerMainController.getInstanc;//플레이어 컨트롤러값 초기화
+        if(PlayerMainController.getInstanc)
+            mainController = PlayerMainController.getInstanc;//플레이어 컨트롤러값 초기화
         //각 상태값들을 메인 컨트롤러안에 값으로 초기화 하는 함수
         mainController.OnLoadStatus(ref getPlayerStatus, ref getMoveStatus, ref getDashStatus, ref getFireStatus, ref getReloadStatus, ref getSkillStatus);
     }

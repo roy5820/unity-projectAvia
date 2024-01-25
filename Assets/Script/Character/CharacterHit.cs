@@ -4,5 +4,7 @@ using UnityEngine;
 
 public interface CharacterHit
 {
-    public void HitAction();
+    //피격시 호출되는 함수 attackType 0: 일반 1: 스킬
+    void HitAction(int attackType);
 }
+    

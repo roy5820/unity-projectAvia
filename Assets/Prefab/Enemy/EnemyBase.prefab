@@ -49,7 +49,6 @@ GameObject:
   - component: {fileID: 3557644147822862306}
   - component: {fileID: 5551992548797548385}
   - component: {fileID: 3709905220773774025}
-  - component: {fileID: 8523959232430673787}
   m_Layer: 8
   m_Name: EnemyBase
   m_TagString: Untagged
@@ -200,6 +199,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65d8b9c1e825b17479bc9c96b7171e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathTime: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &3516621605514879080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +220,10 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 2048
-  minLimitDistance: 3
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  minLimitDistance: 6
   castDistance: 1
 --- !u!114 &3557644147822862306
 MonoBehaviour:
@@ -274,28 +280,3 @@ MonoBehaviour:
     m_Bits: 2048
   buletPrefeb: {fileID: 5836834420690895328, guid: 533361006d0f0874abf74a0151ec3719, type: 3}
   fireForce: 30
---- !u!114 &8523959232430673787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8798696867219536493}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd094087545b1264391a2d3a146646ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cooldown: 7
-  castTime: 0.3
-  afterCastTime: 0
-  lastUsedTime: 0
-  skillRange: 0
-  targetP: {x: 0, y: 0}
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  enemyPrefeb: {fileID: 8798696867219536493, guid: c3053be6646eee44e9f27ea7612b4486, type: 3}

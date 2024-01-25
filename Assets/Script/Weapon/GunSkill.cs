@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GunSkill : MonoBehaviour
+public class GunSkill : MonoBehaviour, SkillStatus
 {
 
     //각 액션별 상태값을 저장할 변수
@@ -33,6 +33,7 @@ public class GunSkill : MonoBehaviour
     private GameObject bulletPrefab;//스킬 사용 시 발사할 총알 프리펩
     public LayerMask enemyLayer; // Enemy레이어
     public LayerMask wallLayer; // 벽레이어
+
     // Start is called before the first frame update
     void Awake()
     {

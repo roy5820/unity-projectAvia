@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포넌트
 {
-    public EnemyMainController mainController;//메인 컨트롤러
-
     public float speed = 5f;
-    private Transform player;
+    private Transform playerP;
     public LayerMask wallLayer;
+    public LayerMask playerLayer;
     public float minLimitDistance = 4f;
     public float castDistance = 1f;
 
@@ -27,13 +26,19 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
 
     void FixedUpdate()
     {
-        getBehavioralStatus = mainController.GetComponent<EnemyMainController>().BehavioralStatus;//플레이어 상태값 가져오기
-        if (getBehavioralStatus == 0 || getBehavioralStatus == 1)
-        {
-            getBehavioralStatus = mainController.GetComponent<EnemyMainController>().BehavioralStatus = 1;//이동 중 상태로 전환
+        //오브젝트 행동 상태값 가져오기
+        if (TryGetComponent<EnemyStatusInterface>(out EnemyStatusInterface enemyStatusInterface))
+            getBehavioralStatus = enemyStatusInterface.BehavioralStatus;
+        else
+            return;
 
-            player = GameObject.FindWithTag("Player").transform;//플레이어 오브젝트 가져오기
-            directionMovement = (player.position - transform.position);//플레이어 방향 가져오기
+        playerP = TargetTransform;//타겟 위치 가져오기
+        //이동 가능 상태이며 타겟이 있으면 플레이어 추적
+        if ((getBehavioralStatus == 0 || getBehavioralStatus == 1) && playerP != null)
+        {
+            getBehavioralStatus = enemyStatusInterface.BehavioralStatus = 1;//해동 설정값 1(걷기)로 설정
+
+            directionMovement = (playerP.position - transform.position);//플레이어 방향 가져오기
             float playerDistance = directionMovement.magnitude;//플레이어와의 거리 계산
             RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), directionMovement, minLimitDistance, wallLayer);
             RaycastHit2D hitM = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y -0.45f), directionMovement, castDistance, wallLayer);
@@ -65,6 +70,21 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
             //이동 구현
             directionMovement.Normalize();
             rb.velocity = directionMovement * speed;
+        }
+    }
+
+
+    //타겟 오브젝트를 가져오는 get 프로퍼티
+    public Transform TargetTransform
+    {
+        get
+        {
+            GameObject targetObj = GameObject.FindWithTag("Player");//타겟 오브젝트 설정
+            //타겟의 레이어 값이 Player가 아니면 null로 리턴
+            if (targetObj == null || (((1 << targetObj.gameObject.layer & playerLayer) == 0)))
+                return null;
+
+            return targetObj.transform;
         }
     }
 }
