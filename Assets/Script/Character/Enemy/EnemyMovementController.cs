@@ -70,6 +70,9 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
             //이동 구현
             directionMovement.Normalize();
             rb.velocity = directionMovement * speed;
+
+            //이동 위치에 따른 캐릭터 반전
+            this.gameObject.GetComponent<Transform>().localScale = new Vector2((directionMovement.x > 0 ? 1 : -1), 1);
         }
     }
 

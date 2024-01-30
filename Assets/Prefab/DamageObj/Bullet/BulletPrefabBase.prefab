@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4776530405492227696}
   - component: {fileID: 5549765535441385194}
   - component: {fileID: 8746038005259684426}
-  - component: {fileID: 8424846871337338130}
+  - component: {fileID: 8045668326091369486}
   m_Layer: 7
   m_Name: BulletPrefabBase
   m_TagString: Untagged
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46debe11f1844d4181c827fc1cf297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDistance: 18
   attackType: 0
+  bulletDistance: 18
 --- !u!50 &8746038005259684426
 Rigidbody2D:
   serializedVersion: 4
@@ -123,8 +123,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &8424846871337338130
-BoxCollider2D:
+--- !u!58 &8045668326091369486
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,18 +137,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 1.5}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!1 &6483244456989145349
 GameObject:
   m_ObjectHideFlags: 0
