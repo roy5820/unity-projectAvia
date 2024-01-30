@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 043c2ca8807b56d4b9cfd4a058a1e0d0
+guid: 342524ca7f678cc4d8a5a2e9195868f2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zombie_walking_0
+      name: Prist_idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,20 +112,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e5aa90831fac6d4a87b57b79c6a200c
-      internalID: -470715074
+      spriteID: cf1c23b38baed4f4bb2191dd3b966369
+      internalID: 875265248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_walking_1
+      name: Prist_idle_1
       rect:
         serializedVersion: 2
         x: 125
@@ -133,20 +133,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 37ec291c6fca8fe4e894d8cbb22c56d5
-      internalID: -1628043156
+      spriteID: 36b02ddc3ea93454b811a6662636d86d
+      internalID: 417397233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_walking_2
+      name: Prist_idle_2
       rect:
         serializedVersion: 2
         x: 250
@@ -154,20 +154,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 706b8fdc19a18f040939035a1ba3f077
-      internalID: 1750857883
+      spriteID: 4ee54a271bb8b224386d9223a969b938
+      internalID: 539046880
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_walking_3
+      name: Prist_idle_3
       rect:
         serializedVersion: 2
         x: 375
@@ -175,35 +175,14 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 886f2465f5f08da428ba3b5a47e59042
-      internalID: 1336257601
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: zombie_walking_4
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 0
-        width: 125
-        height: 125
-      alignment: 9
-      pivot: {x: 0.54, y: 0.46}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 780c75c0a0fc492428b3f6ce4c829f84
-      internalID: -1911332649
+      spriteID: 4f3e0e8de01326641b615a1da000e3ea
+      internalID: 782098749
       vertices: []
       indices: 
       edges: []
@@ -219,11 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      zombie_walking_2: 1750857883
-      zombie_walking_3: 1336257601
-      zombie_walking_0: -470715074
-      zombie_walking_4: -1911332649
-      zombie_walking_1: -1628043156
+      Prist_idle_2: 539046880
+      Prist_idle_3: 782098749
+      Prist_idle_0: 875265248
+      Prist_idle_1: 417397233
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
