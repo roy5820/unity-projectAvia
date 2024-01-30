@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61d68f15232c27c4ea7b3b4b65d4a233
+guid: ef95ea4a9b2469f4fadb9a64e839948e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,169 +104,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_0
+      name: Player_Idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.53, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c49dd078421dc87429ac77728ce5aa18
-      internalID: 1175940682
+      spriteID: b375febfaaf5d7b46a401fdf72f6efe8
+      internalID: 1970463020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_1
+      name: Player_Idle_1
       rect:
         serializedVersion: 2
-        x: 150
+        x: 125
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.53, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61431865605875546912fb8c43d4ecb1
-      internalID: 1373215714
+      spriteID: a4f58327714e0544da67bc01da414987
+      internalID: -829487263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_2
+      name: Player_Idle_2
       rect:
         serializedVersion: 2
-        x: 300
+        x: 250
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.53, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6df7e455408339547bb4d19343faa830
-      internalID: 2081931733
+      spriteID: dc6f785d6edb0cb428c932930996e15a
+      internalID: -116246051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_3
+      name: Player_Idle_3
       rect:
         serializedVersion: 2
-        x: 450
+        x: 374
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.53, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1d59dbcae39dbd42a2b4783437a05cd
-      internalID: -654599566
+      spriteID: 9f78062f8ab27f44da2c6817daaf2b62
+      internalID: -744414567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_4
+      name: Player_Idle_4
       rect:
         serializedVersion: 2
-        x: 600
+        x: 500
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.53, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf05d5ff93e2f42408c8e19809a79001
-      internalID: 534481382
+      spriteID: dac5a2dd03f19a7449458c48cba70af1
+      internalID: 1721089857
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_5
+      name: Player_Idle_5
       rect:
         serializedVersion: 2
-        x: 750
+        x: 625
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.53, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68ad2767f332c8f43bfb6ecf48fc0fd0
-      internalID: 1574734386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 900
-        y: 0
-        width: 150
-        height: 125
-      alignment: 9
-      pivot: {x: 0.4, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e299a84bc4db45a40b5c8bacf5d27d08
-      internalID: -219901147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 1050
-        y: 0
-        width: 150
-        height: 125
-      alignment: 9
-      pivot: {x: 0.4, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d325dd641ccf6b045bbccf7e690a3afc
-      internalID: 2055313535
+      spriteID: 23f7509dd5aa2a242b206ab235d3c60f
+      internalID: -6740778
       vertices: []
       indices: 
       edges: []
@@ -282,14 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      animation_monster1_attack_Sheet_1: 1373215714
-      animation_monster1_attack_Sheet_5: 1574734386
-      animation_monster1_attack_Sheet_0: 1175940682
-      animation_monster1_attack_Sheet_3: -654599566
-      animation_monster1_attack_Sheet_4: 534481382
-      animation_monster1_attack_Sheet_7: 2055313535
-      animation_monster1_attack_Sheet_6: -219901147
-      animation_monster1_attack_Sheet_2: 2081931733
+      Player_Idle_1: -829487263
+      Player_Idle_0: 1970463020
+      Player_Idle_3: -744414567
+      Player_Idle_5: -6740778
+      Player_Idle_4: 1721089857
+      Player_Idle_2: -116246051
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
