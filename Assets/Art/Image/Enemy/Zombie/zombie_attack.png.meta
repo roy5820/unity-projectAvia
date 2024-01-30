@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 61d68f15232c27c4ea7b3b4b65d4a233
+guid: 9cc50d7de92cf3a4e940f96a9eebb073
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,169 +104,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_0
+      name: zombie_attack_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.54, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c49dd078421dc87429ac77728ce5aa18
-      internalID: 1175940682
+      spriteID: 3893a214d4f597f42af9fcd69faed9cc
+      internalID: -337425607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_1
+      name: zombie_attack_1
       rect:
         serializedVersion: 2
-        x: 150
+        x: 125
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.54, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61431865605875546912fb8c43d4ecb1
-      internalID: 1373215714
+      spriteID: 9f96ccca611b24e48a99846ca3667438
+      internalID: 1633507849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_2
+      name: zombie_attack_2
       rect:
         serializedVersion: 2
-        x: 300
+        x: 250
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.54, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6df7e455408339547bb4d19343faa830
-      internalID: 2081931733
+      spriteID: 6717b068aff2cbe4d94c5aa1afe9235f
+      internalID: -1930290449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_3
+      name: zombie_attack_3
       rect:
         serializedVersion: 2
-        x: 450
+        x: 375
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.54, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1d59dbcae39dbd42a2b4783437a05cd
-      internalID: -654599566
+      spriteID: 206faac8235e1824b9d2ec2d8c56de7c
+      internalID: 1627763519
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_4
+      name: zombie_attack_4
       rect:
         serializedVersion: 2
-        x: 600
+        x: 500
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.54, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf05d5ff93e2f42408c8e19809a79001
-      internalID: 534481382
+      spriteID: ace71fe7492b0304889d165b5f9d3b37
+      internalID: 598521771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_5
+      name: zombie_attack_5
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 0
+        width: 125
+        height: 125
+      alignment: 9
+      pivot: {x: 0.54, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 966652dd45dc5724db7168be0ecea6b5
+      internalID: -1962212848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zombie_attack_6
       rect:
         serializedVersion: 2
         x: 750
         y: 0
-        width: 150
+        width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.4, y: 0.5}
+      pivot: {x: 0.54, y: 0.46}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68ad2767f332c8f43bfb6ecf48fc0fd0
-      internalID: 1574734386
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 900
-        y: 0
-        width: 150
-        height: 125
-      alignment: 9
-      pivot: {x: 0.4, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e299a84bc4db45a40b5c8bacf5d27d08
-      internalID: -219901147
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: animation_monster1_attack_Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 1050
-        y: 0
-        width: 150
-        height: 125
-      alignment: 9
-      pivot: {x: 0.4, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d325dd641ccf6b045bbccf7e690a3afc
-      internalID: 2055313535
+      spriteID: 13293afe48082be4ba3ef2c094e3fcf5
+      internalID: 1431463679
       vertices: []
       indices: 
       edges: []
@@ -282,14 +261,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      animation_monster1_attack_Sheet_1: 1373215714
-      animation_monster1_attack_Sheet_5: 1574734386
-      animation_monster1_attack_Sheet_0: 1175940682
-      animation_monster1_attack_Sheet_3: -654599566
-      animation_monster1_attack_Sheet_4: 534481382
-      animation_monster1_attack_Sheet_7: 2055313535
-      animation_monster1_attack_Sheet_6: -219901147
-      animation_monster1_attack_Sheet_2: 2081931733
+      zombie_attack_4: 598521771
+      zombie_attack_5: -1962212848
+      zombie_attack_0: -337425607
+      zombie_attack_6: 1431463679
+      zombie_attack_1: 1633507849
+      zombie_attack_3: 1627763519
+      zombie_attack_2: -1930290449
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

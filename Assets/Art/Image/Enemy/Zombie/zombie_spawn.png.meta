@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bb65a993ad7c76d41b25ee80b1bb1773
+guid: 5612e2fa15fb2a445b69e0cdb95ead4e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -102,91 +102,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: plague_doctor_idle_Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 125
-        height: 125
-      alignment: 9
-      pivot: {x: 0.53, y: 0.46}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4eba3ea153dbf284aac466647cdf2ea1
-      internalID: -1883456228
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: plague_doctor_idle_Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 0
-        width: 125
-        height: 125
-      alignment: 9
-      pivot: {x: 0.53, y: 0.46}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 25c8d6083f3bec646a097fe26a503cbd
-      internalID: -728671263
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: plague_doctor_idle_Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 0
-        width: 125
-        height: 125
-      alignment: 9
-      pivot: {x: 0.53, y: 0.46}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc23ffae479f8b04ba9d1076d1a057cc
-      internalID: 1232015066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: plague_doctor_idle_Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 375
-        y: 0
-        width: 125
-        height: 125
-      alignment: 9
-      pivot: {x: 0.53, y: 0.46}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bf3ed5e6fb43ff4b951eaaf5fbad6f4
-      internalID: 1099749730
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -197,11 +113,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      plague_doctor_idle_Sheet_3: 1099749730
-      plague_doctor_idle_Sheet_0: -1883456228
-      plague_doctor_idle_Sheet_1: -728671263
-      plague_doctor_idle_Sheet_2: 1232015066
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
