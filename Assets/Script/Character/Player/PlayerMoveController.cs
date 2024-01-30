@@ -88,11 +88,11 @@ public class PlayerMoveController : MonoBehaviour
     IEnumerator DashTimer()
     {
         isDashCool = true;//대쉬 쿨 여부 설정
-        mainController.OnSetStatus(1, 1, 2, 1, 1, mainController.getSetSkillStatus != 4 ? 1 : 2); //대쉬 시 상태값 설정
+        mainController.OnSetStatus(1, 1, 2, 1, 1, -1); //대쉬 시 상태값 설정
 
         yield return new WaitForSeconds(DashTime);
 
-        mainController.OnSetStatus(0, 0, 0, 0, 0, mainController.getSetSkillStatus != 4 ? 0 : 2); //대쉬 후 상태값 설정
+        mainController.OnSetStatus(0, 0, 0, 0, 0, -1); //대쉬 후 상태값 설정
 
         yield return new WaitForSeconds(dashCoolTime - DashTime);//대쉬 쿨타임 적용
         isDashCool = false;

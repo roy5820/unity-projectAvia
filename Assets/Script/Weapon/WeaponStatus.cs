@@ -2,17 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponStatus : MonoBehaviour
+public interface WeaponStatus
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int maxBullet { get; set; }
+    int nowBullet { get; set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

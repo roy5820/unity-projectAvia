@@ -91,7 +91,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
         float takenTime = 0;//현제 소요한 시간
 
         //상태값 변경
-        mainController.OnSetStatus(0, 0, 0, 1, 1, 2);
+        mainController.OnSetStatus(-1, -1, -1, 1, 1, 2);
 
         //타겟 별로 딜레이를 주어 공격
         foreach (Collider2D enemy in enemiesInRange)
@@ -111,7 +111,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
         }
 
         //상태값 변경
-        mainController.OnSetStatus(0, 0, 0, 0, 0, 0);
+        mainController.OnSetStatus(-1, -1, -1, 0, 0, 0);
     }
 
     void OnDrawGizmos() // 범위 그리기
@@ -120,16 +120,29 @@ public class GunSkill : MonoBehaviour, SkillStatus
         Gizmos.DrawWireCube(transform.position, new Vector2(skillHorizontalRange, skillVerticalRange));
     }
 
-    //현재 스킬 게이지 정보를 가져오는 함수
-    public int GetNowSkillGauge()
+    //최대 스킬 게이지 프로퍼티
+    public int maxGauge
     {
-        return nowSkillGauge;
+        get
+        {
+            return maxSkillGauge;
+        }
+        set
+        {
+            maxSkillGauge = value;
+        }
     }
 
-    //현재 스킬 게이지 값을 설정하는 함수
-    public void SetNowSkillGauge(int value)
+    //현재 스킬 게이지 프로퍼티
+    public int nowGauge
     {
-        nowSkillGauge += value;
+        get
+        {
+            return nowSkillGauge;
+        }
+        set
+        {
+            nowSkillGauge = value;
+        }
     }
-
 }

@@ -54,15 +54,18 @@ public abstract class EnemySkill: MonoBehaviour
     //선딜 후딜레이 구현 부분
     private IEnumerator PerformSkill(Transform creationLocation)
     {
-        if (castTime > 0f)
+
+        if (castTime > 0f && GetBehavioralStatus() == 2)
             yield return new WaitForSeconds(castTime); // 선딜레이 후에 스킬 수행
 
-        Skill(creationLocation);//스킬 사용
+        if (GetBehavioralStatus() == 2)
+            Skill(creationLocation);//스킬 사용
 
-        if (afterCastTime > 0f)
+        if (afterCastTime > 0f && GetBehavioralStatus() == 2)
             yield return new WaitForSeconds(afterCastTime); // 후딜레이 후에 쿨타임 돌아감
 
-        this.callbackComponent.SetStatus(0);//정지 상태로 스테이터스 전환
+        if(GetBehavioralStatus() == 2)
+            this.callbackComponent.SetStatus(0);//정지 상태로 스테이터스 전환
 
         if (cooldown > 0f)
             yield return new WaitForSeconds(cooldown);//쿨다운 후 코루틴 초기화
@@ -86,6 +89,22 @@ public abstract class EnemySkill: MonoBehaviour
         }
 
         return targetPosition;//타겟 위치 리턴
+    }
+
+    //Enemy객체의 상태값을 가져오는 함수
+    public int GetBehavioralStatus()
+    {
+        int getBehavioralStatus;
+
+        //오브젝트 행동 상태값을 가져와서 공격상태가 취소되면 강제 종료
+        if (TryGetComponent<EnemyStatusInterface>(out EnemyStatusInterface enemyStatusInterface))
+        {
+            getBehavioralStatus = enemyStatusInterface.BehavioralStatus;
+        }
+        else
+            return -1;
+
+        return getBehavioralStatus;
     }
 
     //스킬 구현 부분

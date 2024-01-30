@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface SkillStatus
 {
-    
+    int maxGauge { get; set; }
+    int nowGauge { get; set; }
 }

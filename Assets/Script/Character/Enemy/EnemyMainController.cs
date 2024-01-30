@@ -57,10 +57,18 @@ public class EnemyMainController : MonoBehaviour, CharacterHit, EnemyStatusInter
     //몬스터 죽음 처리
     public void Death(int attackType)
     {
+        Color color = gameObject.GetComponent<SpriteRenderer>().color;
+        color.a = 0.5f;
+        gameObject.GetComponent<SpriteRenderer>().color = color;
+
         //일반 공격으로 유닛 처치 시 플레이어 스킬 게이지 획득
-        if(attackType == 0)
+        if (attackType == 0)
         {
-            
+            PlayerMainController instanc = PlayerMainController.getInstanc;
+            if (instanc != null)
+            {
+                instanc.SkillSatausNowGauge++;
+            }
         }
 
         StartCoroutine(DeathImplementation());//죽음 구현 코루틴 호출

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class WeaponBase : MonoBehaviour
+public class WeaponBase : MonoBehaviour, WeaponStatus
 {
     //각 액션별 상태값을 저장할 변수
     PlayerMainController mainController = null;
@@ -53,7 +53,7 @@ public class WeaponBase : MonoBehaviour
     {
         if(getFireStatus == 0 && nowBulletCnt > 0)
         {
-            mainController.OnSetStatus(0, 0, 0, 2, 0, 0);//일반 공격 상태로 변경
+            mainController.OnSetStatus(-1, -1, -1, 2, -1, -1);//일반 공격 상태로 변경
             
             nowBulletCnt--;//현제 장탄 개수 감소
 
@@ -71,7 +71,7 @@ public class WeaponBase : MonoBehaviour
         yield return new WaitForSeconds(fireCoolTime);
 
         if (getFireStatus == 2)
-            mainController.OnSetStatus(0, 0, 0, 0, 0, 0);
+            mainController.OnSetStatus(-1, -1, -1, 0, -1, -1);
     }
 
     //일반공격 재장전 입력 시 처리 함수
@@ -88,7 +88,7 @@ public class WeaponBase : MonoBehaviour
     {
         float cntTime = 0f;//시간 경과값을 담을 변수
         //재장전 시 액션 재한 상태값 설정
-        mainController.OnSetStatus(0, 0, 0, 0, 2, 0);
+        mainController.OnSetStatus(-1, -1, -1, -1, 2, -1);
 
         //재장전 시간 동안 장전을 취소할 행동을 할 경우 재장전 취소
         while (cntTime < reLoardTime)
@@ -104,7 +104,7 @@ public class WeaponBase : MonoBehaviour
             yield return null;
         }
 
-        mainController.OnSetStatus(0, 0, 0, 0, 0, 0);//재장전 이후 상태값 변경
+        mainController.OnSetStatus(-1, -1, -1, -1, 0, -1);//재장전 이후 상태값 변경
         nowBulletCnt = maxBulletCnt;//장전
     }
 
@@ -112,5 +112,29 @@ public class WeaponBase : MonoBehaviour
     public void OnForcedReload()
     {
         nowBulletCnt = maxBulletCnt;//장전
+    }
+
+    public int maxBullet
+    {
+        get
+        {
+            return maxBulletCnt;
+        }
+        set
+        {
+            maxBulletCnt = value;
+        }
+    }
+
+    public int nowBullet
+    {
+        get
+        {
+            return nowBulletCnt;
+        }
+        set
+        {
+            nowBulletCnt = value;
+        }
     }
 }

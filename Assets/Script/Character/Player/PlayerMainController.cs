@@ -94,8 +94,7 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
             isDashStatus = value;
         }
     }
-
-
+    
     //일반공격 상태값 get set 프로퍼티
     public int getSetFireStatus
     {
@@ -181,7 +180,7 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     //죽음 처리 코루틴 revenge 0: gameOver처리 1:죽음 애니메이션 출력 후 부활 처리
     IEnumerator PlayerDathEvent(int revenge)
     {
-        OnSetStatus(1, 1, 1, 1, 1, 1);//죽음 상태로 전환
+        OnSetStatus(2, 1, 1, 1, 1, 1);//죽음 상태로 전환
 
         yield return new WaitForSeconds(deathTime);
 
@@ -201,5 +200,67 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
         OnSetStatus(1, 0, 1, 1, 1, 1);//부활 상태로 전환
         yield return new WaitForSeconds(resurrectionTime);
         OnSetStatus(0, 0, 0, 0, 0, 0);//부활 상태 종료 처리
+    }
+
+    //스킬상태 중 최대 게이지 값 프로퍼티
+    public int SkillStatusMaxGauge
+    {
+        get
+        {
+            return weapon.GetComponent<SkillStatus>().maxGauge;
+        }
+        set
+        {
+            weapon.GetComponent<SkillStatus>().maxGauge = value;
+        }
+    }
+
+    //스킬상태 중 현제 게이지 값 프로퍼티
+    public int SkillSatausNowGauge
+    {
+        get
+        {
+            return weapon.GetComponent<SkillStatus>().nowGauge;
+        }
+        set
+        {
+            int maxGauge = SkillStatusMaxGauge;
+            int nowGauge = weapon.GetComponent<SkillStatus>().nowGauge = value;
+
+            //현제 게이지값이 최대값 보다 크면 최대값으로 조정
+            if (maxGauge < nowGauge)
+                weapon.GetComponent<SkillStatus>().nowGauge = maxGauge;
+        }
+    }
+
+    //무기상태 중 최대 총알 값 프로퍼티
+    public int WeaponStatusMaxBullet
+    {
+        get
+        {
+            return weapon.GetComponent<WeaponStatus>().maxBullet;
+        }
+        set
+        {
+            weapon.GetComponent<WeaponStatus>().maxBullet = value;
+        }
+    }
+
+    //무기상태 중 현재 총알 값 프로퍼티
+    public int WeaponStatusNowBullet
+    {
+        get
+        {
+            return weapon.GetComponent<WeaponStatus>().nowBullet;
+        }
+        set
+        {
+            int maxBullet = WeaponStatusMaxBullet;
+            int nowBullet = weapon.GetComponent<WeaponStatus>().nowBullet = value;
+
+            //현제값이 최대값보다 크면 최대값으로 조정
+            if (maxBullet < nowBullet)
+                weapon.GetComponent<WeaponStatus>().nowBullet = WeaponStatusMaxBullet;
+        }
     }
 }

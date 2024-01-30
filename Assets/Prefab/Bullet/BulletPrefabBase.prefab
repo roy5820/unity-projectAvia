@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c46debe11f1844d4181c827fc1cf297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletDistance: 12
+  bulletDistance: 18
+  attackType: 0
 --- !u!50 &8746038005259684426
 Rigidbody2D:
   serializedVersion: 4
