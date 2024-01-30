@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5612e2fa15fb2a445b69e0cdb95ead4e
+guid: 265e301abc6540d408dc811fbcfb2e36
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: zombie_spawn_0
+      name: Prist_attack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,20 +112,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec5ca8f9e62d94840aab241c9742d969
-      internalID: 410630337
+      spriteID: 76041522554ebf94480a786ddbf30b34
+      internalID: 1817759191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_1
+      name: Prist_attack_1
       rect:
         serializedVersion: 2
         x: 125
@@ -133,20 +133,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1091f51fa2c0b8942bfa27b131b5f00e
-      internalID: -1931101402
+      spriteID: 9cb713c8920661445ab48bd6d419ec1c
+      internalID: 613020792
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_2
+      name: Prist_attack_2
       rect:
         serializedVersion: 2
         x: 250
@@ -154,20 +154,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd06e61d793ed1b4ea8f361b043adf51
-      internalID: 95806542
+      spriteID: 221a33e81e2098e42b9c117c03783adc
+      internalID: -115948935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_3
+      name: Prist_attack_3
       rect:
         serializedVersion: 2
         x: 375
@@ -175,41 +175,41 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d87c1df8cbb1644a8d7c33baeb85403
-      internalID: 1980523096
+      spriteID: 63856f28dbe363c43a598fc6de9e8c1e
+      internalID: -993849383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_4
+      name: Prist_attack_4
       rect:
         serializedVersion: 2
-        x: 501
+        x: 500
         y: 0
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c374e48c9f4eae498026277c62683c4
-      internalID: 1764191464
+      spriteID: fa81b90c2cc546843816af4457232118
+      internalID: 1824136739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_5
+      name: Prist_attack_5
       rect:
         serializedVersion: 2
         x: 625
@@ -217,20 +217,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e80e2cd0ed7e2bb4aa8b705d324e2d82
-      internalID: -1861232167
+      spriteID: a1d6146f861099c498fae4f6f9c4e104
+      internalID: 796631072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_6
+      name: Prist_attack_6
       rect:
         serializedVersion: 2
         x: 750
@@ -238,20 +238,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e78988bcb61932e488c86075f5950d1b
-      internalID: -742034702
+      spriteID: 63a8a6ebe324e9a47ac3e18b483e1f27
+      internalID: -446544129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_7
+      name: Prist_attack_7
       rect:
         serializedVersion: 2
         x: 875
@@ -259,20 +259,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0601fcea42e695a40a02c806d9a92e89
-      internalID: 1891157465
+      spriteID: 095048a4559d2dd428655f67cb745272
+      internalID: 889019995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_8
+      name: Prist_attack_8
       rect:
         serializedVersion: 2
         x: 1000
@@ -280,20 +280,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25c552c05a90d014e8f4fcdd93a2bdd7
-      internalID: -20495024
+      spriteID: 8f30af3b855b2424a84e41aa719135d7
+      internalID: 1536615637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_9
+      name: Prist_attack_9
       rect:
         serializedVersion: 2
         x: 1125
@@ -301,56 +301,77 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0e2a9c184a28db409d1ec5bb15fdb05
-      internalID: -367025598
+      spriteID: 223a27f9ad2b38e4ca4b3e41f3398ebb
+      internalID: -1116217885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_10
+      name: Prist_attack_10
       rect:
         serializedVersion: 2
-        x: 1247
+        x: 1250
         y: 0
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.54, y: 0.46}
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4430d46229b87234da6203098a65fff6
-      internalID: 1014919951
+      spriteID: 80025e5314d760c43915e9892e62e821
+      internalID: 1002181804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: zombie_spawn_11
+      name: Prist_attack_11
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1375
         y: 0
-        width: 1375
+        width: 125
         height: 125
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.56, y: 0.48}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10f87fedaa3872645b0586bbf2ad8fed
-      internalID: -2094415783
+      spriteID: e8ab2cf46b5188a4a98d2c94db516c5a
+      internalID: -1584737041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Prist_attack_12
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 125
+        height: 125
+      alignment: 9
+      pivot: {x: 0.56, y: 0.48}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09491790551ef3a4fa874b527d96c9bd
+      internalID: 1891780161
       vertices: []
       indices: 
       edges: []
@@ -366,18 +387,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      zombie_spawn_0: 410630337
-      zombie_spawn_11: -2094415783
-      zombie_spawn_4: 1764191464
-      zombie_spawn_2: 95806542
-      zombie_spawn_9: -367025598
-      zombie_spawn_10: 1014919951
-      zombie_spawn_3: 1980523096
-      zombie_spawn_5: -1861232167
-      zombie_spawn_6: -742034702
-      zombie_spawn_1: -1931101402
-      zombie_spawn_7: 1891157465
-      zombie_spawn_8: -20495024
+      Prist_attack_12: 1891780161
+      Prist_attack_6: -446544129
+      Prist_attack_11: -1584737041
+      Prist_attack_1: 613020792
+      Prist_attack_10: 1002181804
+      Prist_attack_3: -993849383
+      Prist_attack_2: -115948935
+      Prist_attack_7: 889019995
+      Prist_attack_0: 1817759191
+      Prist_attack_4: 1824136739
+      Prist_attack_8: 1536615637
+      Prist_attack_9: -1116217885
+      Prist_attack_5: 796631072
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
