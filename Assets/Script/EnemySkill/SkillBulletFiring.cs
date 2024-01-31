@@ -9,11 +9,14 @@ public class SkillBulletFiring: EnemySkill
 
 
     //스킬 구현 부분
-    public override void Skill(Transform creationLocation)
+    public override IEnumerator Skill()
     {
-        GameObject bulletPre = Instantiate(buletPrefeb);
-        bulletPre.transform.position = creationLocation.transform.position;//총알생성 위치 설정
+        targetP = SetTargetToPlayer(0);//타겟 제설정
+        buletPrefeb.transform.position = creationLocation;//총알 활성화 위치 설정
+        buletPrefeb.SetActive(true);//총알 활성화
         Vector2 direction = targetP - (Vector2)transform.position;//플레이어 위치 가져오기
-        bulletPre.GetComponent<Rigidbody2D>().AddForce(direction.normalized * fireForce, ForceMode2D.Impulse);//투사체 발사하기
+        buletPrefeb.GetComponent<Rigidbody2D>().AddForce(direction.normalized * fireForce, ForceMode2D.Impulse);//투사체 발사하기
+
+        yield return base.Skill();
     }
 }

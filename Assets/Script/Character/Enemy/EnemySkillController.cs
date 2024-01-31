@@ -6,7 +6,6 @@ public class EnemySkillController : MonoBehaviour
 {
 
     public List<EnemySkill> enemySkills;
-    public Transform AttackPoint;//공격 생성 위치
 
     private int getBehavioralStatus = 0;//적 오브젝트 행동 상태값
 
@@ -27,7 +26,7 @@ public class EnemySkillController : MonoBehaviour
                 //스킬 사용 여부 체크
                 if (SkillData.CanUse())
                 {
-                    SkillData.Use(AttackPoint, this.GetComponent<EnemySkillController>());//스킬 사용
+                    SkillData.Use(this.GetComponent<EnemySkillController>());//스킬 사용
                     break;
                 }
             }

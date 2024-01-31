@@ -7,7 +7,8 @@ public class BulletBase : DamageObj
     public float bulletDistance = 6f;//총알 최대 발사 거리
     Vector2 startPosition;//총알 발사 위치
 
-    public virtual void Start()
+    //활성화시 설정값 초기화
+    public virtual void OnEnable()
     {
         startPosition = this.transform.position;
     }
@@ -18,7 +19,13 @@ public class BulletBase : DamageObj
         //총알이 사거리 밖으로 나갈시 제거
         if (shotDistance > bulletDistance)
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
+    }
+
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
+        gameObject.SetActive(false);//충돌 시 총알 비활성화
     }
 }
