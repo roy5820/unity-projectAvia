@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ef95ea4a9b2469f4fadb9a64e839948e
+guid: de207172011f62d4f8012797a4a4ae54
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -44,10 +44,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 75
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Idle_0
+      name: Attack_Hand_Back._0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,20 +112,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.53, y: 0.6}
+      pivot: {x: 0.48, y: 0.73}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b375febfaaf5d7b46a401fdf72f6efe8
-      internalID: 1970463020
+      spriteID: 1ea30ae63b5a55e4fa7d74e5e54de75d
+      internalID: -109258357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_1
+      name: Attack_Hand_Back._1
       rect:
         serializedVersion: 2
         x: 125
@@ -133,20 +133,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.53, y: 0.6}
+      pivot: {x: 0.48, y: 0.73}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4f58327714e0544da67bc01da414987
-      internalID: -829487263
+      spriteID: 71e9c3f849db8a34ab98955904d315dd
+      internalID: -750799691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_2
+      name: Attack_Hand_Back._2
       rect:
         serializedVersion: 2
         x: 250
@@ -154,41 +154,41 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.53, y: 0.6}
+      pivot: {x: 0.48, y: 0.73}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc6f785d6edb0cb428c932930996e15a
-      internalID: -116246051
+      spriteID: 5f829282b36a05443a27dcbfe8b0b85e
+      internalID: -96784541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_3
+      name: Attack_Hand_Back._3
       rect:
         serializedVersion: 2
-        x: 374
+        x: 375
         y: 0
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.53, y: 0.6}
+      pivot: {x: 0.48, y: 0.73}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f78062f8ab27f44da2c6817daaf2b62
-      internalID: -744414567
+      spriteID: b9fee79101d00864d8a7892a08a67be8
+      internalID: -221598410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_4
+      name: Attack_Hand_Back._4
       rect:
         serializedVersion: 2
         x: 500
@@ -196,20 +196,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.53, y: 0.6}
+      pivot: {x: 0.48, y: 0.73}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dac5a2dd03f19a7449458c48cba70af1
-      internalID: 1721089857
+      spriteID: c9edd18324507fa4c9dfd72a2b4967db
+      internalID: 1488470128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Idle_5
+      name: Attack_Hand_Back._5
       rect:
         serializedVersion: 2
         x: 625
@@ -217,14 +217,56 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.53, y: 0.6}
+      pivot: {x: 0.48, y: 0.73}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23f7509dd5aa2a242b206ab235d3c60f
-      internalID: -6740778
+      spriteID: 2d0543f739f6b494f8b4dc5b6d59ac8d
+      internalID: 536175156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_Hand_Back._6
+      rect:
+        serializedVersion: 2
+        x: 750
+        y: 0
+        width: 125
+        height: 125
+      alignment: 9
+      pivot: {x: 0.48, y: 0.73}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc14889a04ca44408e6391b03390767
+      internalID: -1870441001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack_Hand_Back._7
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 0
+        width: 125
+        height: 125
+      alignment: 9
+      pivot: {x: 0.48, y: 0.73}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2ad515b55aa634181fa522f0983295
+      internalID: -1130678387
       vertices: []
       indices: 
       edges: []
@@ -240,12 +282,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Idle_1: -829487263
-      Player_Idle_0: 1970463020
-      Player_Idle_3: -744414567
-      Player_Idle_5: -6740778
-      Player_Idle_4: 1721089857
-      Player_Idle_2: -116246051
+      Attack_Hand_Back._4: 1488470128
+      Attack_Hand_Back._1: -750799691
+      Attack_Hand_Back._2: -96784541
+      Attack_Hand_Back._6: -1870441001
+      Attack_Hand_Back._3: -221598410
+      Attack_Hand_Back._5: 536175156
+      Attack_Hand_Back._7: -1130678387
+      Attack_Hand_Back._0: -109258357
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
