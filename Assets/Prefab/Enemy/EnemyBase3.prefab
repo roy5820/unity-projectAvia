@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8798696865757511785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.279, y: -0.004, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,9 +48,9 @@ GameObject:
   - component: {fileID: 3516621605514879080}
   - component: {fileID: 3557644147822862306}
   - component: {fileID: 5551992548797548385}
-  - component: {fileID: 3709905220773774025}
+  - component: {fileID: 555270979694416869}
   m_Layer: 8
-  m_Name: EnemyBase
+  m_Name: EnemyBase3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1817759191, guid: 265e301abc6540d408dc811fbcfb2e36, type: 3}
+  m_Sprite: {fileID: -337425607, guid: 9cc50d7de92cf3a4e940f96a9eebb073, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -137,10 +137,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0.0045676827, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.56, y: 0.48}
+    pivot: {x: 0.54, y: 0.46}
     oldSize: {x: 1.25, y: 1.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -148,7 +148,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.98}
+  m_Size: {x: 0.39, y: 0.97}
   m_EdgeRadius: 0
 --- !u!58 &2288156283965608402
 CircleCollider2D:
@@ -165,7 +165,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.45}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.15
 --- !u!50 &8798696867219536482
 Rigidbody2D:
   serializedVersion: 4
@@ -215,14 +215,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc3bcab7cf82114db78ae70a16cdbbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 6
   wallLayer:
     serializedVersion: 2
     m_Bits: 2048
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  minLimitDistance: 7
+  minLimitDistance: 5
   castDistance: 1
 --- !u!114 &3557644147822862306
 MonoBehaviour:
@@ -250,8 +250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySkills:
-  - {fileID: 3709905220773774025}
---- !u!114 &3709905220773774025
+  - {fileID: 555270979694416869}
+--- !u!114 &555270979694416869
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,12 +260,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 8798696867219536493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d070d53a2360294a8a8dac533de5477, type: 3}
+  m_Script: {fileID: 11500000, guid: b72396c74087e104cb3f116efde1c046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 1.5
-  castTime: 0.2
-  afterCastTime: 0.5
+  cooldown: 3
+  castTime: 0.75
+  afterCastTime: 2
   skillRange: 8
   targetP: {x: 0, y: 0}
   targetLayer:
@@ -274,6 +274,9 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 2048
-  attackPrefeb: {fileID: 5836834420690895328, guid: 533361006d0f0874abf74a0151ec3719, type: 3}
+  attackPrefeb: {fileID: 5836834420690895328, guid: ede6fa1b41ffac3409ae86b335199eab, type: 3}
   creationLocation: {fileID: 8798696865757511784}
-  fireForce: 25
+  dashRange: 10
+  dashPower: 40
+  wallCastRange: 1
+  bodyCol: {fileID: 2288156283965608402}

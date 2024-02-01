@@ -112,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1672057055, guid: 9d5c59ee8019cb544b643052361dd154, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -140,7 +140,7 @@ BoxCollider2D:
   m_Offset: {x: 0.0045676827, y: -0.07308313}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.40676576, y: 0.50000006}
+    pivot: {x: 0.4, y: 0.5}
     oldSize: {x: 1.5, y: 1.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -251,7 +251,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySkills:
   - {fileID: 981298779285438292}
-  AttackPoint: {fileID: 8798696865757511784}
 --- !u!114 &981298779285438292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,10 +264,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 0
-  castTime: 0.2
+  castTime: 0.35
   afterCastTime: 0.8
-  lastUsedTime: 0
-  skillRange: 0.5
+  skillRange: 1
   targetP: {x: 0, y: 0}
   targetLayer:
     serializedVersion: 2
@@ -276,4 +274,6 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 2048
-  buletPrefeb: {fileID: 5836834420690895328, guid: 4778613057e787249ba61fae86cb1242, type: 3}
+  attackPrefeb: {fileID: 5836834420690895328, guid: 4778613057e787249ba61fae86cb1242, type: 3}
+  creationLocation: {fileID: 8798696865757511784}
+  attackTime: 0.1
