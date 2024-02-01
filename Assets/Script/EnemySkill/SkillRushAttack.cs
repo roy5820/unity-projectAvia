@@ -19,9 +19,11 @@ public class SkillRushAttack : EnemySkill
         RaycastHit2D wallCast;//벽 체크할 센서
         float dashDistace = 0;//대쉬 거리
 
-        thisPre = Instantiate(attackPrefeb, creationLocation.position, Quaternion.identity);//공격 프리펩 생성
+        thisPre = Instantiate(attackPrefeb, creationLocation.position, Quaternion.identity, gameObject.transform);//공격 프리펩 생성
+        
+        Vector2 getTargetP = SetTargetToPlayer();//타겟 정보 가져오기
+        targetP = getTargetP == Vector2.zero ? targetP : getTargetP;//타겟 재설정
 
-        targetP = SetTargetToPlayer();//타겟 재설정
         Vector2 direction = (targetP - (Vector2)transform.position).normalized;//플레이어 방향
 
         //최대 이동 거리까지 이동 구현

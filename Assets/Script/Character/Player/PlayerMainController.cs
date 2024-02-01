@@ -60,9 +60,9 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
             switch (playerStatus)
             {
                 case 0://플레이어 일반 상태
+                case 1://플레이어 무적 상태
                     this.gameObject.layer = LayerMask.NameToLayer("Player");
                     break;
-                case 1://플레이어 무적 상태
                 case 2:
                     this.gameObject.layer = LayerMask.NameToLayer("PlayerInv");
                     break;
@@ -166,6 +166,8 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     //피격 처리 함수
     public void HitAction(int attackType)
     {
+        if (playerStatus != 0) return;//피격 가능 상태가 아니면 그냥 리턴
+        
         playerLife--;//목숨 감소
 
         if (playerLife > 0)//죽음 후 부활 처리
@@ -183,6 +185,10 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     {
         OnSetStatus(2, 1, 1, 1, 1, 1);//죽음 상태로 전환
 
+        Color color = gameObject.GetComponent<SpriteRenderer>().color;
+        color.a = 0.5f;
+        gameObject.GetComponent<SpriteRenderer>().color = color;
+
         yield return new WaitForSeconds(deathTime);
 
         if(revenge == 1)//부활 상태로 전환
@@ -198,8 +204,11 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     //부활 처리 코루틴
     IEnumerator OnResurrection()
     {
-        OnSetStatus(1, 0, 1, 1, 1, 1);//부활 상태로 전환
+        OnSetStatus(2, 0, 1, 1, 1, 1);//부활 상태로 전환
         yield return new WaitForSeconds(resurrectionTime);
+        Color color = gameObject.GetComponent<SpriteRenderer>().color;
+        color.a = 1f;
+        gameObject.GetComponent<SpriteRenderer>().color = color;
         OnSetStatus(0, 0, 0, 0, 0, 0);//부활 상태 종료 처리
     }
 

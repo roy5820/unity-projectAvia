@@ -222,7 +222,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  minLimitDistance: 7
+  minLimitDistance: 5
   castDistance: 1
 --- !u!114 &3557644147822862306
 MonoBehaviour:
@@ -266,7 +266,7 @@ MonoBehaviour:
   cooldown: 1.5
   castTime: 0.2
   afterCastTime: 0.5
-  skillRange: 8
+  skillRange: 6
   targetP: {x: 0, y: 0}
   targetLayer:
     serializedVersion: 2
