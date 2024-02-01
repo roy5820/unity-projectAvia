@@ -12,7 +12,8 @@ public abstract class EnemySkill: MonoBehaviour
     public Vector2 targetP;//타겟 오브젝트 위치값
     public LayerMask targetLayer;//타겟 레이어
     public LayerMask wallLayer;//벽 레이어
-    public Vector2 creationLocation;//생성 위치
+    public GameObject attackPrefeb;//발사할 총알 오브젝트
+    public Transform creationLocation;//생성 위치
 
     private Coroutine skillCoroutine = null;//스킬 사용시 코루틴
     private EnemySkillController callbackComponent;//콜백할 컴포넌트
@@ -48,6 +49,12 @@ public abstract class EnemySkill: MonoBehaviour
         this.callbackComponent = callbackComponent;//콜백할 컴포넌트 저장
         this.callbackComponent.SetStatus(2);//공격 상태로 스테이터스 전환
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;//공격 시 정지 상태로 초기화
+
+        //플레이어 방향으로 로컬 스케일 바꿈
+        if (targetP.x < gameObject.transform.position.x)
+            gameObject.transform.localScale = new Vector2(-1, 1);
+        else
+            gameObject.transform.localScale = new Vector2(1, 1);
 
         skillCoroutine = StartCoroutine(Cast());//스킬 선딜, 사용, 후딜, 쿨타임 구현 코루틴 호출
     }

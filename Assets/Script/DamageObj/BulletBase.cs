@@ -19,13 +19,13 @@ public class BulletBase : DamageObj
         //총알이 사거리 밖으로 나갈시 제거
         if (shotDistance > bulletDistance)
         {
-            gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 
     public override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
-        gameObject.SetActive(false);//충돌 시 총알 비활성화
+        Destroy(this.gameObject);
     }
 }

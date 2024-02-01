@@ -32,40 +32,46 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
         else
             return;
 
-        playerP = TargetTransform;//타겟 위치 가져오기
+        
         //이동 가능 상태이며 타겟이 있으면 플레이어 추적
-        if ((getBehavioralStatus == 0 || getBehavioralStatus == 1) && playerP != null)
+        if (getBehavioralStatus == 0 || getBehavioralStatus == 1)
         {
-            getBehavioralStatus = enemyStatusInterface.BehavioralStatus = 1;//해동 설정값 1(걷기)로 설정
-
-            directionMovement = (playerP.position - transform.position);//플레이어 방향 가져오기
-            float playerDistance = directionMovement.magnitude;//플레이어와의 거리 계산
-            RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), directionMovement, minLimitDistance, wallLayer);
-            RaycastHit2D hitM = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y -0.45f), directionMovement, castDistance, wallLayer);
-            RaycastHit2D hitL = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, -25) * directionMovement, castDistance, wallLayer);
-            RaycastHit2D hitR = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, 25) * directionMovement, castDistance, wallLayer);
-            
-            //경로에 벽이 있을 시 우회하여 플레이어 추적
-            if (hitM.collider != null || hitL.collider != null || hitR.collider != null)
+            playerP = TargetTransform;//타겟 위치 가져오기
+            if (playerP != null)
             {
-                //캐릭터 모서리 끼임 방지 체크
-                if (hitL.collider != null && hitM.collider == null)
+                getBehavioralStatus = enemyStatusInterface.BehavioralStatus = 1;//해동 설정값 1(걷기)로 설정
+
+                directionMovement = (playerP.position - transform.position);//플레이어 방향 가져오기
+                float playerDistance = directionMovement.magnitude;//플레이어와의 거리 계산
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), directionMovement, minLimitDistance, wallLayer);
+                RaycastHit2D hitM = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), directionMovement, castDistance, wallLayer);
+                RaycastHit2D hitL = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, -25) * directionMovement, castDistance, wallLayer);
+                RaycastHit2D hitR = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, 25) * directionMovement, castDistance, wallLayer);
+
+                //경로에 벽이 있을 시 우회하여 플레이어 추적
+                if (hitM.collider != null || hitL.collider != null || hitR.collider != null)
                 {
-                    directionMovement = Vector2.Perpendicular(hitL.normal).normalized;
+                    //캐릭터 모서리 끼임 방지 체크
+                    if (hitL.collider != null && hitM.collider == null)
+                    {
+                        directionMovement = Vector2.Perpendicular(hitL.normal).normalized;
+                    }
+                    else if (hitR.collider != null && hit.collider == null)
+                    {
+                        directionMovement = Vector2.Perpendicular(hitR.normal).normalized;
+                    }
+                    else
+                    {
+                        directionMovement = Vector2.Perpendicular(hitM.normal).normalized;
+                    }
                 }
-                else if (hitR.collider != null && hit.collider == null)
+                //최소 이동거리 체크
+                else if (minLimitDistance > directionMovement.magnitude && hit.collider == null)
                 {
-                    directionMovement = Vector2.Perpendicular(hitR.normal).normalized;
-                }
-                else
-                {
-                    directionMovement = Vector2.Perpendicular(hitM.normal).normalized;
+                    directionMovement = Vector2.zero;
                 }
             }
-            //최소 이동거리 체크
-            else if(minLimitDistance > directionMovement.magnitude && hit.collider == null){
-                directionMovement = Vector2.zero;
-            }
+            else directionMovement = Vector2.zero;
 
             //이동 구현
             directionMovement.Normalize();

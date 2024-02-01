@@ -6,10 +6,6 @@ public class DamageObj : MonoBehaviour
 {
     public int attackType = 0;
 
-    public virtual void Start()
-    {
-        this.gameObject.SetActive(false);
-    }
 
     public virtual void OnTriggerEnter2D(Collider2D other)
     {

@@ -63,6 +63,7 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
                     this.gameObject.layer = LayerMask.NameToLayer("Player");
                     break;
                 case 1://플레이어 무적 상태
+                case 2:
                     this.gameObject.layer = LayerMask.NameToLayer("PlayerInv");
                     break;
             }
