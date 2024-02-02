@@ -23,9 +23,8 @@ public class BulletBase : DamageObj
         }
     }
 
-    public override void OnTriggerEnter2D(Collider2D other)
+    private void FixedUpdate()
     {
-        base.OnTriggerEnter2D(other);
-        Destroy(this.gameObject);
+        Time.fixedDeltaTime = 0.01f;
     }
 }

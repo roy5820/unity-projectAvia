@@ -11,4 +11,11 @@ public class BoomBullet : BulletBase
     {
         Instantiate(boomPre, this.gameObject.transform.position, Quaternion.identity);//Æø¹ß ÇÁ¸®Æé »ý¼º
     }
+
+    //Ãæµ¹ ½Ã ÃÑ¾Ë ÆÄ±«
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
+        Destroy(this.gameObject);
+    }
 }
