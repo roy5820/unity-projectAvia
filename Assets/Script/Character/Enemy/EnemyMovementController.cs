@@ -43,10 +43,10 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
 
                 directionMovement = (playerP.position - transform.position);//플레이어 방향 가져오기
                 float playerDistance = directionMovement.magnitude;//플레이어와의 거리 계산
-                RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), directionMovement, minLimitDistance, wallLayer);
-                RaycastHit2D hitM = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), directionMovement, castDistance, wallLayer);
-                RaycastHit2D hitL = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, -25) * directionMovement, castDistance, wallLayer);
-                RaycastHit2D hitR = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.45f), Quaternion.Euler(0, 0, 25) * directionMovement, castDistance, wallLayer);
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 0.45f), directionMovement, minLimitDistance, wallLayer);
+                RaycastHit2D hitM = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 0.45f), directionMovement, castDistance, wallLayer);
+                RaycastHit2D hitL = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 0.45f), Quaternion.Euler(0, 0, -25) * directionMovement, castDistance, wallLayer);
+                RaycastHit2D hitR = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y + 0.45f), Quaternion.Euler(0, 0, 25) * directionMovement, castDistance, wallLayer);
 
                 //경로에 벽이 있을 시 우회하여 플레이어 추적
                 if (hitM.collider != null || hitL.collider != null || hitR.collider != null)

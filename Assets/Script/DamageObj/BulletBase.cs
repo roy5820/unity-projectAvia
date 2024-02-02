@@ -7,6 +7,8 @@ public class BulletBase : DamageObj
     public float bulletDistance = 6f;//총알 최대 발사 거리
     Vector2 startPosition;//총알 발사 위치
 
+    public LayerMask wallLayer;//벽레이어
+
     //활성화시 설정값 초기화
     public virtual void OnEnable()
     {
@@ -26,5 +28,14 @@ public class BulletBase : DamageObj
     private void FixedUpdate()
     {
         Time.fixedDeltaTime = 0.01f;
+    }
+
+    public override void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
+        if(((1 << other.gameObject.layer) & wallLayer) != 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

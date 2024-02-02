@@ -42,6 +42,7 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
         Vector2 direction = mousePos - (new Vector2(transform.position.x, transform.position.y));
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle * gameObject.transform.localScale.x, Vector3.forward);
+        rotation = gameObject.transform.localScale.x > 0 ? rotation * Quaternion.Euler(0, 0, 180f) : rotation;
         transform.rotation = rotation;
 
         //총알 발사방향 설정

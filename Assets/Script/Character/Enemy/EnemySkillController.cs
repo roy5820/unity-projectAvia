@@ -26,17 +26,10 @@ public class EnemySkillController : MonoBehaviour
                 //스킬 사용 여부 체크
                 if (SkillData.CanUse())
                 {
-                    SkillData.Use(this.GetComponent<EnemySkillController>());//스킬 사용
+                    SkillData.Use();//스킬 사용
                     break;
                 }
             }
         }
-    }
-
-    //스테이터스 설정하는 함수
-    public void SetStatus(int mode)
-    {
-        if (TryGetComponent<EnemyStatusInterface>(out EnemyStatusInterface enemyStatusInterface))
-            getBehavioralStatus = enemyStatusInterface.BehavioralStatus = mode;
     }
 }

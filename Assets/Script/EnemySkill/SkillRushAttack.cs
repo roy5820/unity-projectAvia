@@ -9,8 +9,8 @@ public class SkillRushAttack : EnemySkill
     public float wallCastRange = 2f;//돌진 시 벽 체크 거리
     public Collider2D bodyCol;//몸 콜라이더
 
-    private Rigidbody2D rb;//리지드 바디
-    private GameObject thisPre;//생성한 공격 프리펩이 저장되는 곳
+    protected Rigidbody2D rb;//리지드 바디
+    protected GameObject thisPre;//생성한 공격 프리펩이 저장되는 곳
     public override IEnumerator Skill()
     {
         bodyCol.enabled = false;//몸 콜라이더 비활성화

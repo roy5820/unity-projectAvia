@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class EnemyMainController : MonoBehaviour, CharacterHit, EnemyStatusInterface
 {
-    private int enemyStatus = 0;// 적 오브젝트 상태값 0: 일반 상태, 2: 일반 무적, 3: 절대 무적
+    public int enemyStatus = 0;// 적 오브젝트 상태값 0: 일반 상태, 1: 일반 무적, 2: 절대 무적
     private int behavioralStatus = 0;//행동 상태 값 0: 정지, 1: 이동, 2:공격, 3:죽음
 
     public float deathTime = 2.0f;//죽는 시간
-    public LayerMask playerLayer;//플레이어 일반상태 레이어값
 
     //적 상태값 프로퍼티
     public int EnemyStatus

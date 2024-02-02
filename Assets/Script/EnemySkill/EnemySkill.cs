@@ -16,7 +16,12 @@ public abstract class EnemySkill: MonoBehaviour
     public Transform creationLocation;//생성 위치
 
     private Coroutine skillCoroutine = null;//스킬 사용시 코루틴
-    private EnemySkillController callbackComponent;//콜백할 컴포넌트
+
+    private void Start()
+    {
+        //시작시 스킬 쿨타임 돌리기
+        skillCoroutine = StartCoroutine(CoolTime());
+    }
 
     //스킬 사용 여부체크
     public virtual bool CanUse()
@@ -44,10 +49,9 @@ public abstract class EnemySkill: MonoBehaviour
     }
 
     //스킬 사용 부분 creationLocation: 스킬 생성 방향, 
-    public virtual void Use(EnemySkillController callbackComponent)
+    public virtual void Use()
     {
-        this.callbackComponent = callbackComponent;//콜백할 컴포넌트 저장
-        this.callbackComponent.SetStatus(2);//공격 상태로 스테이터스 전환
+        gameObject.GetComponent<EnemyStatusInterface>().BehavioralStatus = 2;//공격 상태로 스테이터스 전환
         this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;//공격 시 정지 상태로 초기화
 
         //플레이어 방향으로 로컬 스케일 바꿈
@@ -84,7 +88,7 @@ public abstract class EnemySkill: MonoBehaviour
         if (afterCastTime > 0f && GetBehavioralStatus() == 2)
             yield return new WaitForSeconds(afterCastTime); // 후딜레이 후에 쿨타임 돌아감
         if (GetBehavioralStatus() == 2)
-            this.callbackComponent.SetStatus(0);//일반 상태로 스테이터스 전환
+            gameObject.GetComponent<EnemyStatusInterface>().BehavioralStatus = 0;//일반 상태로 스테이터스 전환
 
         skillCoroutine = StartCoroutine(CoolTime());//쿨타임 구현 코루틴 호출
         yield return null;
