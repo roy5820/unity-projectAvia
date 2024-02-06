@@ -17,10 +17,16 @@ public abstract class EnemySkill: MonoBehaviour
 
     private Coroutine skillCoroutine = null;//스킬 사용시 코루틴
 
+    public CharacterAnimationManager aniManager;//애니메이션 메니저
+    public int castAniNum = 0;//스킬 캐스트 애니메이션 번호
+    public int skillAniNum = 0;//스킬 사용 애니메이션 번호
+    public int afterCast = 0;//스킬 사용 후 애니메이션 번호
     private void Start()
     {
         //시작시 스킬 쿨타임 돌리기
         skillCoroutine = StartCoroutine(CoolTime());
+
+        aniManager = GetComponent<CharacterAnimationManager>();//애니메이션 매니저 값 초기화
     }
 
     //스킬 사용 여부체크
@@ -66,17 +72,25 @@ public abstract class EnemySkill: MonoBehaviour
     //스킬 캐스팅 구현
     public virtual IEnumerator Cast()
     {
+        if (castAniNum > 0)
+            aniManager.SetAniParameter(castAniNum);//스킬 캐스트 애니메이션 출력
 
         if (castTime > 0f && GetBehavioralStatus() == 2)
             yield return new WaitForSeconds(castTime); // 선딜레이 후에 스킬 수행
 
         if (GetBehavioralStatus() == 2)
+        {
+            if (skillAniNum > 0)
+                aniManager.SetAniParameter(skillAniNum);//스킬 사용 애니메이션 출력
             skillCoroutine = StartCoroutine(Skill());//스킬 사용
+        }
+            
     }
 
     //스킬 구현 부분
     public virtual IEnumerator Skill()
     {
+
         skillCoroutine =  StartCoroutine(AfterCast());//후딜레이 구현 코루틴
 
         yield return null;
@@ -85,10 +99,16 @@ public abstract class EnemySkill: MonoBehaviour
     //스킬 후딜레이 구현
     public virtual IEnumerator AfterCast()
     {
+        if (afterCast > 0)
+            aniManager.SetAniParameter(afterCast);//스킬 후딜레이 애니메이션 출력
         if (afterCastTime > 0f && GetBehavioralStatus() == 2)
             yield return new WaitForSeconds(afterCastTime); // 후딜레이 후에 쿨타임 돌아감
         if (GetBehavioralStatus() == 2)
+        {
+            aniManager.SetAniParameter(0);
             gameObject.GetComponent<EnemyStatusInterface>().BehavioralStatus = 0;//일반 상태로 스테이터스 전환
+        }
+            
 
         skillCoroutine = StartCoroutine(CoolTime());//쿨타임 구현 코루틴 호출
         yield return null;

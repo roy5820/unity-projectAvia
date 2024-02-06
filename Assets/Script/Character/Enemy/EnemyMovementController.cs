@@ -31,7 +31,6 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
             getBehavioralStatus = enemyStatusInterface.BehavioralStatus;
         else
             return;
-
         
         //이동 가능 상태이며 타겟이 있으면 플레이어 추적
         if (getBehavioralStatus == 0 || getBehavioralStatus == 1)
@@ -68,10 +67,15 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
                 //최소 이동거리 체크
                 else if (minLimitDistance > directionMovement.magnitude && hit.collider == null)
                 {
+                    getBehavioralStatus = 0;
                     directionMovement = Vector2.zero;
                 }
             }
-            else directionMovement = Vector2.zero;
+            else
+            {
+                getBehavioralStatus = 0;
+                directionMovement = Vector2.zero;
+            }
 
             //이동 구현
             directionMovement.Normalize();
@@ -80,6 +84,17 @@ public class EnemyMovementController : MonoBehaviour//적 오브젝트 이동 구현 컴포
             //이동 위치에 따른 캐릭터 반전
             this.gameObject.GetComponent<Transform>().localScale = new Vector2((directionMovement.x > 0 ? 1 : -1), 1);
         }
+
+        //걷기, IDLE 상태 애니메이션 적용
+
+        if(TryGetComponent<CharacterAnimationManager>(out CharacterAnimationManager aniManager))
+        {
+
+        }
+        if (getBehavioralStatus == 0)
+            aniManager.SetAniParameter(0);
+        else if (getBehavioralStatus == 1)
+            aniManager.SetAniParameter(1);
     }
 
 

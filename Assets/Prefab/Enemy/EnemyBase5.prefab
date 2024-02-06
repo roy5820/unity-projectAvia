@@ -49,6 +49,8 @@ GameObject:
   - component: {fileID: 3557644147822862306}
   - component: {fileID: 5551992548797548385}
   - component: {fileID: 1327179551181292162}
+  - component: {fileID: 4495993467869476758}
+  - component: {fileID: 8343230053758676867}
   m_Layer: 8
   m_Name: EnemyBase5
   m_TagString: Untagged
@@ -137,18 +139,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.63}
+  m_Offset: {x: 0, y: 0.5102017}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.37, y: 0}
-    oldSize: {x: 3.2, y: 1.6666666}
+    oldSize: {x: 2.4, y: 1.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.29, y: 1.25}
+  m_Size: {x: 1.03443, y: 1.0104034}
   m_EdgeRadius: 0
 --- !u!58 &2288156283965608402
 CircleCollider2D:
@@ -274,8 +276,42 @@ MonoBehaviour:
     m_Bits: 2048
   attackPrefeb: {fileID: 5836834420690895328, guid: ede6fa1b41ffac3409ae86b335199eab, type: 3}
   creationLocation: {fileID: 8798696865757511784}
+  aniManager: {fileID: 0}
   dashRange: 10
   dashPower: 50
   wallCastRange: 2
   bodyCol: {fileID: 2288156283965608402}
   strunTime: 2
+--- !u!114 &4495993467869476758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798696867219536493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6111f431506f3de4e92ed3deafd3fdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAnimator: {fileID: 8343230053758676867}
+--- !u!95 &8343230053758676867
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798696867219536493}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7357400392151b24c972fd8f2fb2d508, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
