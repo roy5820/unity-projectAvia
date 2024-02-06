@@ -10,7 +10,6 @@ public class SkillBulletFiring: EnemySkill
     public override IEnumerator Skill()
     {
         GameObject thisPre = Instantiate(attackPrefeb, creationLocation.position, Quaternion.identity);//총알 프리펩 생성
-        targetP = SetTargetToPlayer();//타겟 제설정
         Vector2 direction = targetP - (Vector2)transform.position;//타겟 위치 가져오기
         thisPre.GetComponent<Rigidbody2D>().AddForce(direction.normalized * fireForce, ForceMode2D.Impulse);//투사체 발사하기
 
