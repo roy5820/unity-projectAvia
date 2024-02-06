@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 342524ca7f678cc4d8a5a2e9195868f2
+guid: 167d1181eac3f7346b96e27def9276d2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 90
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prist_idle_0
+      name: Prist_Idle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,20 +112,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf1c23b38baed4f4bb2191dd3b966369
-      internalID: 875265248
+      spriteID: f12b92a4d99587647b5cf76993eb498b
+      internalID: 901679156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_idle_1
+      name: Prist_Idle_1
       rect:
         serializedVersion: 2
         x: 125
@@ -133,20 +133,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36b02ddc3ea93454b811a6662636d86d
-      internalID: 417397233
+      spriteID: 4d8a669f3ccc95a41b9aee0173b912ec
+      internalID: 314633301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_idle_2
+      name: Prist_Idle_2
       rect:
         serializedVersion: 2
         x: 250
@@ -154,20 +154,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ee54a271bb8b224386d9223a969b938
-      internalID: 539046880
+      spriteID: ae217f24febf09d48814ab84b1a401a7
+      internalID: 1126038966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_idle_3
+      name: Prist_Idle_3
       rect:
         serializedVersion: 2
         x: 375
@@ -175,14 +175,14 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f3e0e8de01326641b615a1da000e3ea
-      internalID: 782098749
+      spriteID: 66c92544af2071647bdfaa41db0bce58
+      internalID: 815737834
       vertices: []
       indices: 
       edges: []
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Prist_idle_2: 539046880
-      Prist_idle_3: 782098749
-      Prist_idle_0: 875265248
-      Prist_idle_1: 417397233
+      Prist_Idle_0: 901679156
+      Prist_Idle_2: 1126038966
+      Prist_Idle_3: 815737834
+      Prist_Idle_1: 314633301
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

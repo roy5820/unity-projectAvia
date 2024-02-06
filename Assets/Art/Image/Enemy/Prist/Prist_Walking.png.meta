@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: badd2b144981dfb4eb0c3b405d3a07b8
+guid: 37498d8a80ca2334f9c77767989056ce
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 90
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prist_walking_0
+      name: Prist_Walking_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,20 +112,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c342a3fbfce8c0141a539f6a3607b3a9
-      internalID: 228722541
+      spriteID: 955a27ce98ab8434dbf736cb30a7d5f2
+      internalID: -21818194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_walking_1
+      name: Prist_Walking_1
       rect:
         serializedVersion: 2
         x: 125
@@ -133,20 +133,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06386962c4ee48448b43eb3158cd0962
-      internalID: -577145423
+      spriteID: c24f03453f53adb44a0ff136e1260b21
+      internalID: 2038605541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_walking_2
+      name: Prist_Walking_2
       rect:
         serializedVersion: 2
         x: 250
@@ -154,20 +154,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0ba62085cb576e4daf5afc40ea8662f
-      internalID: 1140892008
+      spriteID: ccea39081699d1148a8c4ea497b6bdf6
+      internalID: -860305532
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_walking_3
+      name: Prist_Walking_3
       rect:
         serializedVersion: 2
         x: 375
@@ -175,41 +175,41 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df63fefda27d6e64daa1079100e4cb48
-      internalID: -1557144910
+      spriteID: 6d7572b0b8f329146aba5ef9ddeb70aa
+      internalID: 519721302
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_walking_4
+      name: Prist_Walking_4
       rect:
         serializedVersion: 2
-        x: 499
+        x: 500
         y: 0
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df980261c2bd2d743bccc495297ec657
-      internalID: -1112299448
+      spriteID: 7f70a8e725684054f900fe63694d20e3
+      internalID: 1089599556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_walking_5
+      name: Prist_Walking_5
       rect:
         serializedVersion: 2
         x: 625
@@ -217,20 +217,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33bf4ce2a995c5b4ba6517419af984f7
-      internalID: -1926502989
+      spriteID: 6bf0a6c9bd5d7764ba5de0f2aa508b7b
+      internalID: -2055939672
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_walking_6
+      name: Prist_Walking_6
       rect:
         serializedVersion: 2
         x: 750
@@ -238,14 +238,14 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 138d396b473880940b72a7aea9ca8b51
-      internalID: 1594909723
+      spriteID: 66199835fa837114a91288711f962656
+      internalID: 1335118298
       vertices: []
       indices: 
       edges: []
@@ -261,13 +261,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Prist_walking_1: -577145423
-      Prist_walking_5: -1926502989
-      Prist_walking_2: 1140892008
-      Prist_walking_4: -1112299448
-      Prist_walking_3: -1557144910
-      Prist_walking_6: 1594909723
-      Prist_walking_0: 228722541
+      Prist_Walking_6: 1335118298
+      Prist_Walking_3: 519721302
+      Prist_Walking_0: -21818194
+      Prist_Walking_4: 1089599556
+      Prist_Walking_1: 2038605541
+      Prist_Walking_2: -860305532
+      Prist_Walking_5: -2055939672
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

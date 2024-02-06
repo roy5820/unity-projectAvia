@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0ba46bae8e646514f929e90efaf43732
+guid: 165a6fd0e172dd747b8abf87732fb73c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 90
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prist_death_0
+      name: Prist_Death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,20 +112,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b0821048bfb06740b072ea1d5b9d200
-      internalID: 2053449256
+      spriteID: 6299584aa499f4145b63e7eca3897c4d
+      internalID: -1972652329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_death_1
+      name: Prist_Death_1
       rect:
         serializedVersion: 2
         x: 125
@@ -133,20 +133,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63fcec9694df9264595d19f569535e26
-      internalID: 1881768336
+      spriteID: 7841f93f193065a4e94fbd28c5819857
+      internalID: 2077901936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_death_2
+      name: Prist_Death_2
       rect:
         serializedVersion: 2
         x: 250
@@ -154,20 +154,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 074914d2d331a744396ef579b3f86b61
-      internalID: -640373559
+      spriteID: f1c02d0394b51ab47b91c05aee2478f0
+      internalID: -1103765873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_death_3
+      name: Prist_Death_3
       rect:
         serializedVersion: 2
         x: 375
@@ -175,20 +175,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5e17c7395109e545a3233a5c1d0f164
-      internalID: 306549666
+      spriteID: 634c5471fd636894c915ac1cb00a4b1f
+      internalID: -1458589770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_death_4
+      name: Prist_Death_4
       rect:
         serializedVersion: 2
         x: 500
@@ -196,20 +196,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ef60919c5c53d24eaa60be074b2282a
-      internalID: 124482928
+      spriteID: bd366b7d9c3967d46adc2fe5a2dd0edb
+      internalID: -594815310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_death_5
+      name: Prist_Death_5
       rect:
         serializedVersion: 2
         x: 625
@@ -217,20 +217,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdd0b7b82c6c5d6408703e929f9d852d
-      internalID: -1658255844
+      spriteID: cf491cd14c3354548900ce57714cd00e
+      internalID: -1906805465
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_death_6
+      name: Prist_Death_6
       rect:
         serializedVersion: 2
         x: 750
@@ -238,20 +238,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaeeb283fd1dfca41b9542b424ae0827
-      internalID: 397145398
+      spriteID: de63bfb6b64515147aebe7f55f537695
+      internalID: 687954508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_death_7
+      name: Prist_Death_7
       rect:
         serializedVersion: 2
         x: 875
@@ -259,20 +259,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1846a9fc8d528b3439343510bd640280
-      internalID: -1904202239
+      spriteID: e5d3148fb641c3949a1607557e08ef28
+      internalID: 800166535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_death_8
+      name: Prist_Death_8
       rect:
         serializedVersion: 2
         x: 1000
@@ -280,20 +280,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cad7aa3bd19cfd54fbb466cf8bd0ddf1
-      internalID: 2066359890
+      spriteID: 8a0e66fa61b845a47b9b0688efc932a7
+      internalID: -1080384637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_death_9
+      name: Prist_Death_9
       rect:
         serializedVersion: 2
         x: 1125
@@ -301,20 +301,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1e487fc3bf76b24189bfa9a2ea0f43a
-      internalID: 1786589714
+      spriteID: 97e1739c2471f4048b2d25514b090ebf
+      internalID: 195262867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_death_10
+      name: Prist_Death_10
       rect:
         serializedVersion: 2
         x: 1250
@@ -322,14 +322,14 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f964f9e80cded02428f235ca8a34d094
-      internalID: 526239641
+      spriteID: 3fb2454a36c19054aa0953d8816bf42e
+      internalID: -84304850
       vertices: []
       indices: 
       edges: []
@@ -345,17 +345,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Prist_death_6: 397145398
-      Prist_death_0: 2053449256
-      Prist_death_10: 526239641
-      Prist_death_3: 306549666
-      Prist_death_8: 2066359890
-      Prist_death_2: -640373559
-      Prist_death_5: -1658255844
-      Prist_death_7: -1904202239
-      Prist_death_1: 1881768336
-      Prist_death_4: 124482928
-      Prist_death_9: 1786589714
+      Prist_Death_1: 2077901936
+      Prist_Death_7: 800166535
+      Prist_Death_10: -84304850
+      Prist_Death_8: -1080384637
+      Prist_Death_0: -1972652329
+      Prist_Death_9: 195262867
+      Prist_Death_5: -1906805465
+      Prist_Death_4: -594815310
+      Prist_Death_2: -1103765873
+      Prist_Death_6: 687954508
+      Prist_Death_3: -1458589770
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

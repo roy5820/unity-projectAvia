@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 265e301abc6540d408dc811fbcfb2e36
+guid: 80eeb89bf74d56141bb7e3b9bbcc3676
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 90
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Prist_attack_0
+      name: Prist_Attack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,20 +112,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76041522554ebf94480a786ddbf30b34
-      internalID: 1817759191
+      spriteID: adbfef8e5545a2b4b87ace717ab08a3a
+      internalID: 680496375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_1
+      name: Prist_Attack_1
       rect:
         serializedVersion: 2
         x: 125
@@ -133,20 +133,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cb713c8920661445ab48bd6d419ec1c
-      internalID: 613020792
+      spriteID: 3041e96e753a2c34fa008937f8aae797
+      internalID: 46667548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_2
+      name: Prist_Attack_2
       rect:
         serializedVersion: 2
         x: 250
@@ -154,20 +154,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 221a33e81e2098e42b9c117c03783adc
-      internalID: -115948935
+      spriteID: d49b0900ba599db489a2a9582395cbbc
+      internalID: -1182045080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_3
+      name: Prist_Attack_3
       rect:
         serializedVersion: 2
         x: 375
@@ -175,20 +175,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63856f28dbe363c43a598fc6de9e8c1e
-      internalID: -993849383
+      spriteID: aa7dfa521d9d6a0498f155791acaa263
+      internalID: -1437429017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_4
+      name: Prist_Attack_4
       rect:
         serializedVersion: 2
         x: 500
@@ -196,20 +196,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa81b90c2cc546843816af4457232118
-      internalID: 1824136739
+      spriteID: 24518df50c15cf04dbe558a8920f7d4a
+      internalID: -542296566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_5
+      name: Prist_Attack_5
       rect:
         serializedVersion: 2
         x: 625
@@ -217,20 +217,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1d6146f861099c498fae4f6f9c4e104
-      internalID: 796631072
+      spriteID: fc47c4267252dd44093e457e8e9bb67d
+      internalID: 1834652828
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_6
+      name: Prist_Attack_6
       rect:
         serializedVersion: 2
         x: 750
@@ -238,20 +238,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63a8a6ebe324e9a47ac3e18b483e1f27
-      internalID: -446544129
+      spriteID: 15eaa2ef3ddb2d947a226e4c7441f956
+      internalID: 413871578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_7
+      name: Prist_Attack_7
       rect:
         serializedVersion: 2
         x: 875
@@ -259,20 +259,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 095048a4559d2dd428655f67cb745272
-      internalID: 889019995
+      spriteID: 887c1a7f237e1464aa51f096df9cbb43
+      internalID: -1090968667
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_8
+      name: Prist_Attack_8
       rect:
         serializedVersion: 2
         x: 1000
@@ -280,20 +280,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f30af3b855b2424a84e41aa719135d7
-      internalID: 1536615637
+      spriteID: 9a31333c93a12b647894f3a6eb171880
+      internalID: 689778241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_9
+      name: Prist_Attack_9
       rect:
         serializedVersion: 2
         x: 1125
@@ -301,20 +301,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 223a27f9ad2b38e4ca4b3e41f3398ebb
-      internalID: -1116217885
+      spriteID: 4777476dae7493748970bb746fc800d0
+      internalID: -834016096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_10
+      name: Prist_Attack_10
       rect:
         serializedVersion: 2
         x: 1250
@@ -322,20 +322,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80025e5314d760c43915e9892e62e821
-      internalID: 1002181804
+      spriteID: 9061b9bb38540494ab010e3f81b6b330
+      internalID: -2063827348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_11
+      name: Prist_Attack_11
       rect:
         serializedVersion: 2
         x: 1375
@@ -343,20 +343,20 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e8ab2cf46b5188a4a98d2c94db516c5a
-      internalID: -1584737041
+      spriteID: 046df33174feba549b3936712421434d
+      internalID: -1308033864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prist_attack_12
+      name: Prist_Attack_12
       rect:
         serializedVersion: 2
         x: 1500
@@ -364,14 +364,14 @@ TextureImporter:
         width: 125
         height: 125
       alignment: 9
-      pivot: {x: 0.56, y: 0}
+      pivot: {x: 0.54, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09491790551ef3a4fa874b527d96c9bd
-      internalID: 1891780161
+      spriteID: 1957234afbb329a4781b6a97bed18d3a
+      internalID: 1356887090
       vertices: []
       indices: 
       edges: []
@@ -387,19 +387,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Prist_attack_12: 1891780161
-      Prist_attack_6: -446544129
-      Prist_attack_11: -1584737041
-      Prist_attack_1: 613020792
-      Prist_attack_10: 1002181804
-      Prist_attack_3: -993849383
-      Prist_attack_2: -115948935
-      Prist_attack_7: 889019995
-      Prist_attack_0: 1817759191
-      Prist_attack_4: 1824136739
-      Prist_attack_8: 1536615637
-      Prist_attack_9: -1116217885
-      Prist_attack_5: 796631072
+      Prist_Attack_3: -1437429017
+      Prist_Attack_7: -1090968667
+      Prist_Attack_5: 1834652828
+      Prist_Attack_2: -1182045080
+      Prist_Attack_11: -1308033864
+      Prist_Attack_0: 680496375
+      Prist_Attack_10: -2063827348
+      Prist_Attack_1: 46667548
+      Prist_Attack_8: 689778241
+      Prist_Attack_9: -834016096
+      Prist_Attack_4: -542296566
+      Prist_Attack_6: 413871578
+      Prist_Attack_12: 1356887090
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
