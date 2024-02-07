@@ -22,12 +22,14 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     private float deathTime = 2f; //플레이어 죽음 시간
     private float resurrectionTime = 4f; //플레이어 부활 시간
 
-
     private void Awake()
     {
         //인스턴스 값 초기화
         if (instance == null)
+        {
             instance = this;
+        }
+            
         else
             Destroy(this.gameObject);
     }

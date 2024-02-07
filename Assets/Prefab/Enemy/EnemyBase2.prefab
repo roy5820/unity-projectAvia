@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8798696865757511785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.279, y: -0.004, z: 0}
+  m_LocalPosition: {x: 0.279, y: 0.559, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125,7 +125,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &4060592576485832591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -203,7 +203,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStatus: 0
   deathTime: 2
-  aniManager: {fileID: 4360830062690625105}
 --- !u!114 &3516621605514879080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +276,10 @@ MonoBehaviour:
     m_Bits: 2048
   attackPrefeb: {fileID: 5836834420690895328, guid: 4778613057e787249ba61fae86cb1242, type: 3}
   creationLocation: {fileID: 8798696865757511784}
-  aniManager: {fileID: 0}
+  reTargeting: 0
+  castAniNum: 3
+  skillAniNum: 0
+  afterCast: 0
   attackTime: 0.1
 --- !u!114 &4360830062690625105
 MonoBehaviour:
