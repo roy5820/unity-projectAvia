@@ -312,7 +312,7 @@ MonoBehaviour:
   castAniNum: 3
   skillAniNum: 0
   afterCast: 0
-  fireForce: 12
+  fireForce: 20
 --- !u!114 &6802076677228779403
 MonoBehaviour:
   m_ObjectHideFlags: 0
