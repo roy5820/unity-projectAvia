@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8798696865757511785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.245, y: 0.474, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -125,7 +125,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &4060592576485832591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -264,8 +264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 2
-  castTime: 1.5
-  afterCastTime: 0
+  castTime: 0.74
+  afterCastTime: 2
   skillRange: 7
   targetP: {x: 0, y: 0}
   targetLayer:
@@ -276,12 +276,14 @@ MonoBehaviour:
     m_Bits: 2048
   attackPrefeb: {fileID: 5836834420690895328, guid: ede6fa1b41ffac3409ae86b335199eab, type: 3}
   creationLocation: {fileID: 8798696865757511784}
-  aniManager: {fileID: 0}
+  reTargeting: 1
+  castAniNum: 3
+  skillAniNum: 4
+  afterCast: 5
   dashRange: 10
   dashPower: 50
   wallCastRange: 2
   bodyCol: {fileID: 2288156283965608402}
-  strunTime: 2
 --- !u!114 &4495993467869476758
 MonoBehaviour:
   m_ObjectHideFlags: 0

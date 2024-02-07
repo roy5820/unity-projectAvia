@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8798696865757511785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.177, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49,6 +49,9 @@ GameObject:
   - component: {fileID: 3557644147822862306}
   - component: {fileID: 5551992548797548385}
   - component: {fileID: 555270979694416869}
+  - component: {fileID: 2218732892636200142}
+  - component: {fileID: 2865133303203459574}
+  - component: {fileID: 6259369263503876193}
   m_Layer: 8
   m_Name: EnemyBase3
   m_TagString: Untagged
@@ -123,7 +126,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &4060592576485832591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -261,8 +264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72396c74087e104cb3f116efde1c046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 3
-  castTime: 0.75
+  cooldown: 2
+  castTime: 0.25
   afterCastTime: 2
   skillRange: 5
   targetP: {x: 0, y: 0}
@@ -274,7 +277,58 @@ MonoBehaviour:
     m_Bits: 2048
   attackPrefeb: {fileID: 5836834420690895328, guid: ede6fa1b41ffac3409ae86b335199eab, type: 3}
   creationLocation: {fileID: 8798696865757511784}
-  dashRange: 10
-  dashPower: 40
+  reTargeting: 0
+  castAniNum: 3
+  skillAniNum: 0
+  afterCast: 0
+  dashRange: 6
+  dashPower: 20
   wallCastRange: 1
   bodyCol: {fileID: 2288156283965608402}
+--- !u!114 &2218732892636200142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798696867219536493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b3de60e0f1746458d011403391c75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  setAniNum: 4
+  introTime: 1
+--- !u!114 &2865133303203459574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798696867219536493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6111f431506f3de4e92ed3deafd3fdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisAnimator: {fileID: 6259369263503876193}
+--- !u!95 &6259369263503876193
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8798696867219536493}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd211a159cd55974d8d1eb855cd5707c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -35,7 +35,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
     public LayerMask wallLayer; // 벽레이어
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         mainController = PlayerMainController.getInstanc;//플레이어 컨트롤러값 초기화
         //각 상태값들을 메인 컨트롤러안에 값으로 초기화 하는 함수

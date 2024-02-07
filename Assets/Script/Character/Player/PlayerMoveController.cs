@@ -29,7 +29,7 @@ public class PlayerMoveController : MonoBehaviour
     private int thisDashAction = 0;//대쉬 상태 여부
     private bool isDashCool = false;//대쉬 쿨 여부
 
-    private void Awake()
+    private void Start()
     {
         playerRbody = this.GetComponent<Rigidbody2D>();//플레이어 리지드바디값 초기화
 

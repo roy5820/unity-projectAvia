@@ -14,10 +14,11 @@ public abstract class EnemySkill: MonoBehaviour
     public LayerMask wallLayer;//벽 레이어
     public GameObject attackPrefeb;//발사할 총알 오브젝트
     public Transform creationLocation;//생성 위치
+    public bool reTargeting = false;//공격 시 타겟 재설정 여부
 
     private Coroutine skillCoroutine = null;//스킬 사용시 코루틴
 
-    public CharacterAnimationManager aniManager;//애니메이션 메니저
+    private CharacterAnimationManager aniManager;//애니메이션 메니저
     public int castAniNum = 0;//스킬 캐스트 애니메이션 번호
     public int skillAniNum = 0;//스킬 사용 애니메이션 번호
     public int afterCast = 0;//스킬 사용 후 애니메이션 번호
@@ -82,6 +83,13 @@ public abstract class EnemySkill: MonoBehaviour
         {
             if (skillAniNum > 0)
                 aniManager.SetAniParameter(skillAniNum);//스킬 사용 애니메이션 출력
+            //타겟 재설정 여부에 따른 타겟 재설정
+            if (reTargeting)
+            {
+                Vector2 getTargetP = SetTargetToPlayer();//타겟 정보 가져오기
+                targetP = getTargetP == Vector2.zero ? targetP : getTargetP;//타겟 재설정
+            }
+
             skillCoroutine = StartCoroutine(Skill());//스킬 사용
         }
             
@@ -101,6 +109,8 @@ public abstract class EnemySkill: MonoBehaviour
     {
         if (afterCast > 0)
             aniManager.SetAniParameter(afterCast);//스킬 후딜레이 애니메이션 출력
+        else
+            aniManager.SetAniParameter(0);
         if (afterCastTime > 0f && GetBehavioralStatus() == 2)
             yield return new WaitForSeconds(afterCastTime); // 후딜레이 후에 쿨타임 돌아감
         if (GetBehavioralStatus() == 2)

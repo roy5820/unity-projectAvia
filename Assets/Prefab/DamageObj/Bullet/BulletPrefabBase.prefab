@@ -102,6 +102,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   bulletDistance: 18
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!50 &8746038005259684426
 Rigidbody2D:
   serializedVersion: 4
@@ -155,7 +158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2291524337024663705
 Transform:
   m_ObjectHideFlags: 0
