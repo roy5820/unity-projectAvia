@@ -6,6 +6,7 @@ public class SkillMeleeAttack : EnemySkill
 {
     private GameObject thisPre;//생성한 공격 프리펩이 저장되는 곳
     public float attackTime = 0;//공격 시간
+
     //스킬 구현 부분
     public override IEnumerator Skill()
     {
