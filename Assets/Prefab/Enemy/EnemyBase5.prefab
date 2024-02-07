@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc3bcab7cf82114db78ae70a16cdbbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 8
   wallLayer:
     serializedVersion: 2
     m_Bits: 2048
@@ -266,7 +266,7 @@ MonoBehaviour:
   cooldown: 2
   castTime: 0.74
   afterCastTime: 2
-  skillRange: 7
+  skillRange: 6
   targetP: {x: 0, y: 0}
   targetLayer:
     serializedVersion: 2
@@ -280,7 +280,7 @@ MonoBehaviour:
   castAniNum: 3
   skillAniNum: 4
   afterCast: 5
-  dashRange: 10
+  dashRange: 7
   dashPower: 50
   wallCastRange: 2
   bodyCol: {fileID: 2288156283965608402}
