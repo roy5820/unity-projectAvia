@@ -12,6 +12,8 @@ public class BulletBase : DamageObj
     public float destroyTime = 0.5f;//총알 파괴 시간
     public float destroyAniNum = 1;//총알 파괴시 출력할 애니메이션 번호
 
+    public Coroutine bulletDestroy = null;
+
     //활성화시 설정값 초기화
     public virtual void OnEnable()
     {
@@ -22,9 +24,9 @@ public class BulletBase : DamageObj
     {
         float shotDistance = Vector2.Distance(startPosition, this.transform.position);//발사거리 구하기
         //총알이 사거리 밖으로 나갈시 제거
-        if (shotDistance > bulletDistance)
+        if (shotDistance > bulletDistance && bulletDestroy == null)
         {
-            StartCoroutine(BulletDestroy());//파괴 코루틴 호출
+            bulletDestroy = StartCoroutine(BulletDestroy());//파괴 코루틴 호출
         }
     }
 
@@ -39,16 +41,20 @@ public class BulletBase : DamageObj
         base.OnTriggerEnter2D(other);
         if(((1 << other.gameObject.layer) & wallLayer) != 0)
         {
-            StartCoroutine(BulletDestroy());//파괴 코루틴 호출
+            if (bulletDestroy == null)
+                bulletDestroy = StartCoroutine(BulletDestroy());//파괴 코루틴 호출
         }
     }
 
     //총알 파괴 구현 코루틴
     public virtual IEnumerator BulletDestroy()
     {
-        GetComponent<CharacterAnimationManager>().SetAniParameter(1);//파괴 시 애니메이션 재생
-        GetComponent<Collider2D>().enabled = false;//충돌 해제
-        GetComponent<Rigidbody2D>().velocity = Vector2.zero;//이동 값 0으로 초기화
+        if(TryGetComponent<CharacterAnimationManager>(out CharacterAnimationManager aniManager))
+            aniManager.SetAniParameter(1);//파괴 시 애니메이션 재생
+        if(TryGetComponent<Collider2D>(out Collider2D col))
+            col.enabled = false;//충돌 해제
+        if(TryGetComponent<Rigidbody2D>(out Rigidbody2D rd))
+            rd.velocity = Vector2.zero;//이동 값 0으로 초기화
 
         if(destroyTime > 0)
             yield return new WaitForSeconds(destroyTime);//파괴까지 걸리는 시간

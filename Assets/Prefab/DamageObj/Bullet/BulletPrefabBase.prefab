@@ -104,7 +104,9 @@ MonoBehaviour:
   bulletDistance: 18
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
+  destroyTime: 0
+  destroyAniNum: 1
 --- !u!50 &8746038005259684426
 Rigidbody2D:
   serializedVersion: 4

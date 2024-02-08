@@ -426,16 +426,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSkillGauge: 14
-  nowSkillGauge: 0
+  nowSkillGauge: 21
   skillCoast: 7
-  skillHorizontalRange: 16
-  skillVerticalRange: 10
-  shotDelay: 0.1
-  skillDelay: 0.5
-  bulletPrefab: {fileID: 5836834420690895328, guid: 592d4211f5745104693631d6d795da30, type: 3}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 256
+  isCharge: 0
+  minSkillRange: 5
+  maxSkillRange: 15
+  nowSkillRange: 5
+  increaseCycleTime: 0.25
+  increaseRange: 3
+  maxChargeTime: 2
+  timeSlowScale: 0.2
+  SkillPre: {fileID: 3238553048654851135, guid: b35b3442168fa254eb2dff89d5083d76, type: 3}
   wallLayer:
     serializedVersion: 2
     m_Bits: 2048
