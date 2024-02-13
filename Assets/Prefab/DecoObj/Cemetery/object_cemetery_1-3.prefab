@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6317146159377621100}
   - component: {fileID: 5021815358695819542}
   - component: {fileID: 5303357481593469080}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: object_cemetery_1-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}

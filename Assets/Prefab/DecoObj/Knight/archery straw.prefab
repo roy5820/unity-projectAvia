@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1084353935756588211}
   - component: {fileID: 1084353935756588210}
   - component: {fileID: 1084353935756588212}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: archery straw
   m_TagString: Untagged
   m_Icon: {fileID: 0}

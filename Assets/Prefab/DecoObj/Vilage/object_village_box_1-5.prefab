@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4852802124768796847}
   - component: {fileID: 4852802124768796846}
   - component: {fileID: 4852802124768796841}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: object_village_box_1-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
