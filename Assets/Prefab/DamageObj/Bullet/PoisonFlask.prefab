@@ -142,7 +142,9 @@ MonoBehaviour:
   bulletDistance: 6
   wallLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2112
+  destroyTime: 0.5
+  destroyAniNum: 1
   boomPre: {fileID: 5836834420690895328, guid: b4aa91fbb131f814ca737bd0ae984593, type: 3}
 --- !u!114 &8862255917080143598
 MonoBehaviour:
