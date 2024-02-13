@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1029716339397674622}
   - component: {fileID: 9219549994367008122}
-  - component: {fileID: 4569199427177101838}
+  - component: {fileID: 6475907652123535100}
   m_Layer: 0
   m_Name: House 1
   m_TagString: Untagged
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &4569199427177101838
-PolygonCollider2D:
+--- !u!68 &6475907652123535100
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,58 +99,17 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.3, y: 4.1}
-    newSize: {x: 3.3, y: 4.1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_EdgeRadius: 0
   m_Points:
-    m_Paths:
-    - - {x: 1.0343146, y: -2.0205696}
-      - {x: 1.0357251, y: -2.0492268}
-      - {x: 1.1831195, y: -2.0407798}
-      - {x: 1.1830502, y: -1.8825934}
-      - {x: 1.1611929, y: -1.8556973}
-      - {x: 1.1610705, y: -1.7602909}
-      - {x: 1.5121415, y: -1.7605355}
-      - {x: 1.5964376, y: -1.758731}
-      - {x: 1.5597258, y: -1.3166437}
-      - {x: 1.5784014, y: -1.0388126}
-      - {x: 1.65, y: 0.06}
-      - {x: 1.64, y: 0.048349977}
-      - {x: 1.1638203, y: 0.19252652}
-      - {x: 1.1129378, y: 0.27458748}
-      - {x: 1.1899999, y: 1.49}
-      - {x: 1.16, y: 1.52}
-      - {x: 0.94, y: 1.64}
-      - {x: 0.95, y: 1.8399999}
-      - {x: 0.9, y: 2.04}
-      - {x: 0.65, y: 2.04}
-      - {x: 0.57, y: 1.86}
-      - {x: 0.24, y: 2.04}
-      - {x: 0.19999999, y: 2.04}
-      - {x: -0.65, y: 1.5699999}
-      - {x: -1.63, y: 1.56}
-      - {x: -1.65, y: 1.5}
-      - {x: -1.65, y: 1.0799999}
-      - {x: -1.64, y: 0.5}
-      - {x: -1.62, y: 0.48}
-      - {x: -1.5899999, y: 0.41}
-      - {x: -1.5999999, y: -1.8}
-      - {x: -1.5799999, y: -1.8199999}
-      - {x: -0.7143717, y: -1.8031138}
-      - {x: -0.71761036, y: -2.0467608}
-      - {x: -0.58257914, y: -2.0519712}
-      - {x: -0.5828419, y: -2.0197842}
-      - {x: -0.29975563, y: -2.0223398}
-      - {x: 0.041268617, y: -2.0215597}
-      - {x: 0.42, y: -2.0143886}
-      - {x: 0.6594645, y: -2.0131197}
-    - - {x: -1.51, y: 0.32}
-      - {x: -1.5, y: 0.32}
-      - {x: -1.5, y: 0.28}
-      - {x: -1.51, y: 0.28}
+  - {x: 1.0565385, y: 0.6740507}
+  - {x: -1.5890266, y: 0.60432726}
+  - {x: -1.5907173, y: -1.9894598}
+  - {x: 0.18156719, y: -1.9990944}
+  - {x: 1.5854621, y: -2.0039463}
+  - {x: 1.6261439, y: 0.07319379}
+  - {x: 1.1839342, y: 0.16508663}
+  - {x: 1.0619365, y: 0.6772968}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
