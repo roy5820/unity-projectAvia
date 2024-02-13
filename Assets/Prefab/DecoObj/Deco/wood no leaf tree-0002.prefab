@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4443377395009750760}
   - component: {fileID: 4443377395009750761}
   - component: {fileID: 4443377395009750763}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: wood no leaf tree-0002
   m_TagString: Untagged
   m_Icon: {fileID: 0}

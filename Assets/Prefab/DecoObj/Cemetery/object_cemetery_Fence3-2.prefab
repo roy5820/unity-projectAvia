@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2926048308169164888}
   - component: {fileID: 2753859032804478704}
   - component: {fileID: 5831040008439913779}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: object_cemetery_Fence3-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,12 +101,12 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.48638842, y: 0.46559083}
-  - {x: -0.48777366, y: 0.38669336}
-  - {x: -0.033692326, y: -0.10264039}
-  - {x: -0.008296445, y: -0.13246596}
-  - {x: -0.00379543, y: 0.0024068803}
-  - {x: -0.4858876, y: 0.46715534}
+  - {x: -0.51280844, y: 0.54018855}
+  - {x: -0.51263964, y: 0.33074504}
+  - {x: -0.060112353, y: -0.13372277}
+  - {x: 0.024340108, y: -0.19773896}
+  - {x: 0.024178728, y: 0.014839828}
+  - {x: -0.5138618, y: 0.54175305}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0

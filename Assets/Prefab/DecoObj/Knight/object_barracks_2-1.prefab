@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3437897552300646206}
   - component: {fileID: 3437897552300646205}
   - component: {fileID: 3437897552300646207}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: object_barracks_2-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
