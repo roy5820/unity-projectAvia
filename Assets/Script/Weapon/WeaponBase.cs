@@ -23,7 +23,6 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
     public float fireForce = 10f;//총알 발사 속도
 
     Vector2 bulletVec;//촐알 발사 방향
-
     private void Start()
     {
         nowBulletCnt = maxBulletCnt;//현제 총알 계수 초기화

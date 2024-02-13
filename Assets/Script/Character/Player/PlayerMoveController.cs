@@ -28,7 +28,6 @@ public class PlayerMoveController : MonoBehaviour
     Vector2 inputDashVec;//대쉬 이동방향 벡터값
     private int thisDashAction = 0;//대쉬 상태 여부
     private bool isDashCool = false;//대쉬 쿨 여부
-
     private void Start()
     {
         playerRbody = this.GetComponent<Rigidbody2D>();//플레이어 리지드바디값 초기화
@@ -49,20 +48,27 @@ public class PlayerMoveController : MonoBehaviour
     private void FixedUpdate()
     {
         //플레이어 이동 구현 부분
-        if (getMoveStatus == 0)
+        if (getMoveStatus != 1)
         {
             //이동 구현(일반 공격, 재장전, 스킬 사용 중 이동속도 절반으로 감속)
             Vector2 MoveVec = inputMoveVec.normalized * (getFireStatus == 2 || getReloadStatus == 2 || getSkillStatus == 2 ? moveSpeed / 2 : moveSpeed);
             playerRbody.velocity = MoveVec;//백터 값 적용
+
+            if(playerRbody.velocity != Vector2.zero)
+                mainController.OnSetStatus(-1, 2, -1, -1, -1, -1); //이동 상태값 설정
+            else
+                mainController.OnSetStatus(-1, 0, -1, -1, -1, -1); //이동 시 상태값 설정
 
             if (playerRbody.velocity.x > 0)
                 this.transform.localScale = new Vector3(1, 1, 1);
             else if(playerRbody.velocity.x < 0)
                 this.transform.localScale = new Vector3(-1, 1, 1);
         }
+        else
+            mainController.OnSetStatus(-1, 0, -1, -1, -1, -1); //이동 시 상태값 설정
 
         //플레이어 대쉬 구현 부분
-        if(getDashStatus == 2)
+        if (getDashStatus == 2)
         {
             Vector2 dashVec = inputDashVec * DashPower;// 현제 이동 입력값에 따른 대쉬 방향 설정
             playerRbody.velocity = dashVec;//대쉬 적용

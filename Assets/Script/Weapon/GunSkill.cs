@@ -33,7 +33,6 @@ public class GunSkill : MonoBehaviour, SkillStatus
     public Transform attackPoint = null;//스킬 생성 위치
 
     public LayerMask wallLayer; // 벽레이어
-
     // Start is called before the first frame update
     void Start()
     {

@@ -17,10 +17,13 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     private int isReloadStatus = 0; //리로드 상태값
     private int isSkillStatus = 0; //스킬공격 상태값
 
+
     private int playerLife = 50; //플레이어 목숨 개수
 
     private float deathTime = 2f; //플레이어 죽음 시간
     private float resurrectionTime = 4f; //플레이어 부활 시간
+    
+    private CharacterAnimationManager aniManager = null;//애니메이션 매니저
 
     private void Awake()
     {
@@ -32,6 +35,39 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
             
         else
             Destroy(this.gameObject);
+    }
+
+    private void Start()
+    {
+        TryGetComponent<CharacterAnimationManager>(out aniManager);//애니메이션 메니저 값 초기화
+    }
+
+    private void Update()
+    {
+        //상태별 애니메이션 처리
+        //걷기
+        if (isMoveStatus == 2)
+            aniManager.SetBoolAniParameter("isWalking", true);
+        else
+            aniManager.SetBoolAniParameter("isWalking", false);
+
+        //대쉬
+        if (isDashStatus == 2)
+            aniManager.SetBoolAniParameter("isDash", true);
+        else
+            aniManager.SetBoolAniParameter("isDash", false);
+
+        //파이어
+        if (isFireStatus == 2)
+            aniManager.SetBoolAniParameter("isFire", true);
+        else
+            aniManager.SetBoolAniParameter("isFire", false);
+
+        //스킬
+        if (isSkillStatus == 2)
+            aniManager.SetBoolAniParameter("isSkill", true);
+        else
+            aniManager.SetBoolAniParameter("isSkill", false);
     }
 
     //플레이어 메인컨트롤러에 인스턴스값에 접근하는 프로퍼티
@@ -186,10 +222,6 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     IEnumerator PlayerDathEvent(int revenge)
     {
         OnSetStatus(2, 1, 1, 1, 1, 1);//죽음 상태로 전환
-
-        Color color = gameObject.GetComponent<SpriteRenderer>().color;
-        color.a = 0.5f;
-        gameObject.GetComponent<SpriteRenderer>().color = color;
 
         yield return new WaitForSeconds(deathTime);
 

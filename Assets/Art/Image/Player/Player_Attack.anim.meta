@@ -1,6 +1,3 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!74 &7400000
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +17,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -3238042, guid: c4e481c12c910744d89175dd1ee84a47, type: 3}
+      value: {fileID: -3238042, guid: 65581e0cb9f588f44bff03da83750459, type: 3}
     - time: 0.083333336
       value: {fileID: -2130254825, guid: c4e481c12c910744d89175dd1ee84a47, type: 3}
     - time: 0.16666667

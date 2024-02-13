@@ -12,4 +12,10 @@ public class CharacterAnimationManager : MonoBehaviour, AnimationInterface
         if (thisAnimator == null) return;//애니메이션 컴포넌트가 없으면
         thisAnimator.SetInteger("NowAniNum", value);
     }
+
+    //Bool형태의 파라미터 값 변경하는 함수
+    public void SetBoolAniParameter(string paraName, bool value)
+    {
+        thisAnimator.SetBool(paraName, value);
+    }
 }
