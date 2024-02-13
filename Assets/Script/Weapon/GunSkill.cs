@@ -57,6 +57,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
         if(getSkillStatus == 0 && nowSkillGauge >= skillCoast)
         {
             nowSkillGauge -= skillCoast;//스킬 코스트 소모
+            GetComponentInParent<WeaponStatus>().nowBullet = GetComponentInParent<WeaponStatus>().maxBullet;
             //클릭 시 이벤트 처리
             if (value.isPressed)
             {

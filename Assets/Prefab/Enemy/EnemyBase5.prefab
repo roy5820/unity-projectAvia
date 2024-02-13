@@ -222,7 +222,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  minLimitDistance: 4
+  minLimitDistance: 2
   castDistance: 1
 --- !u!114 &3557644147822862306
 MonoBehaviour:
@@ -263,10 +263,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916b761c5c48c5348a34b234e07afd6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 1
   castTime: 0.74
   afterCastTime: 2
-  skillRange: 6
+  skillRange: 5
   targetP: {x: 0, y: 0}
   targetLayer:
     serializedVersion: 2
@@ -280,8 +280,8 @@ MonoBehaviour:
   castAniNum: 3
   skillAniNum: 4
   afterCast: 5
-  dashRange: 7
-  dashPower: 50
+  dashRange: 9
+  dashPower: 30
   wallCastRange: 2
   bodyCol: {fileID: 2288156283965608402}
 --- !u!114 &4495993467869476758

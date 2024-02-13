@@ -87,6 +87,7 @@ public abstract class EnemySkill: MonoBehaviour
             if (reTargeting)
             {
                 Vector2 getTargetP = SetTargetToPlayer();//타겟 정보 가져오기
+                Debug.Log(getTargetP);
                 targetP = getTargetP == Vector2.zero ? targetP : getTargetP;//타겟 재설정
             }
 
@@ -136,17 +137,26 @@ public abstract class EnemySkill: MonoBehaviour
     public Vector2 SetTargetToPlayer(int mode = 0)
     {
         Vector2 targetPosition = Vector2.zero;//타겟 포지션
-        Vector2 attackVec = (GameObject.FindWithTag("Player").transform.position - this.gameObject.transform.position).normalized;
-        RaycastHit2D hit = Physics2D.Raycast(this.transform.position, attackVec, skillRange, mode == 1 ? (targetLayer | wallLayer) : targetLayer);//경로 상에 플레이어 체크를 위한 raycast
-
-
-        if (hit.collider != null)
+        
+        //벽 체크
+        if (mode == 1)
         {
-            if (((1 << hit.collider.gameObject.layer) & targetLayer) != 0)
+            Vector2 attackVec = (GameObject.FindWithTag("Player").transform.position - this.gameObject.transform.position).normalized;
+            RaycastHit2D hit = Physics2D.Raycast(this.transform.position, attackVec, skillRange, (targetLayer | wallLayer));//경로 상에 플레이어 체크를 위한 raycast
+
+
+            if (hit.collider != null)
             {
-                targetPosition = hit.collider.gameObject.transform.position;
+                if (((1 << hit.collider.gameObject.layer) & targetLayer) != 0)
+                {
+                    targetPosition = hit.collider.gameObject.transform.position;
+                }
             }
         }
+        //그냥 위치값 가져오기
+        else
+            targetPosition = GameObject.FindWithTag("Player").transform.position;
+
 
         return targetPosition;//타겟 위치 리턴
     }
