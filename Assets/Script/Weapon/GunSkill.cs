@@ -27,7 +27,10 @@ public class GunSkill : MonoBehaviour, SkillStatus
     public float nowSkillRange = 5f;//현재 스킬 거리
     public float increaseCycleTime = 0.25f;//증가 주기
     public float increaseRange = 3f;//증가 거리
-    public GameObject SkillPre = null;//사용할 스킬 피격 프리펩
+    public float skillDashPower = 50f;//스킬 대쉬 파워
+    public float wallCastRange = 1f;//벽체크 거리
+    public GameObject skillPre = null;//사용할 스킬 피격 프리펩
+    public Transform attackPoint = null;//스킬 생성 위치
 
     public LayerMask wallLayer; // 벽레이어
 
@@ -45,8 +48,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
         //각 상태값들을 메인 컨트롤러안에 값으로 초기화 하는 함수
         mainController.OnLoadStatus(ref getPlayerStatus, ref getMoveStatus, ref getDashStatus, ref getFireStatus, ref getReloadStatus, ref getSkillStatus);
 
-
-
+        
     }
 
     //스킬 사용 입력 처리 함수
@@ -54,6 +56,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
     {
         if(getSkillStatus == 0 && nowSkillGauge >= skillCoast)
         {
+            nowSkillGauge -= skillCoast;//스킬 코스트 소모
             //클릭 시 이벤트 처리
             if (value.isPressed)
             {
@@ -98,7 +101,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
             yield return null;
         }
         isCharge = false;
-        Debug.Log(nowSkillRange);
+        //Debug.Log(nowSkillRange);
         // 차징 종료 처리
         StartCoroutine(Rampage(nowSkillRange)); // 난사 스킬 발동
     }
@@ -106,9 +109,37 @@ public class GunSkill : MonoBehaviour, SkillStatus
     //스킬 구현 코루틴
     IEnumerator Rampage(float skillRange)
     {
+        //스킬 사용 방향 설정
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mousePos - (new Vector2(transform.position.x, transform.position.y));
+        Vector2 skillVec = direction.normalized;
 
-        mainController.OnSetStatus(0, -1, -1, 0, 0, 0);//플레이어 상태값 설정
-        yield return null;
+        mainController.OnSetStatus(1, 1, -1, 1, 1, 2);//플레이어 상태값 설정
+
+        //돌진 구현 부분
+        Vector2 startP = this.transform.position;//시작 위치
+        RaycastHit2D wallCast;//벽 체크할 센서
+        
+
+        GameObject thisPre = Instantiate(skillPre, attackPoint.parent.position, Quaternion.identity, gameObject.transform);//공격 프리펩 생성
+        Rigidbody2D rb = transform.GetComponentInParent<Rigidbody2D>();//리지드 바디 설정
+
+        float skillDistace = 0;//대쉬 거리
+        //최대 이동 거리까지 이동 구현
+        while (skillDistace <= nowSkillRange)
+        {
+            rb.velocity = skillVec * skillDashPower;//이동 구현
+            skillDistace = Vector2.Distance(transform.position, startP);//대쉬 거리 갱신
+            wallCast = Physics2D.Raycast(transform.position, skillVec, wallCastRange, wallLayer);//벽 체크
+            //이동 경로에 벽이 있을 시 이동 강제 종료
+            if (wallCast.collider != null)
+                break;
+
+            yield return null;
+        }
+
+        Destroy(thisPre);
+        mainController.OnSetStatus(0, 0, -1, 0, 0, 0); // 플레이어 상태값 설정
     }
 
     //최대 스킬 게이지 프로퍼티
