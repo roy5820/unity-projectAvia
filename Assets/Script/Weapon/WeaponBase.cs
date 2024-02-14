@@ -26,6 +26,8 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
     Vector2 bulletVec;//촐알 발사 방향
 
     public GameObject fireEft = null;//총알 이펙트
+    public GameObject reloardEft = null;//재장전 시 이펙트
+
     private void Start()
     {
         nowBulletCnt = maxBulletCnt;//현제 총알 계수 초기화
@@ -44,6 +46,11 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = mousePos - (new Vector2(transform.position.x, transform.position.y));
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // 부모 오브젝트의 로컬스케일 값이 -1인 경우 각도를 반전
+        if (transform.parent.localScale.x < 0)
+            angle += 180;
+
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         
         //rotation = gameObject.transform.localScale.x > 0 ? rotation * Quaternion.Euler(0, 0, 180f) : rotation;
@@ -103,6 +110,9 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
     //재장전 구현 코루틴
     IEnumerator ReloardImplementation()
     {
+        //재장전 이펙트 생성
+        GameObject reloardEftPre = Instantiate(reloardEft, transform.position, Quaternion.identity, this.transform);//발사 이펙트
+
         float cntTime = 0f;//시간 경과값을 담을 변수
         //재장전 시 액션 재한 상태값 설정
         mainController.OnSetStatus(-1, -1, -1, -1, 2, -1);

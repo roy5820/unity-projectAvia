@@ -294,6 +294,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 6743331197867488300}
+  deathTime: 2
+  soulStateTime: 4
+  resurrectionTime: 1
 --- !u!114 &6743331197383424864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,6 +517,7 @@ MonoBehaviour:
   reLoardTime: 0.5
   fireForce: 70
   fireEft: {fileID: 6272290338552212666, guid: 717c52ae967f1e541bfb4dbafa204991, type: 3}
+  reloardEft: {fileID: 9139995854108308000, guid: 2f320363d91043849af8cbbef8773386, type: 3}
 --- !u!114 &6743331197867488304
 MonoBehaviour:
   m_ObjectHideFlags: 0
