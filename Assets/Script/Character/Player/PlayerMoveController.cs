@@ -38,20 +38,16 @@ public class PlayerMoveController : MonoBehaviour
         mainController.OnLoadStatus(ref getPlayerStatus, ref getMoveStatus, ref getDashStatus, ref getFireStatus, ref getReloadStatus, ref getSkillStatus);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         //각 상태값들을 메인 컨트롤러안에 값으로 초기화 하는 함수
         mainController.OnLoadStatus(ref getPlayerStatus, ref getMoveStatus, ref getDashStatus, ref getFireStatus, ref getReloadStatus, ref getSkillStatus);
-    }
 
-    private void FixedUpdate()
-    {
         //플레이어 이동 구현 부분
         if (getMoveStatus != 1)
         {
             //이동 구현(일반 공격, 재장전, 스킬 사용 중 이동속도 절반으로 감속)
-            Vector2 MoveVec = inputMoveVec.normalized * (getFireStatus == 2 || getReloadStatus == 2 || getSkillStatus == 2 ? moveSpeed / 2 : moveSpeed);
+            Vector2 MoveVec = inputMoveVec.normalized * (getFireStatus == 2 || getReloadStatus == 2 ? moveSpeed / 2 : moveSpeed);
             playerRbody.velocity = MoveVec;//백터 값 적용
 
             if(playerRbody.velocity != Vector2.zero)
@@ -59,13 +55,15 @@ public class PlayerMoveController : MonoBehaviour
             else
                 mainController.OnSetStatus(-1, 0, -1, -1, -1, -1); //이동 시 상태값 설정
 
-            if (playerRbody.velocity.x > 0)
-                this.transform.localScale = new Vector3(1, 1, 1);
-            else if(playerRbody.velocity.x < 0)
-                this.transform.localScale = new Vector3(-1, 1, 1);
+            if(getFireStatus != 2)
+            {
+                if (playerRbody.velocity.x > 0)
+                    this.transform.localScale = new Vector3(1, 1, 1);
+                else if (playerRbody.velocity.x < 0)
+                    this.transform.localScale = new Vector3(-1, 1, 1);
+            }
+            
         }
-        else
-            mainController.OnSetStatus(-1, 0, -1, -1, -1, -1); //이동 시 상태값 설정
 
         //플레이어 대쉬 구현 부분
         if (getDashStatus == 2)

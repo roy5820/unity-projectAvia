@@ -66,7 +66,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
         }
 
         //스킬 사용후 우클릭을 떘을 떄 이벤트 처리
-        if(getSkillStatus == 2)
+        if(isCharge)
         {
             if(!value.isPressed)
                 isCharge = false;// 스킬 차징 여부 true로 설정
@@ -77,7 +77,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
     IEnumerator Charging()
     {
         // 스킬 차징 상태 처리
-        mainController.OnSetStatus(0, -1, -1, 1, 1, 2); // 플레이어 상태값 설정
+        mainController.OnSetStatus(0, -1, -1, 1, 1, 1); // 플레이어 상태값 설정
         isCharge = true; // 스킬 차징 여부 false로 설정
         float startTime = Time.realtimeSinceStartup; // 시작 시간 기록
         nowSkillRange = minSkillRange; // 스킬 사용 거리를 최소 거리로 초기화
@@ -114,12 +114,11 @@ public class GunSkill : MonoBehaviour, SkillStatus
         Vector2 direction = mousePos - (new Vector2(transform.position.x, transform.position.y));
         Vector2 skillVec = direction.normalized;
 
-        mainController.OnSetStatus(1, 1, -1, 1, 1, 2);//플레이어 상태값 설정
+        mainController.OnSetStatus(1, 1, 1, 1, 1, 2);//플레이어 상태값 설정
 
         //돌진 구현 부분
         Vector2 startP = this.transform.position;//시작 위치
         RaycastHit2D wallCast;//벽 체크할 센서
-        
 
         GameObject thisPre = Instantiate(skillPre, attackPoint.parent.position, Quaternion.identity, gameObject.transform);//공격 프리펩 생성
         Rigidbody2D rb = transform.GetComponentInParent<Rigidbody2D>();//리지드 바디 설정
@@ -139,7 +138,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
         }
 
         Destroy(thisPre);
-        mainController.OnSetStatus(0, 0, -1, 0, 0, 0); // 플레이어 상태값 설정
+        mainController.OnSetStatus(0, 0, 0, 0, 0, 0); // 플레이어 상태값 설정
     }
 
     //최대 스킬 게이지 프로퍼티

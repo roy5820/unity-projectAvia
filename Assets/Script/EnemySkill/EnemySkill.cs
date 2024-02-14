@@ -87,7 +87,7 @@ public abstract class EnemySkill: MonoBehaviour
             if (reTargeting)
             {
                 Vector2 getTargetP = SetTargetToPlayer();//타겟 정보 가져오기
-                Debug.Log(getTargetP);
+                
                 targetP = getTargetP == Vector2.zero ? targetP : getTargetP;//타겟 재설정
             }
 

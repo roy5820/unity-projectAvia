@@ -20,9 +20,11 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
 
     private int playerLife = 50; //플레이어 목숨 개수
 
-    private float deathTime = 2f; //플레이어 죽음 시간
-    private float resurrectionTime = 4f; //플레이어 부활 시간
-    
+    public float deathTime = 2f; //플레이어 죽음 시간
+    public float soulStateTime = 4f; //플레이어 영혼상태 시간
+    public float resurrectionTime = 1f;//플레이어 부활 시간
+
+
     private CharacterAnimationManager aniManager = null;//애니메이션 매니저
 
     private void Awake()
@@ -222,7 +224,7 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     IEnumerator PlayerDathEvent(int revenge)
     {
         OnSetStatus(2, 1, 1, 1, 1, 1);//죽음 상태로 전환
-
+        aniManager.SetBoolAniParameter("isDeath", true);//죽음 애니메이션 전환
         yield return new WaitForSeconds(deathTime);
 
         if(revenge == 1)//부활 상태로 전환
@@ -238,11 +240,19 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     //부활 처리 코루틴
     IEnumerator OnResurrection()
     {
-        OnSetStatus(2, 0, 1, 1, 1, 1);//부활 상태로 전환
+        OnSetStatus(2, 0, 1, 1, 1, 1);//영혼 상태로 전환
+        //영혼상태로 애니메이션 전환
+        aniManager.SetBoolAniParameter("isDeath", false);
+        aniManager.SetBoolAniParameter("isShadow", true);
+        yield return new WaitForSeconds(soulStateTime);
+
+        OnSetStatus(2, 1, 1, 1, 1, 1);//부활 상태로 전환
+        //부활 상태로 애니메이션 전환
+        aniManager.SetBoolAniParameter("isShadow", false);
+        aniManager.SetBoolAniParameter("isLanding", true);
         yield return new WaitForSeconds(resurrectionTime);
-        Color color = gameObject.GetComponent<SpriteRenderer>().color;
-        color.a = 1f;
-        gameObject.GetComponent<SpriteRenderer>().color = color;
+
+        aniManager.SetBoolAniParameter("isLanding", false);//부활상태 애니메이션 종료
         OnSetStatus(0, 0, 0, 0, 0, 0);//부활 상태 종료 처리
     }
 

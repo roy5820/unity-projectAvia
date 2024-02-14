@@ -15,6 +15,7 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
     int getSkillStatus;//스킬 상태값
 
     public GameObject bulletPrefab;//총알 프리펩
+    public Transform eftPoint;//이펙트 생성 위치
     public Transform firePoint;//총알 발사위치
     public int maxBulletCnt = 5; //최대 장탄수
     public int nowBulletCnt;//현제 장탄수
@@ -23,6 +24,8 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
     public float fireForce = 10f;//총알 발사 속도
 
     Vector2 bulletVec;//촐알 발사 방향
+
+    public GameObject fireEft = null;//총알 이펙트
     private void Start()
     {
         nowBulletCnt = maxBulletCnt;//현제 총알 계수 초기화
@@ -43,7 +46,7 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         
-        rotation = gameObject.transform.localScale.x > 0 ? rotation * Quaternion.Euler(0, 0, 180f) : rotation;
+        //rotation = gameObject.transform.localScale.x > 0 ? rotation * Quaternion.Euler(0, 0, 180f) : rotation;
         transform.rotation = rotation;
 
         //총알 발사방향 설정
@@ -56,13 +59,25 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
         if(getFireStatus == 0 && nowBulletCnt > 0)
         {
             mainController.OnSetStatus(-1, -1, -1, 2, -1, -1);//일반 공격 상태로 변경
+            //공격 방향에 따라 캐릭터 방향 전환
+            if(transform.parent.TryGetComponent<Transform>(out Transform playerTransform))
+            {
+                if (bulletVec.x > 0)
+                    playerTransform.transform.localScale = new Vector3(1, 1, 1);
+                else if (bulletVec.x < 0)
+                    playerTransform.transform.localScale = new Vector3(-1, 1, 1);
+            }
             
+                
             nowBulletCnt--;//현제 장탄 개수 감소
 
             //총알 생성
             GameObject bulletPre = Instantiate(bulletPrefab, firePoint.transform.position, Quaternion.identity);//총알 생성
             bulletPre.GetComponent<Rigidbody2D>().AddForce(bulletVec * fireForce, ForceMode2D.Impulse);
 
+            //발사 이펙트 생성
+            GameObject fireEftPre = Instantiate(fireEft, eftPoint.transform.position, Quaternion.identity);//발사 이펙트
+            fireEftPre.transform.localScale = transform.parent.transform.localScale;
             StartCoroutine(FireDelayIementation());//딜레이 구현 코루틴 호출
         }
     }
