@@ -115,7 +115,7 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
 
         float cntTime = 0f;//시간 경과값을 담을 변수
         //재장전 시 액션 재한 상태값 설정
-        mainController.OnSetStatus(-1, -1, -1, -1, 2, -1);
+        mainController.OnSetStatus(-1, -1, -1, 1, 2, -1);
 
         //재장전 시간 동안 장전을 취소할 행동을 할 경우 재장전 취소
         while (cntTime < reLoardTime)
@@ -131,7 +131,7 @@ public class WeaponBase : MonoBehaviour, WeaponStatus
             yield return null;
         }
 
-        mainController.OnSetStatus(-1, -1, -1, -1, 0, -1);//재장전 이후 상태값 변경
+        mainController.OnSetStatus(-1, -1, -1, 0, 0, -1);//재장전 이후 상태값 변경
         nowBulletCnt = maxBulletCnt;//장전
     }
 

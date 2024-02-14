@@ -33,6 +33,10 @@ public class GunSkill : MonoBehaviour, SkillStatus
     public Transform attackPoint = null;//스킬 생성 위치
 
     public LayerMask wallLayer; // 벽레이어
+
+    public GameObject SkillRangeIndicatorObj;//스킬 사거리 표시 오브젝트
+    public float maxRangeIndicatorRange = 3f;//최대로 늘어나는 사거리표시
+    public float RangeIncreaseSpeed = 0.04f;//스킬 늘어나는 속도
     // Start is called before the first frame update
     void Start()
     {
@@ -77,15 +81,25 @@ public class GunSkill : MonoBehaviour, SkillStatus
     IEnumerator Charging()
     {
         // 스킬 차징 상태 처리
-        mainController.OnSetStatus(0, -1, -1, 1, 1, 1); // 플레이어 상태값 설정
+        mainController.OnSetStatus(0, -1, -1, 1, 1, -1); // 플레이어 상태값 설정
         isCharge = true; // 스킬 차징 여부 false로 설정
         float startTime = Time.realtimeSinceStartup; // 시작 시간 기록
         nowSkillRange = minSkillRange; // 스킬 사용 거리를 최소 거리로 초기화
 
         float chkincreaseTime = 0;//체크타임
 
+        //스킬 사거리 표시 생성
+        GameObject thisPre = Instantiate(SkillRangeIndicatorObj, transform.parent.position, Quaternion.identity, transform.parent);
+        Debug.Log(transform.parent.position);
         // 차징시간 비례 스킬 사용 거리 늘어나는 거 구현
         while (isCharge) {
+            //스킬 차징중 취소됬을때 처리
+            if (getSkillStatus == 1)
+            {
+                Destroy(thisPre);
+                yield break;//코루틴 종료
+            }
+
             chkincreaseTime += Time.deltaTime;
             // 스킬 사용거리 증가 주기 체크
             if (chkincreaseTime > increaseCycleTime)
@@ -98,11 +112,15 @@ public class GunSkill : MonoBehaviour, SkillStatus
                     nowSkillRange = maxSkillRange;
             }
 
+            //스킬 사거리 늘어나는 거 구현
+            if(thisPre.transform.localScale.x < maxRangeIndicatorRange)
+                thisPre.transform.localScale += new Vector3(RangeIncreaseSpeed, 0, 0);
             yield return null;
         }
         isCharge = false;
-        //Debug.Log(nowSkillRange);
+
         // 차징 종료 처리
+        Destroy(thisPre);//스킬 사거리 표시 제거
         StartCoroutine(Rampage(nowSkillRange)); // 난사 스킬 발동
     }
 
