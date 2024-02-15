@@ -600,7 +600,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9103541282186377468}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 200878488940483293}
+        m_TargetAssemblyTypeName: SceneChangeBtn, Assembly-CSharp
+        m_MethodName: OnChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TitleScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5738002860709633871
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +902,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TItle
+  m_Text: TITLE
 --- !u!1 &7091876223241764243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1336,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ReStart
+  m_Text: RESTART
 --- !u!1 &8612523175905732031
 GameObject:
   m_ObjectHideFlags: 0
