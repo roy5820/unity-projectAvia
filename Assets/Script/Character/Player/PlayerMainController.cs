@@ -233,7 +233,7 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
         }
         else//게임 오버 창 띄우기
         {
-            GameManeger.instance.ReloardScene();//현재씬 리로드
+            GameManeger.instance.PlayerDead();//현재씬 리로드
         }
     }
 

@@ -9,6 +9,8 @@ public class GameManeger : MonoBehaviour
 
     private int killScore = 0;//킬 스코어
 
+    public GameObject deadPoup;
+
     private void Awake()
     {
         //인스턴스 값 초기화
@@ -35,9 +37,8 @@ public class GameManeger : MonoBehaviour
         }
     }
 
-    public void ReloardScene()
+    public void PlayerDead()
     {
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
+        deadPoup.SetActive(true);
     }
 }

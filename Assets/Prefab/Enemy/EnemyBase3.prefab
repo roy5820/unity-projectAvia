@@ -277,12 +277,12 @@ MonoBehaviour:
     m_Bits: 2048
   attackPrefeb: {fileID: 5836834420690895328, guid: ede6fa1b41ffac3409ae86b335199eab, type: 3}
   creationLocation: {fileID: 8798696865757511784}
-  reTargeting: 0
+  reTargeting: 1
   castAniNum: 3
   skillAniNum: 0
   afterCast: 0
-  dashRange: 6
-  dashPower: 20
+  dashRange: 8
+  dashPower: 15
   wallCastRange: 1
   bodyCol: {fileID: 2288156283965608402}
 --- !u!114 &2218732892636200142

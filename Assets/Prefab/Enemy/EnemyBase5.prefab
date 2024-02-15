@@ -281,7 +281,7 @@ MonoBehaviour:
   skillAniNum: 4
   afterCast: 5
   dashRange: 8
-  dashPower: 30
+  dashPower: 20
   wallCastRange: 2
   bodyCol: {fileID: 2288156283965608402}
 --- !u!114 &4495993467869476758
