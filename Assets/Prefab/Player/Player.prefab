@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 6743331197867488300}
+  playerLife: 2
   deathTime: 2
   soulStateTime: 4
   resurrectionTime: 1
@@ -530,9 +531,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d6762bedb1d8bb4c94a36cfbf465802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSkillGauge: 14
+  maxSkillGauge: 12
   nowSkillGauge: 0
-  skillCoast: 7
+  skillCoast: 6
   isCharge: 0
   minSkillRange: 5
   maxSkillRange: 12

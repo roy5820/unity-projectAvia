@@ -63,6 +63,8 @@ public class EnemyMainController : MonoBehaviour, CharacterHit, EnemyStatusInter
             aniManager.SetAniParameter(2);//죽음 애니메이션 처리
         }
 
+        GameManeger.instance.KillScore++;//킬 스코어 증가
+
         //일반 공격으로 유닛 처치 시 플레이어 스킬 게이지 획득
         if (attackType == 0)
         {

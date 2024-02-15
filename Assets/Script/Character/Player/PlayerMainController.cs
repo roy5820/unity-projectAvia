@@ -18,7 +18,7 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
     private int isSkillStatus = 0; //스킬공격 상태값
 
 
-    private int playerLife = 50; //플레이어 목숨 개수
+    public int playerLife = 3; //플레이어 목숨 개수
 
     public float deathTime = 2f; //플레이어 죽음 시간
     public float soulStateTime = 4f; //플레이어 영혼상태 시간
@@ -216,7 +216,7 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
         }
         else //죽음 처리
         {
-            
+            StartCoroutine(PlayerDathEvent(2));
         }
     }
 
@@ -233,7 +233,7 @@ public class PlayerMainController : MonoBehaviour, CharacterHit
         }
         else//게임 오버 창 띄우기
         {
-            
+            GameManeger.instance.ReloardScene();//현재씬 리로드
         }
     }
 

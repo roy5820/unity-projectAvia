@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8798696865757511785}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.245, y: 0.474, z: 0}
+  m_LocalPosition: {x: 0.279, y: 0.559, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48,11 +48,11 @@ GameObject:
   - component: {fileID: 3516621605514879080}
   - component: {fileID: 3557644147822862306}
   - component: {fileID: 5551992548797548385}
-  - component: {fileID: 1327179551181292162}
-  - component: {fileID: 4495993467869476758}
-  - component: {fileID: 8343230053758676867}
+  - component: {fileID: 981298779285438292}
+  - component: {fileID: 4360830062690625105}
+  - component: {fileID: 1742840001846590038}
   m_Layer: 8
-  m_Name: EnemyBase5
+  m_Name: EnemyBase2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2013401388, guid: a52a285d872d3284b80980eba92a3aa3, type: 3}
+  m_Sprite: {fileID: 1672057055, guid: 9d5c59ee8019cb544b643052361dd154, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,18 +139,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5102017}
+  m_Offset: {x: 0.0045676827, y: 0.5156598}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.37, y: 0}
-    oldSize: {x: 2.4, y: 1.25}
+    pivot: {x: 0.4, y: 0}
+    oldSize: {x: 1.5, y: 1.25}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.03443, y: 1.0104034}
+  m_Size: {x: 0.62879324, y: 1.0213196}
   m_EdgeRadius: 0
 --- !u!58 &2288156283965608402
 CircleCollider2D:
@@ -165,9 +165,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.27}
+  m_Offset: {x: 0, y: 0.15}
   serializedVersion: 2
-  m_Radius: 0.33
+  m_Radius: 0.2
 --- !u!50 &8798696867219536482
 Rigidbody2D:
   serializedVersion: 4
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65d8b9c1e825b17479bc9c96b7171e24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStatus: 1
+  enemyStatus: 0
   deathTime: 2
 --- !u!114 &3516621605514879080
 MonoBehaviour:
@@ -215,14 +215,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cc3bcab7cf82114db78ae70a16cdbbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 6
   wallLayer:
     serializedVersion: 2
     m_Bits: 2048
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  minLimitDistance: 4
+  minLimitDistance: 0.1
   castDistance: 1
 --- !u!114 &3557644147822862306
 MonoBehaviour:
@@ -250,8 +250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySkills:
-  - {fileID: 1327179551181292162}
---- !u!114 &1327179551181292162
+  - {fileID: 981298779285438292}
+--- !u!114 &981298779285438292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -260,13 +260,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8798696867219536493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916b761c5c48c5348a34b234e07afd6f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a04bf4ea4793f8478210a54e68bc508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
-  castTime: 0.74
-  afterCastTime: 2
-  skillRange: 6
+  cooldown: 0
+  castTime: 0.35
+  afterCastTime: 0.8
+  skillRange: 1
   targetP: {x: 0, y: 0}
   targetLayer:
     serializedVersion: 2
@@ -274,17 +274,14 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 2048
-  attackPrefeb: {fileID: 5836834420690895328, guid: ede6fa1b41ffac3409ae86b335199eab, type: 3}
+  attackPrefeb: {fileID: 5836834420690895328, guid: 4778613057e787249ba61fae86cb1242, type: 3}
   creationLocation: {fileID: 8798696865757511784}
-  reTargeting: 1
+  reTargeting: 0
   castAniNum: 3
-  skillAniNum: 4
-  afterCast: 5
-  dashRange: 7
-  dashPower: 50
-  wallCastRange: 2
-  bodyCol: {fileID: 2288156283965608402}
---- !u!114 &4495993467869476758
+  skillAniNum: 0
+  afterCast: 0
+  attackTime: 0.1
+--- !u!114 &4360830062690625105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,8 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6111f431506f3de4e92ed3deafd3fdd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisAnimator: {fileID: 8343230053758676867}
---- !u!95 &8343230053758676867
+  thisAnimator: {fileID: 1742840001846590038}
+--- !u!95 &1742840001846590038
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -307,7 +304,7 @@ Animator:
   m_GameObject: {fileID: 8798696867219536493}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7357400392151b24c972fd8f2fb2d508, type: 2}
+  m_Controller: {fileID: 9100000, guid: f7efc7977c1feb742933cc514fd6dc45, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

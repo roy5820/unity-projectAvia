@@ -90,7 +90,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
 
         //스킬 사거리 표시 생성
         GameObject thisPre = Instantiate(SkillRangeIndicatorObj, transform.parent.position, Quaternion.identity, transform.parent);
-        Debug.Log(transform.parent.position);
+        
         // 차징시간 비례 스킬 사용 거리 늘어나는 거 구현
         while (isCharge) {
             //스킬 차징중 취소됬을때 처리

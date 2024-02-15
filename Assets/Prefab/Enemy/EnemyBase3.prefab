@@ -116,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -337425607, guid: 9cc50d7de92cf3a4e940f96a9eebb073, type: 3}
+  m_Sprite: {fileID: 410630337, guid: 5612e2fa15fb2a445b69e0cdb95ead4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -277,11 +277,11 @@ MonoBehaviour:
     m_Bits: 2048
   attackPrefeb: {fileID: 5836834420690895328, guid: ede6fa1b41ffac3409ae86b335199eab, type: 3}
   creationLocation: {fileID: 8798696865757511784}
-  reTargeting: 1
+  reTargeting: 0
   castAniNum: 3
   skillAniNum: 0
   afterCast: 0
-  dashRange: 8
+  dashRange: 6
   dashPower: 20
   wallCastRange: 1
   bodyCol: {fileID: 2288156283965608402}
