@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2927902687622145370}
   - component: {fileID: 2927902687622145371}
-  - component: {fileID: 2927902687622145364}
+  - component: {fileID: 7411715147765715893}
   m_Layer: 11
   m_Name: object_cemetery_Fence2
   m_TagString: Untagged
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!60 &2927902687622145364
-PolygonCollider2D:
+--- !u!61 &7411715147765715893
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98,7 +98,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.006342225, y: -0.0017500222}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.47098926, y: 0.30707878}
@@ -108,15 +108,6 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.060920477, y: 0.011415288}
-      - {x: -0.015822887, y: 0.011630729}
-      - {x: -0.12832513, y: 0.01580204}
-      - {x: -0.13466664, y: -0.17876145}
-      - {x: -0.13342315, y: -0.35695103}
-      - {x: -0.040844075, y: -0.35583663}
-      - {x: 0.009624988, y: -0.3543158}
-      - {x: 0.13413312, y: -0.3376554}
-      - {x: 0.13729191, y: -0.19106838}
-      - {x: 0.14840308, y: 0.014555663}
+  serializedVersion: 2
+  m_Size: {x: 0.24291267, y: 0.28167087}
+  m_EdgeRadius: 0

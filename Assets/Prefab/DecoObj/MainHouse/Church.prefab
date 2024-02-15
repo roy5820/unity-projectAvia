@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4102965576456543483}
   - component: {fileID: 8174854651447958160}
-  - component: {fileID: 8901329675586868578}
+  - component: {fileID: 8684174758412687330}
   m_Layer: 11
   m_Name: Church
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &8901329675586868578
+--- !u!60 &8684174758412687330
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
