@@ -20,7 +20,8 @@ public class EnemySpqwnerBase : MonoBehaviour
             float delay = Random.Range(minSpawnTime, maxSpawnTime);
             yield return new WaitForSeconds(delay);
 
-            int randomSelect = Random.Range(0, monsterPrefabs.Length-1);
+            int randomSelect = Random.Range(0, monsterPrefabs.Length);
+            Debug.Log(monsterPrefabs.Length - 1);
             Instantiate(monsterPrefabs[randomSelect], transform.position, transform.rotation);
         }
     }
