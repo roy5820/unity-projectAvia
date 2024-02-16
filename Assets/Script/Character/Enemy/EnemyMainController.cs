@@ -51,14 +51,29 @@ public class EnemyMainController : MonoBehaviour, CharacterHit, EnemyStatusInter
             case 2://절대 무적
                 break;
         }
+
+
     }
 
     //몬스터 죽음 처리
     public void Death(int attackType)
     {
+        // 모든 콜라이더를 찾아서 비활성화
+        Collider2D[] colliders = GetComponents<Collider2D>();
+
+        if (colliders.Length > 0)
+        {
+            foreach (var collider2D in colliders)
+            {
+                if (collider2D != null)
+                {
+                    collider2D.enabled = false;
+                }
+            }
+        }
 
         //애니메이션 메니저 가져오기
-        if(TryGetComponent<CharacterAnimationManager>(out CharacterAnimationManager aniManager))
+        if (TryGetComponent<CharacterAnimationManager>(out CharacterAnimationManager aniManager))
         {
             aniManager.SetAniParameter(2);//죽음 애니메이션 처리
         }
@@ -83,20 +98,6 @@ public class EnemyMainController : MonoBehaviour, CharacterHit, EnemyStatusInter
     {
         behavioralStatus = 3;//죽음 상태로 변경
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;//정지
-
-        // 모든 콜라이더를 찾아서 비활성화
-        Collider2D[] colliders = GetComponents<Collider2D>();
-
-        if (colliders.Length > 0)
-        {
-            foreach (var collider2D in colliders)
-            {
-                if (collider2D != null)
-                {
-                    collider2D.enabled = false;
-                }
-            }
-        }
 
         yield return new WaitForSeconds(deathTime);
 

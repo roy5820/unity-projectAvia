@@ -44,6 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccb2eff7db539d340a58c3828996cae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterPrefab: {fileID: 8798696867219536493, guid: 7b6cd4c6390a3ed499919c3a3326f1de, type: 3}
+  monsterPrefabs:
+  - {fileID: 8798696867219536493, guid: 7b6cd4c6390a3ed499919c3a3326f1de, type: 3}
+  - {fileID: 8798696867219536493, guid: 7b6cd4c6390a3ed499919c3a3326f1de, type: 3}
+  - {fileID: 8798696867219536493, guid: 46099d0b8d30e4e498361000453448ce, type: 3}
+  - {fileID: 8798696867219536493, guid: 46099d0b8d30e4e498361000453448ce, type: 3}
+  - {fileID: 8798696867219536493, guid: fe2443a99f7b43949853c79d9333fc3d, type: 3}
+  - {fileID: 8798696867219536493, guid: 37b711f19c774db419524eeab01b6cd1, type: 3}
   minSpawnTime: 3
   maxSpawnTime: 8

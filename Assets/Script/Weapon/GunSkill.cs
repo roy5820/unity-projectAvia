@@ -57,7 +57,7 @@ public class GunSkill : MonoBehaviour, SkillStatus
     //스킬 사용 입력 처리 함수
     public void OnSkill(InputValue value)
     {
-        if(getSkillStatus == 0 && nowSkillGauge >= skillCoast)
+        if((getSkillStatus == 0 && nowSkillGauge >= skillCoast) && !isCharge)
         {
             nowSkillGauge -= skillCoast;//스킬 코스트 소모
             GetComponentInParent<WeaponStatus>().nowBullet = GetComponentInParent<WeaponStatus>().maxBullet;
